@@ -56,9 +56,7 @@ This section will be filled out as project planning progresses.
 
 ## Contributing
 
-At the start of this project we are a party of 2 and there is no expectation to add contributors at this time.
-
-In the future we could update this information and provide means for public contributions, stay tuned.
+At the start of this project we are a party of 2 and there is no expectation to add contributors at this time. In the future we could update this information and provide means for public contributions such as a Discussion Board or Issues list.
 
 ## References and Acknowledgements
 
@@ -68,3 +66,7 @@ Thank-you to [GitHub](https://github.com) for providing collaborative tools for 
 
 [Jon Rumsey](https://github.com/nojronatron)
 [Ryan Schafer](https://github.com/schaferyan)
+
+## License
+
+![https://img.shields.io/github/license/EnigmaBay/lingobingojs?style=plastic](https://img.shields.io/github/license/EnigmaBay/lingobingojs?style=plastic)
