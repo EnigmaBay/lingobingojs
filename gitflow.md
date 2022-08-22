@@ -39,7 +39,7 @@ Depending on your environment vs all other Collaborators in this project, you ma
 
 In summary, the basic problem is Git stores plaintext files the *nix way, with line ending character LF; Windows stores plaintext with line ending characters CR + LF. When both Windows and Unix-based dev systems are contributing and editing files, this can cause CR/CRLF confusion in files, which might adversely affect the project.
 
-#### Action
+#### Action For Windows Collaborators
 
 If you are running Windows, follow the StackOverflow advice (see reference link below and scroll down to subsection "Moral (for Windows)").
 
