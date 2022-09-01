@@ -50,6 +50,10 @@ The following tools will be used:
 - VSCode.
 - others are TBD.
 
+### Git Flow
+
+See [gitflow.md](./gitflow.md) for details.
+
 ## Testing
 
 This section will be filled out as project planning progresses.
