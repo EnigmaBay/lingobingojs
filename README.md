@@ -70,5 +70,12 @@ Thank-you to [GitHub](https://github.com) for providing collaborative tools for 
 
 ### Lead Developers
 
-[Jon Rumsey](https://github.com/nojronatron)
-[Ryan Schafer](https://github.com/schaferyan)
+<img src='./images/icons8-github-cute.svg' alt='octocat' width='25px' height='25px' /> [Jon Rumsey](https://github.com/nojronatron)
+
+<img src='./images/icons8-github-cute.svg' alt='octocat' width='25px' height='25px' /> [Ryan Schafer](https://github.com/schaferyan)
+
+<a target="_blank" href="https://icons8.com/icon/106564/github">GitHub</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+
+## License
+
+![https://img.shields.io/github/license/EnigmaBay/lingobingojs?style=plastic](https://img.shields.io/github/license/EnigmaBay/lingobingojs?style=plastic)
