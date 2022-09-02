@@ -8,7 +8,6 @@ section,
 header {
   border: solid 1px #244592;
   display: flex;
-  justify-content: space-around;
 }
 
 header > div {
@@ -22,8 +21,6 @@ section {
 .logo-container {
   border: solid 1px #DB7622;
   background: #0D296A;
-  color: #CED4E1;
-  min-width: 15%;
 }
 
 .nav-container {

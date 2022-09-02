@@ -1,4 +1,5 @@
 import React from 'react';
+import Logo from './Logo.js';
 import './root.css';
 import './tempstyle.css';
 
@@ -7,7 +8,7 @@ export default function Home() {
     <div>
       <header>
         <div className='logo-container'>
-          <h2>Logo</h2>
+          <Logo />
         </div>
         <div className='nav-container'>
           <h3>Nav placeholder</h3>
@@ -17,7 +18,7 @@ export default function Home() {
         <h1>Home Component</h1>
         <p>About component placeholder</p>
         <p>Description component placeholder</p>
-        <p>GameBoard placeholder</p>
+        <p>Gameboard component placeholder</p>
       </section>
     </div>
   );
