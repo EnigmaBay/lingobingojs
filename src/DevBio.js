@@ -4,11 +4,13 @@ import CardHeader from 'react-bootstrap/esm/CardHeader';
 
 export default function DevBio() {
   return (
-    <Card style={{
-      maxWidth: '19em'
-    }}>
+    <Card
+      className="text-center"
+      style={{
+        maxWidth: '19em'
+      }}>
       <CardHeader>
-        <p>Placeholder Bio</p>
+        Placeholder Bio
         <Card.Img
           className='dev-bio-image'
           variant='top'
@@ -17,16 +19,16 @@ export default function DevBio() {
         />
       </CardHeader>
       <Card.Title>
-        <p>Dev Eloper (they/them)</p>
+        Dev Eloper (they/them)
       </Card.Title>
       <Card.Text>
-        <p>Developer biography here.</p>
+        Developer biography here.
       </Card.Text>
       <Card.Link>
-        <p>LinkedIn link</p>
+        LinkedIn link
       </Card.Link>
       <Card.Link>
-        <p>GitHub link</p>
+        GitHub link
       </Card.Link>
     </Card>
   );
