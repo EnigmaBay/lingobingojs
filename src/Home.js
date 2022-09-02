@@ -1,5 +1,6 @@
 import React from 'react';
 import Logo from './Logo.js';
+import About from './About.js';
 import './root.css';
 import './tempstyle.css';
 
@@ -16,7 +17,7 @@ export default function Home() {
       </header>
       <section>
         <h1>Home Component</h1>
-        <p>About component placeholder</p>
+        <About />
         <p>Description component placeholder</p>
         <p>Gameboard component placeholder</p>
       </section>

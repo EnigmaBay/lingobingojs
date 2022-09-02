@@ -26,5 +26,5 @@ section {
 .nav-container {
   border: solid 1px #9F4A04;
   background: #CED4E1;
-  min-width: 70%;
+  width: 70%;
 }
