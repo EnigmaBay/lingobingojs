@@ -18,18 +18,16 @@ export default function DevBio() {
           alt='placeholder image for developer headshot'
         />
       </CardHeader>
-      <Card.Title>
-        Dev Eloper (they/them)
-      </Card.Title>
+      <Card.Title>Dev Eloper (they/them)</Card.Title>
       <Card.Text>
         Developer biography here.
       </Card.Text>
-      <Card.Link>
-        LinkedIn link
-      </Card.Link>
-      <Card.Link>
-        GitHub link
-      </Card.Link>
+      <Card.Link>LinkedIn link</Card.Link>
+      <Card.Link
+        style={{
+          margin: '0'
+        }}
+      >GitHub link</Card.Link>
     </Card>
   );
 }
