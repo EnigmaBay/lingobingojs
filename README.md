@@ -14,16 +14,11 @@ During the summer of 2022, Jon and Ryan decided to collaborate on this project. 
 
 Use the existing [LingoBingo project](https://github.com/nojronatron/LingoBingoGen) as a guide and rewrite the app as an HTML, CSS, and Javascript webapp that can then be added on to and improved over time. There is potential for this project to expand into a full MERN-stack webapp.
 
-### Non-function Outcomes
+### User Stories
 
-Development of this project will be a collaborative effort, with the following goals:
+User Stories are managed by and for the Dev Team in GoogleDocs and a copy of those developing stories is stored in [userstories.md](./userstories.md) here in this repo.
 
-- Gain experience developing a javascript-based webapp from the ground up.
-- Practice project collaboration.
-- Exericse UI design and implementation skills and techniques.
-- Practice javascript and JS framework interaction and implementation.
-- Work toward a full-stack implementation.
-- Develop an open-source, utilitarian online 'game' others can use and enjoy.
+Updates will be made on a best-effort basis as the project progresses.
 
 ### Functional Outcomes
 
@@ -34,6 +29,17 @@ To start, we expect to:
 - Provide a dedicated web interface for people to use the app as they need.
 
 Later on, we hope to do a lot more. As we move out of the planning phase and into initial implementation, this section will receive updates.
+
+### Non-function Outcomes
+
+Development of this project will be a collaborative effort, with the following goals:
+
+- Gain experience developing a javascript-based webapp from the ground up.
+- Practice project collaboration.
+- Exericse UI design and implementation skills and techniques.
+- Practice javascript and JS framework interaction and implementation.
+- Work toward a full-stack implementation.
+- Develop an open-source, utilitarian online 'game' others can use and enjoy.
 
 ## Prequisites
 
