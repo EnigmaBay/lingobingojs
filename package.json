@@ -9,6 +9,7 @@
     "bootstrap": "^5.2.0",
     "eslint": "^8.23.0",
     "eslint-plugin-react": "^7.31.1",
+    "eslinter": "^3.2.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",
