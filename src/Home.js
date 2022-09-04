@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from './Logo.js';
 import About from './About.js';
-import Description from './description.js';
+import Description from './Description.js';
 import './root.css';
 import './tempstyle.css';
 
