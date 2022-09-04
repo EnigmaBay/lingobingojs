@@ -2,6 +2,7 @@ import React from 'react';
 import Logo from './Logo.js';
 import About from './About.js';
 import Description from './Description.js';
+import NavbarMain from './NavbarMain.js';
 import './root.css';
 import './tempstyle.css';
 
@@ -13,7 +14,7 @@ export default function Home() {
           <Logo />
         </div>
         <div className='nav-container'>
-          <h3>Nav placeholder</h3>
+          <NavbarMain/>
         </div>
       </header>
       <section>
