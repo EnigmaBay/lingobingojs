@@ -36,31 +36,36 @@ export default function Gameboard() {
   });
 
   return (
-    <Container>
+    <Container fluid>
       <Row>
         <Col></Col>
+        <Col xs={'auto'}>Lets Play Bingo!</Col>
+        <Col></Col>
+      </Row>
+      <Row>
+        <Col xs={1}></Col>
         {rowOneWords}
-        <Col></Col>
+        <Col xs={1}></Col>
       </Row>
       <Row>
-        <Col></Col>
+        <Col xs={1}></Col>
         {rowTwoWords}
-        <Col></Col>
+        <Col xs={1}></Col>
       </Row>
       <Row>
-        <Col></Col>
+        <Col xs={1}></Col>
         {rowThreeWords}
-        <Col></Col>
+        <Col xs={1}></Col>
       </Row>
       <Row>
-        <Col></Col>
+        <Col xs={1}></Col>
         {rowFourWords}
-        <Col></Col>
+        <Col xs={1}></Col>
       </Row>
       <Row>
-        <Col></Col>
+        <Col xs={1}></Col>
         {rowFiveWords}
-        <Col></Col>
+        <Col xs={1}></Col>
       </Row>
     </Container>
   );
