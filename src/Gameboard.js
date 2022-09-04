@@ -38,29 +38,29 @@ export default function Gameboard() {
   return (
     <Container>
       <Row>
-        <Col className='board-buffer'></Col>
+        <Col></Col>
         {rowOneWords}
-        <Col className='board-buffer'></Col>
+        <Col></Col>
       </Row>
       <Row>
-        <Col className='board-buffer'></Col>
+        <Col></Col>
         {rowTwoWords}
-        <Col className='board-buffer'></Col>
+        <Col></Col>
       </Row>
       <Row>
-        <Col className='board-buffer'></Col>
+        <Col></Col>
         {rowThreeWords}
-        <Col className='board-buffer'></Col>
+        <Col></Col>
       </Row>
       <Row>
-        <Col className='board-buffer'></Col>
+        <Col></Col>
         {rowFourWords}
-        <Col className='board-buffer'></Col>
+        <Col></Col>
       </Row>
       <Row>
-        <Col className='board-buffer'></Col>
+        <Col></Col>
         {rowFiveWords}
-        <Col className='board-buffer'></Col>
+        <Col></Col>
       </Row>
     </Container>
   );
