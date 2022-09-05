@@ -18,7 +18,7 @@ export default function Gameboard() {
   });
   const rowThreeWords = Words.map((item, idx) => {
     if (idx === 12) {
-      return <Col key={idx} xs={2} className='word-tile'><div className='center-tile-content'>{item.word}</div></Col>;
+      return <Col key={idx} xs={2} className='word-tile'><div className='center-tile-content'>FREE</div></Col>;
     }
     if (idx >= 10 && idx <= 14) {
       return <Col key={idx} xs={2} className='word-tile'><div className='center-tile-content'>{item.word}</div></Col>;
