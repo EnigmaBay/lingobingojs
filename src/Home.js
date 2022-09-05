@@ -1,5 +1,4 @@
 import React from 'react';
-import Logo from './Logo.js';
 import About from './About.js';
 import Description from './Description.js';
 import NavbarMain from './NavbarMain.js';
@@ -12,9 +11,6 @@ export default function Home() {
   return (
     <div>
       <header>
-        <div className='logo-container'>
-          <Logo />
-        </div>
         <Container fluid>
           <NavbarMain/>
         </Container>
