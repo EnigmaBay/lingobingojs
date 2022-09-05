@@ -1,0 +1,132 @@
+[
+  {
+    "id": 1,
+    "word": "Alpha",
+    "category": "itu"
+  },
+  {
+    "id": 2,
+    "word": "Bravo",
+    "category": "itu"
+  },
+  {
+    "id": 3,
+    "word": "Charlie",
+    "category": "itu"
+  },
+  {
+    "id": 4,
+    "word": "Delta",
+    "category": "itu"
+  },
+  {
+    "id": 5,
+    "word": "Echo",
+    "category": "itu"
+  },
+  {
+    "id": 6,
+    "word": "Foxtrot",
+    "category": "itu"
+  },
+  {
+    "id": 7,
+    "word": "Golf",
+    "category": "itu"
+  },
+  {
+    "id": 8,
+    "word": "Hotel",
+    "category": "itu"
+  },
+  {
+    "id": 9,
+    "word": "India",
+    "category": "itu"
+  },
+  {
+    "id": 10,
+    "word": "Juliet",
+    "category": "itu"
+  },
+  {
+    "id": 11,
+    "word": "Kilo",
+    "category": "itu"
+  },
+  {
+    "id": 12,
+    "word": "Lima",
+    "category": "itu"
+  },
+  {
+    "id": 13,
+    "word": "Mike",
+    "category": "itu"
+  },
+  {
+    "id": 14,
+    "word": "November",
+    "category": "itu"
+  },
+  {
+    "id": 15,
+    "word": "Oscar",
+    "category": "itu"
+  },
+  {
+    "id": 16,
+    "word": "Pahpah",
+    "category": "itu"
+  },
+  {
+    "id": 17,
+    "word": "Quebec",
+    "category": "itu"
+  },
+  {
+    "id": 18,
+    "word": "Roger",
+    "category": "itu"
+  },
+  {
+    "id": 19,
+    "word": "Sierra",
+    "category": "itu"
+  },
+  {
+    "id": 20,
+    "word": "Tango",
+    "category": "itu"
+  },
+  {
+    "id": 21,
+    "word": "Uniform",
+    "category": "itu"
+  },
+  {
+    "id": 22,
+    "word": "Victor",
+    "category": "itu"
+  },
+  {
+    "id": 23,
+    "word": "Whiskey",
+    "category": "itu"
+  },
+  {
+    "id": 24,
+    "word": "X-ray",
+    "category": "itu"
+  },
+  {
+    "id": 25,
+    "word": "Yankee",
+    "category": "itu"
+  },
+  {
+    "id": 26,
+    "word": "Zulu",
+    "category": "itu"
+  }
+]
