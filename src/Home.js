@@ -6,6 +6,7 @@ import NavbarMain from './NavbarMain.js';
 import Container from 'react-bootstrap/Container';
 import './root.css';
 import './tempstyle.css';
+import Gameboard from './Gameboard.js';
 
 export default function Home() {
   return (
@@ -22,7 +23,7 @@ export default function Home() {
         <h1>Home Component</h1>
         <Description/>
         <About />
-        <p>Gameboard component placeholder</p>
+        <Gameboard />
       </section>
     </div>
   );
