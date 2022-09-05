@@ -36,33 +36,33 @@ export default function Gameboard() {
   });
 
   return (
-    <Container fluid>
-      <Row>
+    <Container fluid className='px-0'>
+      <Row className='mx-0'>
         <Col></Col>
         <Col xs={'auto'}>Lets Play Bingo!</Col>
         <Col></Col>
       </Row>
-      <Row>
+      <Row className='mx-0'>
         <Col xs={1}></Col>
         {rowOneWords}
         <Col xs={1}></Col>
       </Row>
-      <Row>
+      <Row className='mx-0'>
         <Col xs={1}></Col>
         {rowTwoWords}
         <Col xs={1}></Col>
       </Row>
-      <Row>
+      <Row className='mx-0'>
         <Col xs={1}></Col>
         {rowThreeWords}
         <Col xs={1}></Col>
       </Row>
-      <Row>
+      <Row className='mx-0'>
         <Col xs={1}></Col>
         {rowFourWords}
         <Col xs={1}></Col>
       </Row>
-      <Row>
+      <Row className='mx-0'>
         <Col xs={1}></Col>
         {rowFiveWords}
         <Col xs={1}></Col>
