@@ -1,7 +1,8 @@
 import React from 'react';
-import Logo from './Logo.js';
 import About from './About.js';
 import Description from './Description.js';
+import NavbarMain from './NavbarMain.js';
+import Container from 'react-bootstrap/Container';
 import './root.css';
 import './tempstyle.css';
 import Gameboard from './Gameboard.js';
@@ -10,12 +11,9 @@ export default function Home() {
   return (
     <div>
       <header>
-        <div className='logo-container'>
-          <Logo />
-        </div>
-        <div className='nav-container'>
-          <h3>Nav placeholder</h3>
-        </div>
+        <Container fluid>
+          <NavbarMain/>
+        </Container>
       </header>
       <section>
         <h1>Home Component</h1>
