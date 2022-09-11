@@ -16,8 +16,8 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home/>}>
+          <Route index element={<Description/>} />
           <Route path="about" element = {<About/>}/>
-          <Route path="home" element = {<Description/>}/>
           <Route path="signup" element = {''}/>
           <Route path="login" element = {''}/>
           <Route path="play" element = {<Gameboard/>}/>

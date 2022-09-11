@@ -16,7 +16,6 @@ export default function Home() {
         </Container>
       </header>
       <section>
-        <h1>Home Component</h1>
         <Outlet/>
       </section>
     </div>
