@@ -54,6 +54,7 @@
         "allowTemplateLiterals": true
       }
     ],
-    "semi": "error"
+    "semi": "error",
+    "react/prop-types": 1
   }
 }
