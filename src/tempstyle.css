@@ -30,17 +30,27 @@ section {
 }
 
 .word-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 6em;
   font-size: 1.6vw;
   font-weight: 600;
   border: solid 2px #9F4A04;
-  border-radius: 10%;
+  border-radius: 4%;
 }
 
-.center-tile-content {
+.daubered {
+  color: #010B24;
+  border-radius: 50%;
+  background: #657BAD;
+  width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
-  padding: .25rem;
   justify-content: center;
+}
+
+.plain {
+  background: #FFF2E8;
 }
