@@ -1,0 +1,18 @@
+{
+  "data": [
+    {
+      "name": "Jonathan Rumsey (he/him)",
+      "bio": "I am a full stack software developer with experience in systems administration and software testing. I earned a Code Fellows certificate in Advanced Software Development with Java, and I enjoy developing in Java, C#, and webapps using the MERN stack. I thrive working in groups that collaboratively design and build solutions that have a positive impact on customers.",
+      "img": "Jon_Rainier_200x200.jpg",
+      "github": "https://github.com/nojronatron",
+      "linkedin": "https://linked.in/jonathan_rumsey_wa"
+    },
+    {
+      "name": "Ryan Schafer",
+      "bio": "I'm a software developer with strong Java, Javascript, HTML, and CSS fundamentals and a knack for learning and implementing new technologies, frameworks, and paradigms. I derive a feeling of immense satisfaction from solving challenging technical dilemmas. My love for solving complex problems, applying logic, and making things work is what drew me to a programming career.",
+      "img": "https://place-hold.it/200/9F8404/352C00.png&text=Dev&bold&fontsize=18",
+      "github": "https://github.com/schaferyan",
+      "linkedin": ""
+    }
+  ]
+}

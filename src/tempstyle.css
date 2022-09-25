@@ -54,3 +54,14 @@ section {
 .plain {
   background: #FFF2E8;
 }
+
+.dev-bio-image {
+  width: 200px;
+  height: auto;
+}
+
+.dev-bio-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

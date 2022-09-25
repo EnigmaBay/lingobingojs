@@ -1,33 +1,53 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
+import PropTypes from 'prop-types';
+import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
 import CardHeader from 'react-bootstrap/esm/CardHeader';
 
-export default function DevBio() {
+export default function DevBio(props) {
   return (
-    <Card
-      className="text-center"
-      style={{
-        maxWidth: '19em'
-      }}>
-      <CardHeader>
-        Placeholder Bio
-        <Card.Img
-          className='dev-bio-image'
-          variant='top'
-          src='https://place-hold.it/150/9F8404/352C00.png&text=Dev&bold&fontsize=18'
-          alt='placeholder image for developer headshot'
-        />
-      </CardHeader>
-      <Card.Title>Dev Eloper (they/them)</Card.Title>
-      <Card.Text>
-        Developer biography here.
-      </Card.Text>
-      <Card.Link>LinkedIn link</Card.Link>
-      <Card.Link
+    <Col className="dev-bio-column">
+      <Card
+        className="text-center"
         style={{
-          margin: '0'
-        }}
-      >GitHub link</Card.Link>
-    </Card>
+          maxWidth: '19em'
+        }}>
+        <CardHeader>
+          Placeholder Bio
+          <Card.Img
+            className='dev-bio-image'
+            variant='top'
+            src={props.img}
+            alt={props.name}
+          />
+        </CardHeader>
+        <Card.Title>
+          {props.name}
+        </Card.Title>
+        <Card.Text style={{margin: '.5em'}}>
+          {props.bio}
+        </Card.Text>
+        <Card.Link
+          style={{margin: '.5em'}}
+          href={props.linkedin}
+        >
+          LinkedIn
+        </Card.Link>
+        <Card.Link
+          style={{margin: '.5em'}}
+          href={props.github}
+        >
+          GitHub
+        </Card.Link>
+      </Card>
+    </Col>
   );
 }
+
+DevBio.propTypes = {
+  img: PropTypes.string,
+  name: PropTypes.string,
+  bio: PropTypes.string,
+  linkedin: PropTypes.string,
+  github: PropTypes.string
+};
