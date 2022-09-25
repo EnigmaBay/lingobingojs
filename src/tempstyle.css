@@ -44,3 +44,14 @@ section {
   padding: .25rem;
   justify-content: center;
 }
+
+.dev-bio-image {
+  width: 200px;
+  height: auto;
+}
+
+.dev-bio-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
