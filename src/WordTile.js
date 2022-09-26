@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 
 export default function WordTile(props) {
   return (
-    <div>{props.word}</div>
+    <div onClick={props.handleTileClick} className={props.styleClass}>{props.word}</div>
   );
 }
 WordTile.propTypes = {
-  word: PropTypes.string
+  word: PropTypes.string,
+  styleClass: PropTypes.string,
+  handleTileClick: PropTypes.func
 };

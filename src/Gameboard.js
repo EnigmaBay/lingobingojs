@@ -18,25 +18,27 @@ export default class Gameboard extends React.Component {
   }
 
   tileBuilder(row, randWords) {
-    console.log('Gameboard itemBuilder(row) accessing param randWords: ' + randWords);
     let result = [];
     const incrementor = row * 5;
     for (let col=0; col < 5; col++) {
-      console.log('Gameboard itemBuilder(row) col: ' + col);
       const idx = col + incrementor;
-      console.log('Gameboard itemBuilder(row) idx: ' + idx);
       const currentWord = randWords[idx];
-      console.log('Gameboard itemBuilder(row) currentWord: ' + currentWord);
-      result.push(<Col key={idx} className='word-tile'><DauberLayer styleClass='daubered' word={currentWord}/></Col>);
+      result.push(
+        <Col key={idx} className='word-tile'>
+          <DauberLayer styleClass='plain' word={currentWord}
+            handleTileClick={e => this.handleTileClick(e)}/>
+        </Col>);
     }
     return result;
   }
-
+  handleTileClick(e){
+    e.target.className='daubered';
+    console.log('click');
+  }
   render() {
     const randInts = randomGen(24);
     let words = wordImporter();
     const randWords = wordProcessor(words, randInts);
-    console.log('Gameboard randWords: ' + randWords);
     const rows = this.rowBuilder(randWords);
 
     return (
