@@ -1,4 +1,4 @@
-export default function RandomGen(limit) {
+function RandomGen(limit) {
   let currentNum;
   const randomArray = [];
   for (let count = 0; count < limit; count++) {
@@ -11,3 +11,5 @@ export default function RandomGen(limit) {
     randomArray
   );
 }
+
+module.exports = RandomGen;

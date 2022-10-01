@@ -1,4 +1,4 @@
-export default function WordProcessor(words, intsArray) {
+function WordProcessor(words, intsArray) {
   const freeSpaceWord = 'FREE';
   let randomizedWords = [];
   for (let idx=0; idx<intsArray.length; idx++) {
@@ -13,3 +13,5 @@ export default function WordProcessor(words, intsArray) {
     randomizedWords
   );
 }
+
+module.exports = WordProcessor;
