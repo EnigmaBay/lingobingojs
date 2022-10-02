@@ -9,6 +9,12 @@ import wordProcessor from './funcLib/WordProcessor.js';
 import './tempstyle.css';
 
 export default class Gameboard extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      dauberedTiles : [],
+    };
+  }
   rowBuilder(randWords) {
     let result = [];
     for (let row = 0; row < 5; row++) {
@@ -25,15 +31,22 @@ export default class Gameboard extends React.Component {
       const currentWord = randWords[idx];
       result.push(
         <Col key={idx} className='word-tile'>
-          <DauberLayer styleClass='plain' word={currentWord}
+          <DauberLayer id={idx} styleClass={this.state.dauberedTiles[idx] ? 'daubered' : 'plain'} word={currentWord}
             handleTileClick={e => this.handleTileClick(e)}/>
         </Col>);
     }
     return result;
   }
   handleTileClick(e){
-    e.target.className='daubered';
-    console.log('click');
+    let id = e.currentTarget.id;
+    if(id !== null){
+      this.setState((prevState) => {
+        prevState.dauberedTiles[id] = true;
+        return {dauberedTiles: prevState.dauberedTiles};
+      });
+      console.log('click ' + id);
+      console.log(this.state.dauberedTiles);
+    }
   }
   render() {
     const randInts = randomGen(24);
