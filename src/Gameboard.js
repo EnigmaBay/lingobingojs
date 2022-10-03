@@ -1,11 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import DauberLayer from './DauberLayer';
-import randomGen from './funcLib/RandomGen.js';
-import wordImporter from './funcLib/WordImporter.js';
-import wordProcessor from './funcLib/WordProcessor.js';
 import './tempstyle.css';
 
 export default class Gameboard extends React.Component {
@@ -13,6 +11,7 @@ export default class Gameboard extends React.Component {
     super(props);
     this.state = {
       dauberedTiles : [],
+      words : [],
     };
   }
   rowBuilder(randWords) {
@@ -49,10 +48,7 @@ export default class Gameboard extends React.Component {
     }
   }
   render() {
-    const randInts = randomGen(24);
-    let words = wordImporter();
-    const randWords = wordProcessor(words, randInts);
-    const rows = this.rowBuilder(randWords);
+    const rows = this.rowBuilder(this.props.randwords);
 
     return (
       <Container fluid className='px-0' >
@@ -66,3 +62,6 @@ export default class Gameboard extends React.Component {
     );
   }
 }
+Gameboard.propTypes = {
+  randwords: PropTypes.string
+};
