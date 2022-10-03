@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 
 export default function WordTile(props) {
   return (
-    <div>{props.word}</div>
+    <div>
+      {props.word}
+    </div>
   );
 }
 WordTile.propTypes = {
-  word: PropTypes.string
+  word: PropTypes.string,
 };
