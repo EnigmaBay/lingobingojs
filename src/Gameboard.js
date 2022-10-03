@@ -11,7 +11,6 @@ export default class Gameboard extends React.Component {
     super(props);
     this.state = {
       dauberedTiles : [],
-      words : [],
     };
   }
   rowBuilder(randWords) {
@@ -67,5 +66,5 @@ export default class Gameboard extends React.Component {
   }
 }
 Gameboard.propTypes = {
-  randwords: PropTypes.string
+  randwords: PropTypes.array
 };
