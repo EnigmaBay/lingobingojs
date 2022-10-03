@@ -29,7 +29,11 @@ export default class Gameboard extends React.Component {
       const idx = col + incrementor;
       const currentWord = randWords[idx];
       result.push(
-        <Col key={idx} className='word-tile'>
+        <Col key={idx}
+          className='word-col'
+          // inline style is neccessary here to override the defualt style for 'Col'
+          style={{ padding: 0 }}
+        >
           <DauberLayer id={idx} styleClass={this.state.dauberedTiles[idx] ? 'daubered' : 'plain'} word={currentWord}
             handleTileClick={e => this.handleTileClick(e)}/>
         </Col>);
