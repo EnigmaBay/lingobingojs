@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './root.css';
 // import App from './App';
 import Home from './Home';
-import Gameboard from './Gameboard.js';
+import GameSession from './GameSession.js';
 import About from './About.js';
 import Description from './Description.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -20,7 +20,7 @@ root.render(
           <Route path="about" element = {<About/>}/>
           <Route path="signup" element = {''}/>
           <Route path="login" element = {''}/>
-          <Route path="play" element = {<Gameboard/>}/>
+          <Route path="play" element = {<GameSession/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
