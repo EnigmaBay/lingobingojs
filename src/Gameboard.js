@@ -7,14 +7,24 @@ import randomGen from './funcLib/RandomGen.js';
 import wordImporter from './funcLib/WordImporter.js';
 import wordProcessor from './funcLib/WordProcessor.js';
 import './tempstyle.css';
+import calculateBingo from './funcLib/IsFiveOrMoreMoves';
 
 export default class Gameboard extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      dauberedTiles : [],
+      moves: 1,
+      isBingoed: false,
+      dauberedTiles: [
+        false, false, false, false, false,
+        false, false, false, false, false,
+        false, false, true, false, false,
+        false, false, false, false, false,
+        false, false, false, false, false,
+      ],
     };
   }
+
   rowBuilder(randWords) {
     let result = [];
     for (let row = 0; row < 5; row++) {
@@ -26,7 +36,7 @@ export default class Gameboard extends React.Component {
   tileBuilder(row, randWords) {
     let result = [];
     const incrementor = row * 5;
-    for (let col=0; col < 5; col++) {
+    for (let col = 0; col < 5; col++) {
       const idx = col + incrementor;
       const currentWord = randWords[idx];
       result.push(
@@ -36,17 +46,22 @@ export default class Gameboard extends React.Component {
           style={{ padding: 0 }}
         >
           <DauberLayer id={idx} styleClass={this.state.dauberedTiles[idx] ? 'daubered' : 'plain'} word={currentWord}
-            handleTileClick={e => this.handleTileClick(e)}/>
+            handleTileClick={e => this.handleTileClick(e)} />
         </Col>);
     }
     return result;
   }
-  handleTileClick(e){
+  handleTileClick(e) {
+    const incrMoves = this.state.moves + 1;
+    const bingoed = calculateBingo(incrMoves);
+    console.log('calcuateBingo returned: ' + bingoed);
     let id = e.currentTarget.id;
-    if(id !== null){
+    if (id !== null) {
       this.setState((prevState) => {
         prevState.dauberedTiles[id] = true;
-        return {dauberedTiles: prevState.dauberedTiles};
+        prevState.moves = incrMoves;
+        prevState.isBingoed = bingoed;
+        return { dauberedTiles: prevState.dauberedTiles };
       });
       console.log('click ' + id);
       console.log(this.state.dauberedTiles);
