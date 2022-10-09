@@ -4,9 +4,10 @@ import Button from 'react-bootstrap/Button';
 
 
 export default function PlayAgainButton(props){
-  return <Button disabled={props.disabled} className='center-button'>Play Again</Button>;
+  return <Button onClick={props.handleClick} disabled={props.disabled}>Play Again</Button>;
 }
 
 PlayAgainButton.propTypes = {
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  handleClick: PropTypes.func
 };

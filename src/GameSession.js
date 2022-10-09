@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Gameboard from './Gameboard.js';
 import randomGen from './funcLib/RandomGen.js';
 import wordProcessor from './funcLib/WordProcessor.js';
@@ -10,6 +10,7 @@ export default function GameSession() {
   const randInts = randomGen(24);
   let words = wordImporter();
   const randWords = wordProcessor(words, randInts);
+  const [restarts, setRestarts] = useState(0);
   return (
     <Container fluid>
       <Row>
@@ -19,7 +20,7 @@ export default function GameSession() {
       </Row>
       <Row>
         <Col className='d-flex justify-content-center'> {/* Center the button */}
-          <PlayAgainButton disabled={false}/>
+          <PlayAgainButton disabled={false} handleClick={ () => setRestarts(restarts + 1)}/>
         </Col>
       </Row>
     </Container>
