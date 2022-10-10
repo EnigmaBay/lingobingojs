@@ -11,7 +11,7 @@ export default class Gameboard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      moves: 1,
+      moves: 0,
       isBingoed: false,
       dauberedTiles: [
         false, false, false, false, false,
@@ -52,20 +52,14 @@ export default class Gameboard extends React.Component {
 
   handleTileClick(e) {
     const incrMoves = this.state.moves + 1;
-    const trueTiles = this.state.dauberedTiles;
-    const completedMoves = this.state.moves;
-    const bingoed = checkForBingo(trueTiles, completedMoves);
-
     let id = e.currentTarget.id;
+
     if (id !== null) {
       this.setState((prevState) => {
         prevState.dauberedTiles[id] = true;
         prevState.moves = incrMoves;
-        prevState.isBingoed = bingoed;
         return { dauberedTiles: prevState.dauberedTiles };
       });
-      console.log('click ' + id);
-      console.log(this.state.dauberedTiles);
     }
   }
 
@@ -85,12 +79,11 @@ export default class Gameboard extends React.Component {
   render() {
     const rows = this.rowBuilder(this.props.randwords);
     const gameBoard = this.renderGameboard(rows);
-
-    const bingoed = this.state.bingoed;
+    const bingoed = checkForBingo(this.state.dauberedTiles, this.state.moves);
 
     return (
       <>
-        {bingoed === true ? gameBoard : <div>BINGO!</div>}
+        {bingoed === true ? <div>BINGO! In {this.state.moves} tiles!</div> : gameBoard}
       </>
     );
   }
