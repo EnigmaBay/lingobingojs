@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import DauberLayer from './DauberLayer';
 import './tempstyle.css';
-import calculateBingo from './funcLib/IsFiveOrMoreMoves';
+import checkForBingo from './funcLib/CheckForBingo';
 
 export default class Gameboard extends React.Component {
   constructor(props) {
@@ -49,10 +49,13 @@ export default class Gameboard extends React.Component {
     }
     return result;
   }
+
   handleTileClick(e) {
     const incrMoves = this.state.moves + 1;
-    const bingoed = calculateBingo(incrMoves);
-    console.log('calcuateBingo returned: ' + bingoed);
+    const trueTiles = this.state.dauberedTiles;
+    const completedMoves = this.state.moves;
+    const bingoed = checkForBingo(trueTiles, completedMoves);
+
     let id = e.currentTarget.id;
     if (id !== null) {
       this.setState((prevState) => {
@@ -65,9 +68,8 @@ export default class Gameboard extends React.Component {
       console.log(this.state.dauberedTiles);
     }
   }
-  render() {
-    const rows = this.rowBuilder(this.props.randwords);
 
+  renderGameboard(rows) {
     return (
       <Container fluid className='px-0' >
         <Row className='mx-0'>
@@ -79,7 +81,21 @@ export default class Gameboard extends React.Component {
       </Container>
     );
   }
+
+  render() {
+    const rows = this.rowBuilder(this.props.randwords);
+    const gameBoard = this.renderGameboard(rows);
+
+    const bingoed = this.state.bingoed;
+
+    return (
+      <>
+        {bingoed === true ? gameBoard : <div>BINGO!</div>}
+      </>
+    );
+  }
 }
+
 Gameboard.propTypes = {
   randwords: PropTypes.array
 };
