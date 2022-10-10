@@ -1,8 +1,5 @@
 const checkForBingo = require('../funcLib/CheckForBingo.js');
-const crossBingoPatterns = require('./testData/crossBingoPatterns.json');
-const vBingoPatterns = require('./testData/verticalBingoPatterns.json');
-const hBingoPatterns = require('./testData/horizontalBingoPatterns.json');
-const freeSpacePatterns = require('./testData./freeSpacePatterns.json');
+const freeSpacePatterns = require('./testData/freeSpacePatterns.json');
 
 const freeSpaceOne = [];
 const freeSpaceTwo = [];
@@ -10,6 +7,14 @@ const freeSpaceThree = [];
 const freeSpaceFour = [];
 const freeSpaceFiveNo = [];
 const freeSpaceFiveBingo = [];
+const seventeen = [];
+const seventeenBingo = [];
+const eighteen = [];
+const eighteenBingo = [];
+const nineteen = [];
+const nineteenBingo = [];
+const twentyfourBingo = [];
+const twentyfiveBingo = [];
 
 freeSpacePatterns.map((list) => {
   if (list.pattern === 'one') {
@@ -30,67 +35,29 @@ freeSpacePatterns.map((list) => {
   if (list.pattern === 'fiveBingo') {
     list.dauberedTiles.forEach(tile => freeSpaceFiveBingo.push(tile));
   }
-});
-
-const tlbr = [];
-crossBingoPatterns.map((list) => {
-  if (list.pattern === 'tlbr') {
-    list.dauberedTiles.forEach(tile => tlbr.push(tile));
+  if (list.pattern === 'seventeen') {
+    list.dauberedTiles.forEach(tile => seventeen.push(tile));
   }
-});
-
-const trbl = [];
-crossBingoPatterns.map((list) => {
-  if (list.pattern === 'trbl') {
-    list.dauberedTiles.forEach(tile => trbl.push(tile));
+  if (list.pattern === 'seventeenBingo') {
+    list.dauberedTiles.forEach(tile => seventeenBingo.push(tile));
   }
-});
-
-const rowZeroTiles = [];
-const rowOneTiles = [];
-const rowTwoTiles = [];
-const rowThreeTiles = [];
-const rowFourTiles = [];
-
-hBingoPatterns.map((list) => {
-  if (list.pattern === 'row0') {
-    list.dauberedTiles.forEach(tile => rowZeroTiles.push(tile));
+  if (list.pattern === 'eighteen') {
+    list.dauberedTiles.forEach(tile => eighteen.push(tile));
   }
-  if (list.pattern === 'row1') {
-    list.dauberedTiles.forEach(tile => rowOneTiles.push(tile));
+  if (list.pattern === 'eighteenBingo') {
+    list.dauberedTiles.forEach(tile => eighteenBingo.push(tile));
   }
-  if (list.pattern === 'row2') {
-    list.dauberedTiles.forEach(tile => rowTwoTiles.push(tile));
+  if (list.pattern === 'nineteen') {
+    list.dauberedTiles.forEach(tile => nineteen.push(tile));
   }
-  if (list.pattern === 'row3') {
-    list.dauberedTiles.forEach(tile => rowThreeTiles.push(tile));
+  if (list.pattern === 'nineteenBingo') {
+    list.dauberedTiles.forEach(tile => nineteenBingo.push(tile));
   }
-  if (list.pattern === 'row4') {
-    list.dauberedTiles.forEach(tile => rowFourTiles.push(tile));
+  if (list.pattern === 'twentyfour') {
+    list.dauberedTiles.forEach(tile => twentyfourBingo.push(tile));
   }
-});
-
-const colZeroTiles = [];
-const colOneTiles = [];
-const colTwoTiles = [];
-const colThreeTiles = [];
-const colFourTiles = [];
-
-vBingoPatterns.map((list) => {
-  if (list.pattern === 'col0') {
-    list.dauberedTiles.forEach(tile => colZeroTiles.push(tile));
-  }
-  if (list.pattern === 'col1') {
-    list.dauberedTiles.forEach(tile => colOneTiles.push(tile));
-  }
-  if (list.pattern === 'col2') {
-    list.dauberedTiles.forEach(tile => colTwoTiles.push(tile));
-  }
-  if (list.pattern === 'col3') {
-    list.dauberedTiles.forEach(tile => colThreeTiles.push(tile));
-  }
-  if (list.pattern === 'col4') {
-    list.dauberedTiles.forEach(tile => colFourTiles.push(tile));
+  if (list.pattern === 'twentyfive') {
+    list.dauberedTiles.forEach(tile => twentyfiveBingo.push(tile));
   }
 });
 
@@ -101,6 +68,12 @@ test('can calculate horizontal bingo', ()=>{
   expect(checkForBingo(freeSpaceFour,4)).toBeFalsy();
   expect(checkForBingo(freeSpaceFiveNo,5)).toBeFalsy();
   expect(checkForBingo(freeSpaceFiveBingo,5)).toBeTruthy();
-  expect(checkForBingo(19)).toBeFalsy();
-  expect(checkForBingo(20)).toBeTruthy();
+  expect(checkForBingo(seventeen,17)).toBeFalsy();
+  expect(checkForBingo(seventeenBingo,17)).toBeTruthy();
+  expect(checkForBingo(eighteen,18)).toBeFalsy();
+  expect(checkForBingo(eighteenBingo,18)).toBeTruthy();
+  expect(checkForBingo(nineteen,19)).toBeFalsy();
+  expect(checkForBingo(nineteenBingo,19)).toBeTruthy();
+  expect(checkForBingo(twentyfourBingo,24)).toBeTruthy();
+  expect(checkForBingo(twentyfiveBingo,25)).toBeTruthy();
 });
