@@ -390,7 +390,7 @@
     ]
   },
   {
-    "pattern": "twentyfour",
+    "pattern": "twentyfourBingo",
     "dauberedTiles": [
       true,
       true,
@@ -420,7 +420,7 @@
     ]
   },
   {
-    "pattern": "twentyfive",
+    "pattern": "twentyfiveBingo",
     "dauberedTiles": [
       true,
       true,
