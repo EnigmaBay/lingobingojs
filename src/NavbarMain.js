@@ -2,7 +2,7 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { NavLink } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 
 export default function NavbarMain() {
   return (
@@ -12,11 +12,11 @@ export default function NavbarMain() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <NavLink href="../">Home</NavLink>
-            <NavLink href="../about">About Us</NavLink>
-            <NavLink href="../signup">Signup</NavLink>
-            <NavLink href="../login">Login</NavLink>
-            <NavLink href="../play">Play LingoBingo</NavLink>
+            <NavLink className="nav-link main-nav-link" to="../">Home</NavLink>
+            <NavLink className="nav-link main-nav-link" to="../about">About Us</NavLink>
+            <NavLink className="nav-link main-nav-link" to="../signup">Signup</NavLink>
+            <NavLink className="nav-link main-nav-link" to="../login">Login</NavLink>
+            <NavLink className="nav-link main-nav-link" to="../play">Play LingoBingo</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
