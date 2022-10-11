@@ -1,34 +1,22 @@
 const calcBingoH = require('../funcLib/CalcBingoH.js');
 const testArrays = require('./testData/horizontalBingoPatterns.json');
+const patterns = [];
 
-const rowZeroTiles = [];
-const rowOneTiles = [];
-const rowTwoTiles = [];
-const rowThreeTiles = [];
-const rowFourTiles = [];
-
-testArrays.map((list) => {
-  if (list.pattern === 'row0') {
-    list.dauberedTiles.forEach(tile => rowZeroTiles.push(tile));
-  }
-  if (list.pattern === 'row1') {
-    list.dauberedTiles.forEach(tile => rowOneTiles.push(tile));
-  }
-  if (list.pattern === 'row2') {
-    list.dauberedTiles.forEach(tile => rowTwoTiles.push(tile));
-  }
-  if (list.pattern === 'row3') {
-    list.dauberedTiles.forEach(tile => rowThreeTiles.push(tile));
-  }
-  if (list.pattern === 'row4') {
-    list.dauberedTiles.forEach(tile => rowFourTiles.push(tile));
-  }
+testArrays.forEach((instance) => {
+  const tileList = [];
+  instance.dauberedTiles.forEach(tile => tileList.push(tile));
+  patterns.push(
+    {
+      pattern: instance.pattern,
+      dauberedTiles: tileList
+    }
+  );
 });
 
 test('can calculate horizontal bingo', () => {
-  expect(calcBingoH(rowZeroTiles)).toBeTruthy();
-  expect(calcBingoH(rowOneTiles)).toBeTruthy();
-  expect(calcBingoH(rowTwoTiles)).toBeTruthy();
-  expect(calcBingoH(rowThreeTiles)).toBeTruthy();
-  expect(calcBingoH(rowFourTiles)).toBeTruthy();
+  expect(calcBingoH(patterns.find(item=>item.pattern==='row0').dauberedTiles)).toBeTruthy();
+  expect(calcBingoH(patterns.find(item=>item.pattern==='row1').dauberedTiles)).toBeTruthy();
+  expect(calcBingoH(patterns.find(item=>item.pattern==='row2').dauberedTiles)).toBeTruthy();
+  expect(calcBingoH(patterns.find(item=>item.pattern==='row3').dauberedTiles)).toBeTruthy();
+  expect(calcBingoH(patterns.find(item=>item.pattern==='row4').dauberedTiles)).toBeTruthy();
 });

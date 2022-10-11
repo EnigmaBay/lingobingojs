@@ -1,24 +1,19 @@
 const calcBingoX = require('../funcLib/CalcBingoX.js');
 const testArrays = require('./testData/crossBingoPatterns.json');
+const patterns = [];
 
-const tlbr = [];
-testArrays.map((list) => {
-  if (list.pattern === 'tlbr') {
-    list.dauberedTiles.forEach(tile => tlbr.push(tile));
-  }
+testArrays.forEach((instance) => {
+  const tileList = [];
+  instance.dauberedTiles.forEach(tile => tileList.push(tile));
+  patterns.push(
+    {
+      pattern: instance.pattern,
+      dauberedTiles: tileList
+    }
+  );
 });
 
-const trbl = [];
-testArrays.map((list) => {
-  if (list.pattern === 'trbl') {
-    list.dauberedTiles.forEach(tile => trbl.push(tile));
-  }
-});
-
-test('can calculate bingo from top left to bottom right', () => {
-  expect(calcBingoX(tlbr)).toBeTruthy();
-});
-
-test('can calculate bingo from top right to bottom left', () => {
-  expect(calcBingoX(trbl)).toBeTruthy();
+test('can calculate vertical bingo', ()=>{
+  expect(calcBingoX(patterns.find(item=>item.pattern==='tlbr').dauberedTiles)).toBeTruthy();
+  expect(calcBingoX(patterns.find(item=>item.pattern==='trbl').dauberedTiles)).toBeTruthy();
 });

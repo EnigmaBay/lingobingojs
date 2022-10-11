@@ -1,34 +1,22 @@
 const calcBingoV = require('../funcLib/CalcBingoV.js');
 const testArrays = require('./testData/verticalBingoPatterns.json');
+const patterns = [];
 
-const colZeroTiles = [];
-const colOneTiles = [];
-const colTwoTiles = [];
-const colThreeTiles = [];
-const colFourTiles = [];
-
-testArrays.map((list) => {
-  if (list.pattern === 'col0') {
-    list.dauberedTiles.forEach(tile => colZeroTiles.push(tile));
-  }
-  if (list.pattern === 'col1') {
-    list.dauberedTiles.forEach(tile => colOneTiles.push(tile));
-  }
-  if (list.pattern === 'col2') {
-    list.dauberedTiles.forEach(tile => colTwoTiles.push(tile));
-  }
-  if (list.pattern === 'col3') {
-    list.dauberedTiles.forEach(tile => colThreeTiles.push(tile));
-  }
-  if (list.pattern === 'col4') {
-    list.dauberedTiles.forEach(tile => colFourTiles.push(tile));
-  }
+testArrays.forEach((instance) => {
+  const tileList = [];
+  instance.dauberedTiles.forEach(tile => tileList.push(tile));
+  patterns.push(
+    {
+      pattern: instance.pattern,
+      dauberedTiles: tileList
+    }
+  );
 });
 
 test('can calculate vertical bingo', ()=>{
-  expect(calcBingoV(colZeroTiles)).toBeTruthy();
-  expect(calcBingoV(colOneTiles)).toBeTruthy();
-  expect(calcBingoV(colTwoTiles)).toBeTruthy();
-  expect(calcBingoV(colThreeTiles)).toBeTruthy();
-  expect(calcBingoV(colFourTiles)).toBeTruthy();
+  expect(calcBingoV(patterns.find(item=>item.pattern==='col0').dauberedTiles)).toBeTruthy();
+  expect(calcBingoV(patterns.find(item=>item.pattern==='col1').dauberedTiles)).toBeTruthy();
+  expect(calcBingoV(patterns.find(item=>item.pattern==='col2').dauberedTiles)).toBeTruthy();
+  expect(calcBingoV(patterns.find(item=>item.pattern==='col3').dauberedTiles)).toBeTruthy();
+  expect(calcBingoV(patterns.find(item=>item.pattern==='col4').dauberedTiles)).toBeTruthy();
 });
