@@ -3,7 +3,6 @@ const testArrays = require('./testData/verticalBingoPatterns.json');
 const patterns = [];
 
 testArrays.forEach((instance) => {
-  const tileList = [];
   patterns.push(
     {
       pattern: instance.pattern,
