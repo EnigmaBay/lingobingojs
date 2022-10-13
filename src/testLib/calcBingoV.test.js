@@ -7,7 +7,7 @@ testArrays.forEach((instance) => {
   patterns.push(
     {
       pattern: instance.pattern,
-      dauberedTiles: tileList
+      dauberedTiles: instance.dauberedTiles
     }
   );
 });
