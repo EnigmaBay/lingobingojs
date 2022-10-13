@@ -3,12 +3,10 @@ const freeSpacePatterns = require('./testData/freeSpacePatterns.json');
 const patterns = [];
 
 freeSpacePatterns.forEach((instance) => {
-  const tileList = [];
-  instance.dauberedTiles.forEach(tile => tileList.push(tile));
   patterns.push(
     {
       pattern: instance.pattern,
-      dauberedTiles: tileList
+      dauberedTiles: instance.dauberedTiles
     }
   );
 });
