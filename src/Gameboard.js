@@ -46,8 +46,6 @@ export default class Gameboard extends React.Component {
         prevState.dauberedTiles[id] = true;
         return {dauberedTiles: prevState.dauberedTiles};
       });
-      console.log('click ' + id);
-      console.log(this.state.dauberedTiles);
     }
   }
   render() {
