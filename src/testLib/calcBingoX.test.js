@@ -3,12 +3,10 @@ const testArrays = require('./testData/crossBingoPatterns.json');
 const patterns = [];
 
 testArrays.forEach((instance) => {
-  const tileList = [];
-  instance.dauberedTiles.forEach(tile => tileList.push(tile));
   patterns.push(
     {
       pattern: instance.pattern,
-      dauberedTiles: tileList
+      dauberedTiles: instance.dauberedTiles
     }
   );
 });
