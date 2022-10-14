@@ -56,7 +56,7 @@ export default function GameSession() {
       </Row>
       <Row>
         <Col className='d-flex justify-content-center'> {/* Center the button */}
-          <PlayAgainButton handleClick={() => restartGame()}/>
+          <PlayAgainButton isBingoed={isBingoed} handleClick={() => restartGame()}/>
         </Col>
       </Row>
     </Container>

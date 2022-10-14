@@ -5,11 +5,11 @@ import Button from 'react-bootstrap/Button';
 
 export default function PlayAgainButton(props){
   return <Button onClick={props.handleClick}>
-    {props.didBingo ? 'Play Again' : 'Restart Game'}
+    {props.isBingoed ? 'Play Again' : 'Restart Game'}
   </Button>;
 }
 
 PlayAgainButton.propTypes = {
-  didBingo: PropTypes.bool,
+  isBingoed: PropTypes.bool,
   handleClick: PropTypes.func
 };
