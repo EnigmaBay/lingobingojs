@@ -5,22 +5,11 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import DauberLayer from './DauberLayer';
 import './tempstyle.css';
-import checkForBingo from './funcLib/CheckForBingo';
+
 
 export default class Gameboard extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      moves: 0,
-      isBingoed: false,
-      dauberedTiles: [
-        false, false, false, false, false,
-        false, false, false, false, false,
-        false, false, true, false, false,
-        false, false, false, false, false,
-        false, false, false, false, false,
-      ],
-    };
   }
 
   rowBuilder(randWords) {
@@ -43,26 +32,12 @@ export default class Gameboard extends React.Component {
           // inline style is neccessary here to override the defualt style for 'Col'
           style={{ padding: 0 }}
         >
-          <DauberLayer id={idx} styleClass={this.state.dauberedTiles[idx] ? 'daubered' : 'plain'} word={currentWord}
-            handleTileClick={e => this.handleTileClick(e)} />
+          <DauberLayer id={idx} styleClass={this.props.dauberedTiles[idx] ? 'daubered' : 'plain'} word={currentWord}
+            handleTileClick={e => this.props.handleTileClick(e)} />
         </Col>);
     }
     return result;
   }
-
-  handleTileClick(e) {
-    const incrMoves = this.state.moves + 1;
-    let id = e.currentTarget.id;
-
-    if (id !== null) {
-      this.setState((prevState) => {
-        prevState.dauberedTiles[id] = true;
-        prevState.moves = incrMoves;
-        return { dauberedTiles: prevState.dauberedTiles };
-      });
-    }
-  }
-
   renderGameboard(rows) {
     return (
       <Container fluid className='px-0' >
@@ -79,16 +54,18 @@ export default class Gameboard extends React.Component {
   render() {
     const rows = this.rowBuilder(this.props.randwords);
     const gameBoard = this.renderGameboard(rows);
-    const bingoed = checkForBingo(this.state.dauberedTiles, this.state.moves);
-
     return (
       <>
-        {bingoed === true ? <div>BINGO! In {this.state.moves} tiles!</div> : gameBoard}
+        {this.props.isBingoed === true ? <div>BINGO! In {this.props.moves} tiles!</div> : gameBoard}
       </>
     );
   }
 }
 
 Gameboard.propTypes = {
-  randwords: PropTypes.array
+  randwords: PropTypes.array,
+  moves: PropTypes.number,
+  dauberedTiles: PropTypes.array,
+  handleTileClick: PropTypes.func,
+  isBingoed: PropTypes.bool
 };
