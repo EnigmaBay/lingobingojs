@@ -12,9 +12,10 @@ export default function GameSession() {
   const [moves, setMoves] = useState(0);
   const [isBingoed, setBingoed] = useState(false);
   const [dauberedTiles, setDauberedTiles] = useState([]);
+  const [gamesStarted, setGamesStarted] = useState([1]);
   const randInts = randomGen(24);
   let words = wordImporter();
-  const randWords = wordProcessor(words, randInts);
+  const [randWords, setRandWords] = useState(wordProcessor(words, randInts));
 
   function handleTileClick(e) {
     let id = e.currentTarget.id;
@@ -27,15 +28,27 @@ export default function GameSession() {
     }
   }
 
+  function restartGame() {
+    setGamesStarted(gamesStarted + 1);
+    setMoves(0);
+    setDauberedTiles([]);
+    setGamesStarted(gamesStarted + 1);
+  }
+
   useEffect(() =>{
     setBingoed( checkForBingo(dauberedTiles, moves));
   },[moves]);
+
+  useEffect(() =>{
+    setRandWords(wordProcessor(words, randInts));
+  }, [gamesStarted]);
 
   return (
     <Container fluid>
       <Row>
         <Col>
-          <Gameboard randwords={randWords}
+          <Gameboard
+            randwords={randWords}
             moves={moves}
             isBingoed={isBingoed}
             dauberedTiles={dauberedTiles}
@@ -45,7 +58,9 @@ export default function GameSession() {
       <Row>
         <Col className='d-flex justify-content-center'> {/* Center the button */}
           {/*reloadDocument parameter skips client-side routing so that page is refreshed and state is reset */}
-          <Link reloadDocument to={'../play'}><PlayAgainButton /></Link>
+          <Link reloadDocument to={'../play'}>
+            <PlayAgainButton handleClick={() => restartGame()}/>
+          </Link>
         </Col>
       </Row>
     </Container>
