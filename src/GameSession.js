@@ -5,7 +5,6 @@ import wordProcessor from './funcLib/WordProcessor.js';
 import wordImporter from './funcLib/WordImporter.js';
 import PlayAgainButton from './PlayAgainButton.js';
 import { Col, Container, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import checkForBingo from './funcLib/CheckForBingo';
 
 export default function GameSession() {
@@ -57,10 +56,7 @@ export default function GameSession() {
       </Row>
       <Row>
         <Col className='d-flex justify-content-center'> {/* Center the button */}
-          {/*reloadDocument parameter skips client-side routing so that page is refreshed and state is reset */}
-          <Link reloadDocument to={'../play'}>
-            <PlayAgainButton handleClick={() => restartGame()}/>
-          </Link>
+          <PlayAgainButton handleClick={() => restartGame()}/>
         </Col>
       </Row>
     </Container>
