@@ -5,14 +5,24 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import DauberLayer from './DauberLayer';
 import './tempstyle.css';
+import checkForBingo from './funcLib/CheckForBingo';
 
 export default class Gameboard extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      dauberedTiles : [],
+      moves: 0,
+      isBingoed: false,
+      dauberedTiles: [
+        false, false, false, false, false,
+        false, false, false, false, false,
+        false, false, true, false, false,
+        false, false, false, false, false,
+        false, false, false, false, false,
+      ],
     };
   }
+
   rowBuilder(randWords) {
     let result = [];
     for (let row = 0; row < 5; row++) {
@@ -24,7 +34,7 @@ export default class Gameboard extends React.Component {
   tileBuilder(row, randWords) {
     let result = [];
     const incrementor = row * 5;
-    for (let col=0; col < 5; col++) {
+    for (let col = 0; col < 5; col++) {
       const idx = col + incrementor;
       const currentWord = randWords[idx];
       result.push(
@@ -34,23 +44,26 @@ export default class Gameboard extends React.Component {
           style={{ padding: 0 }}
         >
           <DauberLayer id={idx} styleClass={this.state.dauberedTiles[idx] ? 'daubered' : 'plain'} word={currentWord}
-            handleTileClick={e => this.handleTileClick(e)}/>
+            handleTileClick={e => this.handleTileClick(e)} />
         </Col>);
     }
     return result;
   }
-  handleTileClick(e){
+
+  handleTileClick(e) {
+    const incrMoves = this.state.moves + 1;
     let id = e.currentTarget.id;
-    if(id !== null){
+
+    if (id !== null) {
       this.setState((prevState) => {
         prevState.dauberedTiles[id] = true;
-        return {dauberedTiles: prevState.dauberedTiles};
+        prevState.moves = incrMoves;
+        return { dauberedTiles: prevState.dauberedTiles };
       });
     }
   }
-  render() {
-    const rows = this.rowBuilder(this.props.randwords);
 
+  renderGameboard(rows) {
     return (
       <Container fluid className='px-0' >
         <Row className='mx-0'>
@@ -62,7 +75,20 @@ export default class Gameboard extends React.Component {
       </Container>
     );
   }
+
+  render() {
+    const rows = this.rowBuilder(this.props.randwords);
+    const gameBoard = this.renderGameboard(rows);
+    const bingoed = checkForBingo(this.state.dauberedTiles, this.state.moves);
+
+    return (
+      <>
+        {bingoed === true ? <div>BINGO! In {this.state.moves} tiles!</div> : gameBoard}
+      </>
+    );
+  }
 }
+
 Gameboard.propTypes = {
   randwords: PropTypes.array
 };
