@@ -27,11 +27,22 @@ export default function GameSession() {
     }
   }
 
+  function dauberTile(id){
+    setDauberedTiles((prev) =>{
+      let modDauberedTiles = prev;
+      modDauberedTiles[id] = true;
+      return modDauberedTiles;});
+  }
+
   function restartGame() {
     setGamesStarted(gamesStarted + 1);
     setMoves(0);
     setDauberedTiles([]);
     setGamesStarted(gamesStarted + 1);
+  }
+
+  function dauberFreeSpace(){
+    dauberTile(12);
   }
 
   useEffect(() =>{
@@ -40,6 +51,7 @@ export default function GameSession() {
 
   useEffect(() =>{
     setRandWords(wordProcessor(words, randInts));
+    dauberFreeSpace();
   }, [gamesStarted]);
 
   return (
