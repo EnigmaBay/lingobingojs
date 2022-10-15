@@ -4,9 +4,11 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import DauberLayer from './DauberLayer';
+import PartyFavor from './funcLib/PartyFavor';
+import glitterData from './glitter-types.json';
+import BingoAnnouncer from './BingoAnnouncer';
 import './tempstyle.css';
-
-
+import './screenpartystyle.css';
 export default class Gameboard extends React.Component {
   constructor(props) {
     super(props);
@@ -15,7 +17,12 @@ export default class Gameboard extends React.Component {
   rowBuilder(randWords) {
     let result = [];
     for (let row = 0; row < 5; row++) {
-      result.push(<Row key={row} className='mx-0'>{this.tileBuilder(row, randWords)}</Row>);
+      result.push(
+        <Row
+          key={row}
+          className='mx-0'
+        >{this.tileBuilder(row, randWords)}</Row>
+      );
     }
     return result;
   }
@@ -32,12 +39,19 @@ export default class Gameboard extends React.Component {
           // inline style is neccessary here to override the defualt style for 'Col'
           style={{ padding: 0 }}
         >
-          <DauberLayer id={idx} styleClass={this.props.dauberedTiles[idx] ? 'daubered' : 'plain'} word={currentWord}
-            handleTileClick={e => this.props.handleTileClick(e)} />
+          <DauberLayer
+            id={idx}
+            styleClass={this.props.dauberedTiles[idx] ?
+              'daubered' :
+              'plain'}
+            word={currentWord}
+            handleTileClick={e => this.props.handleTileClick(e)}
+          />
         </Col>);
     }
     return result;
   }
+
   renderGameboard(rows) {
     return (
       <Container fluid className='px-0' >
@@ -51,12 +65,47 @@ export default class Gameboard extends React.Component {
     );
   }
 
+  getBingoAnnouncement(text) {
+    return (
+      <BingoAnnouncer
+        classname={'bingo'}
+        text={text}
+      />
+    );
+  }
+
+  getPartyFavors() {
+    return (
+      <Container fluid className='px-0'>
+        {glitterData.map((item) => {
+          return (
+            <PartyFavor
+              key={item.id}
+              classname={item.styleclass}
+              src={item.url}
+              alt={item.alt}
+            />
+          );
+        })}
+      </Container>
+    );
+  }
+
   render() {
     const rows = this.rowBuilder(this.props.randwords);
     const gameBoard = this.renderGameboard(rows);
+    // const currentMove = this.props.moves;
+    // const bingoAnnouncement = this.getBingoAnnouncement('B I N G O !');
+    // const additionalInfo = 'Completed in ' + currentMove + ' words!';
+    const partyfavors = this.getPartyFavors();
+
     return (
       <>
-        {this.props.isBingoed === true ? <div>BINGO! In {this.props.moves} tiles!</div> : gameBoard}
+        {
+          this.props.isBingoed ?
+            partyfavors :
+            gameBoard
+        }
       </>
     );
   }
