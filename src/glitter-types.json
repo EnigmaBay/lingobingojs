@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "url": "https://github.githubassets.com/images/icons/emoji/unicode/1f603.png?v8",
+    "alt": "smiley emoji",
+    "styleclass": "leftside alpha"
+  },
+  {
+    "id": 2,
+    "url": "https://github.githubassets.com/images/icons/emoji/unicode/1f386.png?v8",
+    "alt": "fireworks emoji",
+    "styleclass": "leftmid bravo"
+  },
+  {
+    "id": 3,
+    "url": "https://github.githubassets.com/images/icons/emoji/unicode/1f525.png?v8",
+    "alt": "fire emoji",
+    "styleclass": "middle charlie"
+  },
+  {
+    "id": 4,
+    "url": "https://github.githubassets.com/images/icons/emoji/unicode/1f6f8.png?v8",
+    "alt": "flying saucer emoji",
+    "styleclass": "rightmid delta"
+  },
+  {
+    "id": 5,
+    "url": "https://github.githubassets.com/images/icons/emoji/unicode/1f36d.png",
+    "alt": "lolipop emoji",
+    "styleclass": "rightside echo"
+  },
+  {
+    "id": 6,
+    "url": "https://github.githubassets.com/images/icons/emoji/unicode/1f929.png",
+    "alt": "star emoji",
+    "styleclass": "center star"
+  }
+]
