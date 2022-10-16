@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function BingoAnnouncer() {
+export default function BingoAnnouncer(props) {
   return (
     <div
-      className={this.props.classname}
-    >{this.props.text}</div>
+      className={props.classname}
+    >{props.text}</div>
   );
 }
 
