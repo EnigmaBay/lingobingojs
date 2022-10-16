@@ -65,16 +65,7 @@ export default class Gameboard extends React.Component {
     );
   }
 
-  getBingoAnnouncement(text) {
-    return (
-      <BingoAnnouncer
-        classname={'bingo'}
-        text={text}
-      />
-    );
-  }
-
-  getPartyFavors() {
+  getPartyFavors(message) {
     return (
       <Container fluid className='px-0'>
         {glitterData.map((item) => {
@@ -87,6 +78,10 @@ export default class Gameboard extends React.Component {
             />
           );
         })}
+        <BingoAnnouncer
+          classname={'bingo'}
+          text={message}
+        />
       </Container>
     );
   }
@@ -94,18 +89,15 @@ export default class Gameboard extends React.Component {
   render() {
     const rows = this.rowBuilder(this.props.randwords);
     const gameBoard = this.renderGameboard(rows);
-    // const currentMove = this.props.moves;
-    // const bingoAnnouncement = this.getBingoAnnouncement('B I N G O !');
-    // const additionalInfo = 'Completed in ' + currentMove + ' words!';
-    const partyfavors = this.getPartyFavors();
+    const currentMove = this.props.moves;
+    const bingoAnnouncementText = 'B I N G O in ' + currentMove + ' words !';
+    const partyfavors = this.getPartyFavors(bingoAnnouncementText);
+    const bingoed = this.props.isBingoed;
 
     return (
       <>
-        {
-          this.props.isBingoed ?
-            partyfavors :
-            gameBoard
-        }
+        <div>{bingoed && partyfavors}</div>
+        <div>{gameBoard}</div>
       </>
     );
   }
