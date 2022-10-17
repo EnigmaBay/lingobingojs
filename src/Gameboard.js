@@ -9,6 +9,7 @@ import glitterData from './glitter-types.json';
 import BingoAnnouncer from './BingoAnnouncer';
 import './tempstyle.css';
 import './screenpartystyle.css';
+
 export default class Gameboard extends React.Component {
   constructor(props) {
     super(props);
@@ -35,9 +36,7 @@ export default class Gameboard extends React.Component {
       const currentWord = randWords[idx];
       result.push(
         <Col key={idx}
-          className='word-col'
-          // inline style is neccessary here to override the defualt style for 'Col'
-          style={{ padding: 0 }}
+          className='word-col p-1'
         >
           <DauberLayer
             id={idx}
