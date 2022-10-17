@@ -3,7 +3,8 @@ html, body {
   width: 100%;
   /* background: black; */
 }
-img {
+
+.glitter {
   opacity: 0;
   width: 30px;
   height: 30px;
