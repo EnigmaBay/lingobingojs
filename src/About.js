@@ -9,8 +9,8 @@ export default function About() {
   const devdata = biodata.data.map((dev, index) => {
     return (
       <Col
+        md={6} sm={12}
         key={index}
-        lg={true}
       >
         <DevBio
           img={dev.img}
