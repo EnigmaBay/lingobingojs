@@ -1,0 +1,188 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  /* background: black; */
+}
+
+.glitter {
+  opacity: 0;
+  width: 30px;
+  height: 30px;
+}
+
+.leftside {
+  position: absolute;
+  margin: 1em;
+  border-radius: 16px;
+}
+@keyframes patternOne {
+  0% { left: 12vw; top: 0; }
+  10% { left: 12vw; top: 0; opacity: 1; }
+  25% { transform: rotateZ(360deg); opacity: 1; }
+  50% { transform: rotateZ(-360deg); opacity: 1; }
+  75% { transform: rotateZ(360deg); opacity: 1; }
+  100% { left: 7vw; top: 90vh; opacity: 0; }
+}
+.alpha {
+  left: 12vw;
+  animation-name: patternOne;
+  animation-duration: 6s;
+  animation-timing-function: ease-in;
+}
+
+.leftmid {
+  position: absolute;
+  margin: 1em;
+  border-radius: 16px;
+}
+@keyframes patternTwo {
+  0% { left: 32vw; top: 0; opacity: 1; }
+  100% { left: 38vw; top: 100vh; opacity: 1; }
+}
+.bravo {
+  left: 32rem;
+  animation-name: patternTwo;
+  animation-duration: 6s;
+  animation-timing-function: ease-in;
+}
+
+.middle {
+  position: absolute;
+  margin: 1em;
+  border-radius: 16px;
+}
+@keyframes patternThree {
+  0% { left: 52vw; top: 0; opacity: 1; }
+  100% { left: 42vw; top: 100vh; opacity: 1; }
+}
+.charlie {
+  left: 52vw;
+  animation-name: patternThree;
+  animation-duration: 6s;
+  animation-timing-function: ease-in;
+}
+
+.rightmid {
+  position: absolute;
+  margin: 1em;
+  border-radius: 16px;
+}
+@keyframes patternFour {
+  0% { left: 82vw; top: 0; opacity: 1; }
+  100% { left: 82vw; top: 100vh; opacity: 1; }
+}
+.delta {
+  left: 82vw;
+  animation-name: patternFour;
+  animation-duration: 6s;
+  animation-timing-function: ease-in;
+}
+
+.rightside {
+  position: absolute;
+  margin: 1em;
+  border-radius: 16px;
+}
+@keyframes patternFive {
+  0% { left: 92vw; top: 0; opacity: 1; }
+  100% { left: 82vw; top: 100vh; opacity: 1; }
+}
+.echo {
+  left: 92vw;
+  animation-name: patternFive;
+  animation-duration: 6s;
+  animation-timing-function: ease-in;
+}
+
+.center {
+  position: absolute;
+  margin: 1em;
+  left: 10em;
+  top: 50%;
+}
+.star {
+  width: 0px;
+  height: 0px;
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  animation-name: patternGrow;
+  animation-duration: .5s;
+  animation-iteration-count: 3;
+  animation-timing-function: cubic-bezier(1, 0.63, 0.71, 0.74);
+}
+@keyframes patternGrow {
+  0% { transform-origin: center center; opacity: 1; }
+  50% { transform-origin: center center; width: 98vw; height: 90vh; opacity: 1; top: 0 }
+  100% { transform-origin: center center; opacity: 1; }
+}
+
+.bingo {
+  font-size: 0;
+  opacity: 0;
+  transform: rotate(0deg);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  overflow: hidden;
+  animation-name: sloGrow;
+  animation-duration: 4s;
+  animation-iteration-count: 2;
+  color: brown;
+  min-width:fit-content;
+  height: min-content;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  margin: auto;
+}
+@keyframes sloGrow {
+  0% {
+    font-size:0px;
+    opacity:0;
+    margin-left:.5vw;
+    margin-top:0px;
+    transform: rotate(-25deg);
+  }
+  20% {
+    font-size: 14px;
+    opacity:1;
+    font-weight: 300;
+    transform: rotate(25deg);
+  }
+  40% {
+    font-size:30px;
+    font-weight: 500;
+    opacity:1;
+    margin-left:0px;
+    margin-top:0px;
+    transform: rotate(-25deg);
+  }
+  60% {
+    font-size: 100px;
+    font-weight: 700;
+    opacity:1;
+    margin-left:0px;
+    margin-top:0px;
+    transform: rotate(25deg);
+  }
+  80% {
+    font-size:500px;
+    font-weight: 900;
+    opacity:0;
+    margin-left:0vw;
+    margin-top:50vh;
+    transform: rotate(-25deg);
+  }
+  100% {
+    font-size:0px;
+    opacity:0;
+    margin-left:0.5vw;
+    margin-top:0px;
+    transform: rotate(0deg);
+  }
+}
