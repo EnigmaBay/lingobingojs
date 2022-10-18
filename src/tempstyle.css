@@ -7,7 +7,7 @@ section,
 
 header {
   border: solid 1px var(--rgba-primary-0);
-  display: flex;
+  /* display: flex; */
 }
 
 header > div {
@@ -19,14 +19,11 @@ section {
 }
 
 .logo-container {
-  border: solid 1px var(--rgba-secondary-2-0);
   background: var(--rgba-primary-4);
 }
 
 .nav-container {
-  border: solid 1px var(--rgba-secondary-2-4);
   background: var(--rgba-primary-1);
-  width: 100%;
 }
 
 .word-col {
