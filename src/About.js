@@ -9,8 +9,8 @@ export default function About() {
   const devdata = biodata.data.map((dev, index) => {
     return (
       <Col
+        md={6} sm={12}
         key={index}
-        lg={true}
       >
         <DevBio
           img={dev.img}
@@ -23,13 +23,12 @@ export default function About() {
   });
 
   return (
-    <Container
-      style={{
-        border: 'solid 1px #9F4A04'
-      }}>
+    <Container>
       <Row>
         <Col></Col>
-        <Col sm={4}><h1>About Us</h1></Col>
+        <Col sm={4}>
+          <div className='text-center fs-2 fw-bold'>About Us</div>
+        </Col>
         <Col></Col>
       </Row>
       <Row>
