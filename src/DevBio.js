@@ -13,7 +13,7 @@ export default function DevBio(props) {
         <CardHeader>
           Placeholder Bio
           <Card.Img
-            className='dev-bio-image fluid'
+            className='fluid'
             variant='top'
             src={props.img}
             alt={props.name}
