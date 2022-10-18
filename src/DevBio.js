@@ -8,7 +8,7 @@ export default function DevBio(props) {
   return (
     <Col className="dev-bio-column">
       <Card
-        className="text-center"
+        className="text-center mb-3"
         style={{
           maxWidth: '19em'
         }}>
