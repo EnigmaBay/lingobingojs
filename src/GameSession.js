@@ -7,6 +7,7 @@ import PlayAgainButton from './PlayAgainButton.js';
 import { Col, Container, Row } from 'react-bootstrap';
 import checkForBingo from './funcLib/CheckForBingo';
 
+
 export default function GameSession() {
   const [moves, setMoves] = useState(0);
   const [isBingoed, setBingoed] = useState(false);
@@ -41,17 +42,13 @@ export default function GameSession() {
     setGamesStarted(gamesStarted + 1);
   }
 
-  function dauberFreeSpace(){
-    dauberTile(12);
-  }
-
   useEffect(() =>{
     setBingoed( checkForBingo(dauberedTiles, moves));
-  },[moves]);
+  },[dauberedTiles, moves]);
 
   useEffect(() =>{
     setRandWords(wordProcessor(words, randInts));
-    dauberFreeSpace();
+    dauberTile(12);
   }, [gamesStarted]);
 
   return (
