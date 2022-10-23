@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 
 export default function Description() {
   return (
-    <Container fluid='md'>
+    <Container fluid='md' className='main-output-borders'>
       <Row>
         <Col md='auto'></Col>
         <Col className='md-8'>
