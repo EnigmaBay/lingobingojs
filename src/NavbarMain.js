@@ -7,7 +7,7 @@ import logo67x40 from './lingo-bingo-logo-bravo-67-40.png';
 
 export default function NavbarMain() {
   return (
-    <Navbar bg="dark" variant="dark" expand="sm">
+    <Navbar bg="dark" variant="dark" expand="sm" className='round-top-edges'>
       <Container>
         <Navbar.Brand to="../">
           <img
