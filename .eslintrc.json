@@ -5,7 +5,8 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended"
   ],
   "parserOptions": {
     "ecmaVersion": 6,
@@ -55,6 +56,11 @@
       }
     ],
     "semi": "error",
-    "react/prop-types": 1
-  }
+    "react/prop-types": 1,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  },
+  "plugins": [
+    "react-hooks"
+  ]
 }
