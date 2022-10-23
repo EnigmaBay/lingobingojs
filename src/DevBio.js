@@ -9,13 +9,7 @@ export default function DevBio(props) {
     <Col className="dev-bio-column">
       <Card
         className="text-center mb-3"
-<<<<<<< HEAD
-        style={{
-          maxWidth: '19em'
-        }}>
-=======
       >
->>>>>>> 8b2ac4618d5a30a0e3d2146bdea9e0107b8e8ced
         <CardHeader>
           Placeholder Bio
           <Card.Img
