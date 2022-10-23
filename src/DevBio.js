@@ -9,13 +9,17 @@ export default function DevBio(props) {
     <Col className="dev-bio-column">
       <Card
         className="text-center mb-3"
+<<<<<<< HEAD
         style={{
           maxWidth: '19em'
         }}>
+=======
+      >
+>>>>>>> 8b2ac4618d5a30a0e3d2146bdea9e0107b8e8ced
         <CardHeader>
           Placeholder Bio
           <Card.Img
-            className='dev-bio-image'
+            className='fluid'
             variant='top'
             src={props.img}
             alt={props.name}
@@ -24,17 +28,19 @@ export default function DevBio(props) {
         <Card.Title>
           {props.name}
         </Card.Title>
-        <Card.Text style={{margin: '.5em'}}>
+        <Card.Text
+          className='m-2 p-2'
+        >
           {props.bio}
         </Card.Text>
         <Card.Link
-          style={{margin: '.5em'}}
+          className='m-1'
           href={props.linkedin}
         >
           LinkedIn
         </Card.Link>
         <Card.Link
-          style={{margin: '.5em'}}
+          className='m-1'
           href={props.github}
         >
           GitHub
