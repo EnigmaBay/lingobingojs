@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Gameboard from './Gameboard.js';
 import randomGen from './funcLib/RandomGen.js';
 import wordProcessor from './funcLib/WordProcessor.js';
@@ -12,26 +12,32 @@ export default function GameSession() {
   const [isBingoed, setBingoed] = useState(false);
   const [dauberedTiles, setDauberedTiles] = useState([]);
   const [gamesStarted, setGamesStarted] = useState([1]);
-  const randInts = randomGen(24);
-  let words = wordImporter();
-  const [randWords, setRandWords] = useState(wordProcessor(words, randInts));
+  const [randWords, setRandWords] = useState(initRandomWords());
+
+  function initRandomWords() {
+    const randInts = randomGen(24);
+    let words = wordImporter();
+    return wordProcessor(words, randInts);
+  }
 
   function handleTileClick(e) {
     let id = e.currentTarget.id;
-    if(id !== null) {
-      setDauberedTiles((prev) =>{
+    if (id !== null) {
+      setDauberedTiles((prev) => {
         let modDauberedTiles = prev;
         modDauberedTiles[id] = true;
-        return modDauberedTiles;});
+        return modDauberedTiles;
+      });
       setMoves(moves + 1);
     }
   }
 
-  function dauberTile(id){
-    setDauberedTiles((prev) =>{
+  function dauberTile(id) {
+    setDauberedTiles((prev) => {
       let modDauberedTiles = prev;
       modDauberedTiles[id] = true;
-      return modDauberedTiles;});
+      return modDauberedTiles;
+    });
   }
 
   function restartGame() {
@@ -41,17 +47,14 @@ export default function GameSession() {
     setGamesStarted(gamesStarted + 1);
   }
 
-  function dauberFreeSpace(){
+  useEffect(() => {
+    setBingoed(checkForBingo(dauberedTiles, moves));
+  }, [dauberedTiles, moves]);
+
+  useEffect(() => {
+    setRandWords(initRandomWords());
+    // daubers center tile
     dauberTile(12);
-  }
-
-  useEffect(() =>{
-    setBingoed( checkForBingo(dauberedTiles, moves));
-  },[moves]);
-
-  useEffect(() =>{
-    setRandWords(wordProcessor(words, randInts));
-    dauberFreeSpace();
   }, [gamesStarted]);
 
   return (
@@ -63,12 +66,18 @@ export default function GameSession() {
             moves={moves}
             isBingoed={isBingoed}
             dauberedTiles={dauberedTiles}
-            handleTileClick={(e) => handleTileClick(e)}/>
+            handleTileClick={(e) => handleTileClick(e)}
+          />
         </Col>
       </Row>
       <Row>
-        <Col className='d-flex justify-content-center'> {/* Center the button */}
-          <PlayAgainButton isBingoed={isBingoed} handleClick={() => restartGame()}/>
+        <Col className="d-flex justify-content-center">
+          {' '}
+          {/* Center the button */}
+          <PlayAgainButton
+            isBingoed={isBingoed}
+            handleClick={() => restartGame()}
+          />
         </Col>
       </Row>
     </Container>
