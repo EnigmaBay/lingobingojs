@@ -23,7 +23,7 @@ export default function About() {
   });
 
   return (
-    <Container>
+    <Container className='main-output-borders'>
       <Row>
         <Col></Col>
         <Col sm={4}>
