@@ -13,9 +13,13 @@ export default function GameSession() {
   const [isBingoed, setBingoed] = useState(false);
   const [dauberedTiles, setDauberedTiles] = useState([]);
   const [gamesStarted, setGamesStarted] = useState([1]);
-  const randInts = randomGen(24);
-  let words = wordImporter();
-  const [randWords, setRandWords] = useState(wordProcessor(words, randInts));
+  const [randWords, setRandWords] = useState(initRandomWords);
+
+  function initRandomWords(){
+    const randInts = randomGen(24);
+    let words = wordImporter();
+    return wordProcessor(words, randInts);
+  }
 
   function handleTileClick(e) {
     let id = e.currentTarget.id;
@@ -47,7 +51,8 @@ export default function GameSession() {
   },[dauberedTiles, moves]);
 
   useEffect(() =>{
-    setRandWords(wordProcessor(words, randInts));
+    setRandWords(initRandomWords());
+    // daubers center tile
     dauberTile(12);
   }, [gamesStarted]);
 
