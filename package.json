@@ -28,7 +28,15 @@
     "extends": [
       "lingobingojs",
       "lingobingojs/jest"
-    ]
+    ],
+    "plugins": [
+      "react-hooks"
+    ],
+    "rules": {
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn"
+    }
+
   },
   "browserslist": {
     "production": [
@@ -43,9 +51,10 @@
     ]
   },
   "devDependencies": {
-    "@babel/preset-env":"^7.19.3",
-    "@babel/preset-react":"^7.18.6",
-    "babel-jest":"^29.1.2",
+    "@babel/preset-env": "^7.19.3",
+    "@babel/preset-react": "^7.18.6",
+    "babel-jest": "^29.1.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "jest": "^27.5.1",
     "react-test-renderer": "^18.2.0"
   }
