@@ -55,7 +55,7 @@ export default function GameSession() {
   }, [gamesStarted]);
 
   return (
-    <Container fluid>
+    <Container fluid className='main-output-borders'>
       <Row>
         <Col>
           <Gameboard
