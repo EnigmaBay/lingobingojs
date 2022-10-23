@@ -7,15 +7,9 @@ import './tempstyle.css';
 
 export default function Home() {
   return (
-    <div>
-      <header>
-        <Container fluid>
-          <NavbarMain/>
-        </Container>
-      </header>
-      <section>
-        <Outlet/>
-      </section>
-    </div>
+    <Container>
+      <NavbarMain />
+      <Outlet />
+    </Container>
   );
 }
