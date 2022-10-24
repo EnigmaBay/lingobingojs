@@ -54,9 +54,10 @@ export default class Gameboard extends React.Component {
   renderGameboard(rows) {
     return (
       <Container fluid className='px-0' >
-        <Row className='mx-0'>
+        <Row className='m-2'>
           <Col></Col>
-          <Col xs={'auto'}>Lets Play Bingo!</Col>
+          <Col xs={'auto'}
+            className='rounded-4 light-theme-text lets-play'>Lets Play Bingo!</Col>
           <Col></Col>
         </Row>
         {rows}
