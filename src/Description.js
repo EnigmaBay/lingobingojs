@@ -4,11 +4,14 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 export default function Description() {
+  // selectedTheme can be converted to a prop or user-accessible variable to select a theme
+  const selectedTheme = 'light';
+
   return (
     <Container
       fluid='md'
       className='main-output-borders themed-background'
-      data-theme='light'
+      data-theme={selectedTheme}
     >
       <Row className='p-2'>
         <Col md='auto'></Col>
@@ -27,7 +30,7 @@ export default function Description() {
         <Col className='md-8'>
           <div
             className='p-2 rounded-4 themed-text'
-            data-theme='light'
+            data-theme={selectedTheme}
           >
             LingoBingo creates a more engaging experience for participants during webinars. Participants select words from their LingoBingo board as they hear or see them during a presentation. This keeps participants minds actively engaged with the speaker and the presentation content.
           </div>
@@ -46,7 +49,7 @@ export default function Description() {
         <Col className='md-8'>
           <div
             className='p-2 rounded-4 themed-text'
-            data-theme='light'
+            data-theme={selectedTheme}
           >
             If you are attending a webinar and have been invited to join a LingoBingo game, use the link provided by the host to join the game. LingoBingo will create a bingo board for you based on the vocabulary chosen by your host.
           </div>
@@ -58,7 +61,7 @@ export default function Description() {
         <Col className='md-8'>
           <div
             className='p-2 rounded-4 themed-text'
-            data-theme='light'
+            data-theme={selectedTheme}
           >
             <ul>
               <li>Whenever you hear or see a word on your bingoboard, just click it to select it.</li>
