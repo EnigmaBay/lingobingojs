@@ -23,7 +23,10 @@ export default function About() {
   });
 
   return (
-    <Container className='main-output-borders light-theme'>
+    <Container
+      className='main-output-borders themed-background'
+      data-theme='light'
+    >
       <Row>
         <Col></Col>
         <Col sm={4}>
