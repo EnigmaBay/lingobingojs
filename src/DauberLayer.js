@@ -4,7 +4,12 @@ import WordTile from './WordTile.js';
 
 export default function DauberLayer(props) {
   return (
-    <div className={props.styleClass} onClick={props.handleTileClick} id={props.id}>
+    <div
+      className={props.styleClass}
+      data-theme={props.datatheme}
+      onClick={props.handleTileClick}
+      id={props.id}
+    >
       <WordTile
         word={props.word}
       />
@@ -14,6 +19,7 @@ export default function DauberLayer(props) {
 DauberLayer.propTypes = {
   word: PropTypes.string,
   styleClass: PropTypes.string,
+  datatheme: PropTypes.string,
   handleTileClick: PropTypes.func,
   id: PropTypes.number
 };
