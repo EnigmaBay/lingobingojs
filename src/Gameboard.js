@@ -37,12 +37,14 @@ export default class Gameboard extends React.Component {
       result.push(
         <Col key={idx}
           className='word-col p-1'
+          data-theme='light'
         >
           <DauberLayer
             id={idx}
             styleClass={this.props.dauberedTiles[idx] ?
               'daubered' :
               'plain'}
+            datatheme='light'
             word={currentWord}
             handleTileClick={e => this.props.handleTileClick(e)}
           />
@@ -57,7 +59,9 @@ export default class Gameboard extends React.Component {
         <Row className='m-2'>
           <Col></Col>
           <Col xs={'auto'}
-            className='rounded-4 light-theme-text lets-play'>Lets Play Bingo!</Col>
+            className='rounded-4 themed-text lets-play'
+            data-theme='light'
+          >Lets Play Bingo!</Col>
           <Col></Col>
         </Row>
         {rows}
