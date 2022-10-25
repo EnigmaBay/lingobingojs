@@ -5,7 +5,11 @@ import Col from 'react-bootstrap/Col';
 
 export default function Description() {
   return (
-    <Container fluid='md' className='main-output-borders light-theme'>
+    <Container
+      fluid='md'
+      className='main-output-borders themed-background'
+      data-theme='light'
+    >
       <Row className='p-2'>
         <Col md='auto'></Col>
         <Col className='md-8'></Col>
@@ -21,7 +25,10 @@ export default function Description() {
       <Row className='p-2'>
         <Col md='auto'></Col>
         <Col className='md-8'>
-          <div className='p-2 rounded-4 light-theme-text'>
+          <div
+            className='p-2 rounded-4 themed-text'
+            data-theme='light'
+          >
             LingoBingo creates a more engaging experience for participants during webinars. Participants select words from their LingoBingo board as they hear or see them during a presentation. This keeps participants minds actively engaged with the speaker and the presentation content.
           </div>
         </Col>
@@ -37,7 +44,10 @@ export default function Description() {
       <Row className='p-2 mb-3'>
         <Col md='auto'></Col>
         <Col className='md-8'>
-          <div className='p-2 rounded-4 light-theme-text'>
+          <div
+            className='p-2 rounded-4 themed-text'
+            data-theme='light'
+          >
             If you are attending a webinar and have been invited to join a LingoBingo game, use the link provided by the host to join the game. LingoBingo will create a bingo board for you based on the vocabulary chosen by your host.
           </div>
         </Col>
@@ -46,7 +56,10 @@ export default function Description() {
       <Row className='p-2 mb-3'>
         <Col md='auto'></Col>
         <Col className='md-8'>
-          <div className='p-2 rounded-4 light-theme-text'>
+          <div
+            className='p-2 rounded-4 themed-text'
+            data-theme='light'
+          >
             <ul>
               <li>Whenever you hear or see a word on your bingoboard, just click it to select it.</li>
               <li>Select five-in-a-row in any direction and the game will &quot;throw a screen party&quot; for you!</li>
