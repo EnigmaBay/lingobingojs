@@ -58,7 +58,10 @@ export default function GameSession() {
   }, [gamesStarted]);
 
   return (
-    <Container fluid className='main-output-borders light-theme'>
+    <Container fluid
+      className='main-output-borders themed-background'
+      data-theme='light'
+    >
       <Row>
         <Col>
           <Gameboard
