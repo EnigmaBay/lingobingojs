@@ -58,3 +58,7 @@ ul {
   list-style: none;
   margin-left: -2em;
 }
+
+.enable-pointer:hover {
+  cursor: pointer;
+}
