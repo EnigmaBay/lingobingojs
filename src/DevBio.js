@@ -6,12 +6,12 @@ import CardHeader from 'react-bootstrap/esm/CardHeader';
 
 export default function DevBio(props) {
   return (
-    <Col className="dev-bio-column">
-      <Card
-        className="text-center mb-3"
-      >
+    <Col className='dev-bio-column'>
+      <Card className='text-center mb-3'>
         <CardHeader>
-          Placeholder Bio
+          <Card.Title>
+            {props.name}
+          </Card.Title>
           <Card.Img
             className='fluid'
             variant='top'
@@ -19,9 +19,6 @@ export default function DevBio(props) {
             alt={props.name}
           />
         </CardHeader>
-        <Card.Title>
-          {props.name}
-        </Card.Title>
         <Card.Text
           className='m-2 p-2'
         >

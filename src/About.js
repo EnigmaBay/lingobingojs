@@ -23,7 +23,7 @@ export default function About() {
   });
 
   return (
-    <Container className='main-output-borders'>
+    <Container className='main-output-borders light-theme'>
       <Row>
         <Col></Col>
         <Col sm={4}>

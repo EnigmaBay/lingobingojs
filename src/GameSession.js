@@ -58,7 +58,7 @@ export default function GameSession() {
   }, [gamesStarted]);
 
   return (
-    <Container fluid className='main-output-borders'>
+    <Container fluid className='main-output-borders light-theme'>
       <Row>
         <Col>
           <Gameboard
@@ -72,7 +72,6 @@ export default function GameSession() {
       </Row>
       <Row>
         <Col className="d-flex justify-content-center">
-          {' '}
           {/* Center the button */}
           <PlayAgainButton
             isBingoed={isBingoed}
