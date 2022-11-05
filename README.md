@@ -30,7 +30,7 @@ To start, we expect to:
 
 Later on, we hope to do a lot more. As we move out of the planning phase and into initial implementation, this section will receive updates.
 
-### Non-function Outcomes
+### Non-functional Outcomes
 
 Development of this project will be a collaborative effort, with the following goals:
 
@@ -43,18 +43,46 @@ Development of this project will be a collaborative effort, with the following g
 
 ## Prequisites
 
-This section will be filled out as project planning progresses.
+To build, test, and run this project you will need both:
+
+- npm v8.6.0
+- node 16.14-2
+
+## Dependencies
+
+Review package.json for specifics, but overall this project makes use of:
+
+- React v.18+ and React Hooks
+- Bootstrap v.5+
+- React-bootstrap v.2+
+- Jest-dom v5.16+ for unit tests
+
+To view dependencies run `npm version` at the terminal after cloning.
 
 ## Installation
 
-This section will be filled out as project planning progresses.
+This project is being developed in Linux-based environments. You can choose to build and deploy this project using a Windows environment, but you will need to either use WSL, or pay attention to differences in how Windows handles linefeeds, etc.
+
+1. Ensure your environment meets the prerequisites listed above.
+2. Clone the repository to your local.
+3. CD to the project folder created when cloned.
+4. Run `npm install` to install dependencies.
+5. Run `npm test` to execute Jest tests.
+6. Run `npm start` to run a local, development version of the website.
+7. Run `npm run build` to build a deployment-ready website.
+
+See [reactapp readme](./README-reactapp.md) and [reactjs](https://reactjs.org/) for details on cloning, developing, testing, and running react webapps.
 
 ## Development
 
 The following tools will be used:
 
 - VSCode.
-- others are TBD.
+- Google Chrome (latest 2 versions) and Chrome DevTools.
+- Mozilla Firefox (latest 2 versions).
+- Edge (latest version).
+- Jest.
+- ESLint with react and react-hooks plugins.
 
 ### Git Flow
 
@@ -62,13 +90,15 @@ See [gitflow.md](./gitflow.md) for details.
 
 ## Testing
 
-This section will be filled out as project planning progresses.
+Jest unit tests are included in folder directory 'testLib'.
+
+Review the Jest files and child directory 'testData' to see how it is used.
 
 ## Contributing
 
 At the start of this project we are a party of 2 and there is no expectation to add contributors at this time.
 
-In the future we could update this information and provide means for public contributions, stay tuned.
+In the future we could change our minds and would then update this section.
 
 ## References and Acknowledgements
 
