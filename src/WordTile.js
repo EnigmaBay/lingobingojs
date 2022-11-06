@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export default function WordTile(props) {
   return (
-    <div>
+    <div className='enable-pointer'>
       {props.word}
     </div>
   );
