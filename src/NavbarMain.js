@@ -13,7 +13,7 @@ export default function NavbarMain() {
           <Navbar.Brand>
             <img
               src={logo67x40}
-              alt="Partial bingo board with words lingo bingo emblazoned over the top."
+              alt="Click to return to LingoBingo home page"
               width={'67px'}
               height={'40px'}
             />
