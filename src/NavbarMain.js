@@ -19,14 +19,16 @@ export default function NavbarMain() {
   return (
     <Navbar bg="dark" variant="dark" expand="sm" className='round-top-edges'>
       <Container>
-        <Navbar.Brand to="../">
-          <img
-            src={logo67x40}
-            alt="Partial bingo board with words lingo bingo emblazoned over the top."
-            width={'67px'}
-            height={'40px'}
-          />
-        </Navbar.Brand>
+        <NavLink to="../">
+          <Navbar.Brand>
+            <img
+              src={logo67x40}
+              alt="Click to return to LingoBingo home page"
+              width={'67px'}
+              height={'40px'}
+            />
+          </Navbar.Brand>
+        </NavLink>
         <div>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">

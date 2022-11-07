@@ -68,3 +68,7 @@ ul {
 .lb-main-nav-link-active{
   color: var(--rgba-primary-2);
 }
+
+.enable-pointer:hover {
+  cursor: pointer;
+}
