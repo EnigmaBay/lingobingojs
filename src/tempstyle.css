@@ -59,6 +59,16 @@ ul {
   margin-left: -2em;
 }
 
+.lb-main-nav-link{
+  padding: 10px;
+  text-decoration: none;
+  color: var(--rgba-primary-1);
+}
+
+.lb-main-nav-link-active{
+  color: var(--rgba-primary-2);
+}
+
 .enable-pointer:hover {
   cursor: pointer;
 }

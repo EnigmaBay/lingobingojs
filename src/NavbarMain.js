@@ -6,6 +6,16 @@ import { NavLink } from 'react-router-dom';
 import logo67x40 from './lingo-bingo-logo-bravo-67-40.png';
 
 export default function NavbarMain() {
+  const activeFunc = ({isActive}) =>{ 
+    if(!isActive){
+      console.log("not active");
+      return "lb-main-nav-link";
+    }
+    else{
+      console.log("active");
+      return "lb-main-nav-link lb-main-nav-link-active";
+    }
+  };
   return (
     <Navbar bg="dark" variant="dark" expand="sm" className='round-top-edges'>
       <Container>
@@ -23,11 +33,11 @@ export default function NavbarMain() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <NavLink className="nav-link main-nav-link" to="../">Home</NavLink>
-              <NavLink className="nav-link main-nav-link" to="../about">About Us</NavLink>
-              <NavLink className="nav-link main-nav-link" to="../signup">Signup</NavLink>
-              <NavLink className="nav-link main-nav-link" to="../login">Login</NavLink>
-              <NavLink className="nav-link main-nav-link" to="../play">Play LingoBingo</NavLink>
+              <NavLink className={activeFunc} to="/" end>Home</NavLink>
+              <NavLink className={activeFunc} to="../about">About Us</NavLink>
+              <NavLink className={activeFunc} to="../signup">Signup</NavLink>
+              <NavLink className={activeFunc} to="../login">Login</NavLink>
+              <NavLink className={activeFunc} to="../play">Play LingoBingo</NavLink>
             </Nav>
           </Navbar.Collapse>
         </div>
