@@ -6,6 +6,7 @@ import wordImporter from './funcLib/WordImporter.js';
 import PlayAgainButton from './PlayAgainButton.js';
 import { Col, Container, Row } from 'react-bootstrap';
 import checkForBingo from './funcLib/CheckForBingo';
+import { useOutletContext } from 'react-router-dom';
 
 export default function GameSession() {
   const [moves, setMoves] = useState(0);
@@ -13,6 +14,8 @@ export default function GameSession() {
   const [dauberedTiles, setDauberedTiles] = useState([]);
   const [gamesStarted, setGamesStarted] = useState([1]);
   const [randWords, setRandWords] = useState(initRandomWords());
+
+  const [theme] = useOutletContext();
 
   function initRandomWords() {
     const randInts = randomGen(24);
@@ -60,7 +63,7 @@ export default function GameSession() {
   return (
     <Container fluid
       className='main-output-borders themed-background'
-      data-theme='light'
+      data-theme={theme}
     >
       <Row>
         <Col>

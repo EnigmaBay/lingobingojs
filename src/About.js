@@ -4,8 +4,10 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import DevBio from './DevBio.js';
 import biodata from './about-us/bio-data.json';
+import { useOutletContext } from 'react-router-dom';
 
 export default function About() {
+  const [theme] = useOutletContext();
   const devdata = biodata.data.map((dev, index) => {
     return (
       <Col
@@ -25,7 +27,7 @@ export default function About() {
   return (
     <Container
       className='main-output-borders themed-background'
-      data-theme='light'
+      data-theme={theme}
     >
       <Row>
         <Col></Col>
