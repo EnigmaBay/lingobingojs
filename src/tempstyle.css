@@ -54,15 +54,15 @@ ul {
 .lb-main-nav-link{
   padding: 10px;
   text-decoration: none;
-  color: var(--rgba-secondary-1-2);
+  color: var(--rgba-primary-1);
 }
 
 .lb-main-nav-link-active{
-  color: var(--rgba-primary-1);
+  color: var(--rgba-secondary-1-2);
 }
 
 .lb-main-nav-link:hover{
-  color: var(--rgba-primary-1);
+  color: var(--rgba-secondary-1-2);
 }
 
 .enable-pointer:hover {
