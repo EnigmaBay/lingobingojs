@@ -1,6 +1,13 @@
 /* use plain for wordtile plain */
 /* use daubered for wordtile daubered */
 /* nav button font and theme styles currently not set here*/
+h2 {
+  padding: .1rem .1rem .1rem 1rem;
+}
+
+ul > li {
+  line-height: 2rem;
+}
 
 .word-col[data-theme='light'] {
   color: var(--rgba-primary-3);
@@ -55,10 +62,12 @@
 .themed-text[data-theme='light'] {
   color: var(--rgba-secondary-2-3);
   background-color: var(--rgba-secondary-1-2);
+  padding: .5rem 1.5rem .5rem 1.5rem;
 }
 .themed-text[data-theme='dark'] {
   color: var(--rgba-secondary-1-1);
   background-color: var(--rgba-secondary-1-3);
+  padding: .5rem 1.5rem .5rem 1.5rem;
 }
 
 .themed-button[data-theme='light'] {
@@ -101,12 +110,12 @@
 
 .highlight-tile[data-theme=light]:active {
   color: var(--rgba-primary-3);
-  background: var(--rgba-primary-2); 
+  background: var(--rgba-primary-2);
 }
 
 .highlight-tile[data-theme=dark]:active {
-  color: var(--rgba-primary-2); 
-  background: var(--rgba-primary-3); 
+  color: var(--rgba-primary-2);
+  background: var(--rgba-primary-3);
 }
 
 .lets-play[data-theme=dark]{
