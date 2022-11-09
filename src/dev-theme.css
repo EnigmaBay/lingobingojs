@@ -100,13 +100,13 @@
 }
 
 .highlight-tile[data-theme=light]:active {
-  color: var(--rgba-primary-3); /* text */
-  background: var(--rgba-primary-2); /* dauber */
+  color: var(--rgba-primary-3);
+  background: var(--rgba-primary-2); 
 }
 
 .highlight-tile[data-theme=dark]:active {
-  color: var(--rgba-primary-2); /* text */
-  background: var(--rgba-primary-3); /* dauber */
+  color: var(--rgba-primary-2); 
+  background: var(--rgba-primary-3); 
 }
 
 .lets-play[data-theme=dark]{
