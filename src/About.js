@@ -19,8 +19,8 @@ export default function About() {
           img={dev.img}
           name={dev.name}
           bio={dev.bio}
-          linkedin={personalbar.linkedin}
-          github={personalbar.github}
+          linkedin={dev.linkedin}
+          github={dev.github}
         />
       </Col>);
   });
