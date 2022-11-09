@@ -6,11 +6,13 @@ import './root.css';
 import './tempstyle.css';
 import './dev-theme.css';
 
+
 export default function Home() {
+  const [theme] = React.useState('dark');
   return (
     <Container>
       <NavbarMain />
-      <Outlet />
+      <Outlet context={[theme]}/>
     </Container>
   );
 }

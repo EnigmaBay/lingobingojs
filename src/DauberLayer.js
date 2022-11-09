@@ -5,8 +5,8 @@ import WordTile from './WordTile.js';
 export default function DauberLayer(props) {
   return (
     <div
-      className={props.styleClass + ' enable-pointer highlight-tile'}
-      data-theme={props.datatheme}
+      className={props.styleClass + ' dauber-layer enable-pointer highlight-tile'}
+      data-theme={props.dataTheme}
       onClick={props.handleTileClick}
       id={props.id}
     >
@@ -19,7 +19,7 @@ export default function DauberLayer(props) {
 DauberLayer.propTypes = {
   word: PropTypes.string,
   styleClass: PropTypes.string,
-  datatheme: PropTypes.string,
+  dataTheme: PropTypes.string,
   handleTileClick: PropTypes.func,
   id: PropTypes.number
 };

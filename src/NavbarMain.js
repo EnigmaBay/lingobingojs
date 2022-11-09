@@ -6,14 +6,14 @@ import { NavLink } from 'react-router-dom';
 import logo67x40 from './lingo-bingo-logo-bravo-67-40.png';
 
 export default function NavbarMain() {
-  const activeFunc = ({isActive}) =>{ 
+  const activeFunc = ({isActive}) =>{
     if(!isActive){
-      console.log("not active");
-      return "lb-main-nav-link";
+      console.log('not active');
+      return 'lb-main-nav-link';
     }
     else{
-      console.log("active");
-      return "lb-main-nav-link lb-main-nav-link-active";
+      console.log('active');
+      return 'lb-main-nav-link lb-main-nav-link-active';
     }
   };
   return (

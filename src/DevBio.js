@@ -6,8 +6,8 @@ import CardHeader from 'react-bootstrap/esm/CardHeader';
 
 export default function DevBio(props) {
   return (
-    <Col className='dev-bio-column'>
-      <Card className='text-center mb-3'>
+    <Col className='dev-bio-column' >
+      <Card className='text-center mb-3 themed-text' data-theme={props.dataTheme}>
         <CardHeader>
           <Card.Title>
             {props.name}
@@ -46,5 +46,6 @@ DevBio.propTypes = {
   name: PropTypes.string,
   bio: PropTypes.string,
   linkedin: PropTypes.string,
-  github: PropTypes.string
+  github: PropTypes.string,
+  dataTheme: PropTypes.string
 };
