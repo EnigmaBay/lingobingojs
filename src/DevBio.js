@@ -25,14 +25,14 @@ export default function DevBio(props) {
           {props.bio}
         </Card.Text>
         <Card.Link
-          className='m-1 enable-pointer themed-hyperlink'
+          className='mx-auto my-1 enable-pointer themed-hyperlink'
           data-theme={props.dataTheme}
           href={props.linkedin}
         >
           LinkedIn
         </Card.Link>
         <Card.Link
-          className='m-1 enable-pointer themed-hyperlink'
+          className='mx-auto my-1 enable-pointer themed-hyperlink'
           data-theme={props.dataTheme}
           href={props.github}
         >
