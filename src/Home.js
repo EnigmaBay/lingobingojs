@@ -8,7 +8,7 @@ import './dev-theme.css';
 
 
 export default function Home() {
-  const [theme] = React.useState('light');
+  const [theme] = React.useState('dark');
   return (
     <Container>
       <NavbarMain />

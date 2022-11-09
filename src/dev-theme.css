@@ -3,12 +3,12 @@
 /* nav button font and theme styles currently not set here*/
 
 .word-col[data-theme='light'] {
-  background-color: white;
-  border: solid 2px var(--rgba-secondary-2-3);
+  color: var(--rgba-primary-3);
+  background: var(--rgba-secondary-1-1);
 }
 .word-col[data-theme='dark'] {
-  background-color: red;
-  border: solid 2px var(--rgba-secondary-2-3);
+  color: var(--rgba-secondary-1-2);
+  background-color: var(--rgba-secondary-1-3);
 }
 .daubered[data-theme='light'] {
   color: var(--rgba-primary-3); /* text */
@@ -16,15 +16,13 @@
 }
 .daubered[data-theme='dark'] {
   color: var(--rgba-primary-2); /* text */
-  background: var(--rgba-primary-3); /* dauber */
+  background: var(--rgba-primary-4); /* dauber */
 }
 .plain[data-theme='light'] {
   color: var(--rgba-primary-3);
-  background: var(--rgba-secondary-1-1);
 }
 .plain[data-theme='dark'] {
-  color: var(--rgba-secondary-1-1);
-  background: var(--rgba-primary-3);
+  color: var(--rgba-secondary-1-2);
 }
 .main-output-borders[data-theme='light'] {
   border: solid 4px var(--rgba-primary-3);
@@ -42,14 +40,25 @@
 .themed-background[data-theme='light'] {
   background-color: var(--rgba-secondary-1-4);
 }
+.themed-background[data-theme='dark'] {
+  background-color: var(--rgba-primary-3);
+}
+
+.themed-header[data-theme='light']{
+  color: var(--rgba-secondary-2-3);
+}
+
+.themed-header[data-theme='dark']{
+  color: var(--rgba-secondary-1-1);
+}
 
 .themed-text[data-theme='light'] {
   color: var(--rgba-secondary-2-3);
   background-color: var(--rgba-secondary-1-2);
 }
 .themed-text[data-theme='dark'] {
-  color: var(--rgba-primary-2);
-  background-color: var(--rgba-primary-3);
+  color: var(--rgba-secondary-1-1);
+  background-color: var(--rgba-secondary-1-3);
 }
 
 .themed-button[data-theme='light'] {

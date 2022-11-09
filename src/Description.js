@@ -21,7 +21,7 @@ export default function Description() {
       <Row className='p-2'>
         <Col md='auto'></Col>
         <Col className='md-8'>
-          <h2>Make Your Webinars Interactive</h2>
+          <h2 className='themed-header' data-theme={theme}>Make Your Webinars Interactive</h2>
         </Col>
         <Col md='auto'></Col>
       </Row>
@@ -40,7 +40,7 @@ export default function Description() {
       <Row className='p-2'>
         <Col md='auto'></Col>
         <Col className='md-8'>
-          <h2>How to Play</h2>
+          <h2 className='themed-header' data-theme={theme}>How to Play</h2>
         </Col>
         <Col md='auto'></Col>
       </Row>

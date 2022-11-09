@@ -68,6 +68,7 @@ export default function GameSession() {
       <Row>
         <Col>
           <Gameboard
+            dataTheme={theme}
             randwords={randWords}
             moves={moves}
             isBingoed={isBingoed}

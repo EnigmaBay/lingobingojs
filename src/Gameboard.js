@@ -13,8 +13,6 @@ import './screenpartystyle.css';
 export default class Gameboard extends React.Component {
   constructor(props) {
     super(props);
-    // selectedTheme can be converted to a prop or user-accessible variable to select a theme
-    this.selectedTheme = 'light';
   }
 
   rowBuilder(randWords) {
@@ -39,14 +37,14 @@ export default class Gameboard extends React.Component {
       result.push(
         <Col key={idx}
           className='word-col p-1'
-          data-theme={this.selectedTheme}
+          data-theme={this.props.dataTheme}
         >
           <DauberLayer
             id={idx}
             styleClass={this.props.dauberedTiles[idx] ?
               'daubered' :
               'plain'}
-            datatheme={this.selectedTheme}
+            dataTheme={this.props.dataTheme}
             word={currentWord}
             handleTileClick={e => this.props.handleTileClick(e)}
           />
@@ -62,7 +60,7 @@ export default class Gameboard extends React.Component {
           <Col></Col>
           <Col xs={'auto'}
             className='rounded-4 themed-text lets-play'
-            data-theme={this.selectedTheme}
+            data-theme={this.props.dataTheme}
           >Lets Play Bingo!</Col>
           <Col></Col>
         </Row>
@@ -114,5 +112,6 @@ Gameboard.propTypes = {
   moves: PropTypes.number,
   dauberedTiles: PropTypes.array,
   handleTileClick: PropTypes.func,
-  isBingoed: PropTypes.bool
+  isBingoed: PropTypes.bool,
+  dataTheme: PropTypes.string
 };
