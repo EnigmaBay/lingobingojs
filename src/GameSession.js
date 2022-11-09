@@ -83,6 +83,7 @@ export default function GameSession() {
           <PlayAgainButton
             isBingoed={isBingoed}
             handleClick={() => restartGame()}
+            dataTheme={theme}
           />
         </Col>
       </Row>

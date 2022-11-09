@@ -15,8 +15,8 @@
   background: var(--rgba-primary-2); /* dauber */
 }
 .daubered[data-theme='dark'] {
-  color: var(--rgba-primary-2); /* text */
-  background: var(--rgba-primary-4); /* dauber */
+  color: var(--rgba-primary-3); /* text */
+  background: var( --rgba-secondary-1-4); /* dauber */
 }
 .plain[data-theme='light'] {
   color: var(--rgba-primary-3);
@@ -31,7 +31,7 @@
   border-bottom-right-radius: .7rem;
 }
 .main-output-borders[data-theme='dark'] {
-  border: solid 4px var(--rgba-secondary-2-4);
+  border: solid 4px var(--rgba-secondary-2-3);
   border-top: 0;
   border-bottom-left-radius: .7rem;
   border-bottom-right-radius: .7rem;
@@ -67,9 +67,8 @@
   border: solid 2px var(--rgba-secondary-2-3);
 }
 .themed-button[data-theme='dark'] {
-  color: var(--rgba-primary-2);
-  background-color: var(--rgba-primary-3);
-  border: solid 4px var(--rgba-secondary-2-4);
+  color: var(--rgba-primary-3);
+  background-color: var( --rgba-secondary-1-0);
 }
 
 
@@ -78,7 +77,7 @@
   color: var(--rgba-secondary-1-2);
 }
 .highlight-button[data-theme=dark]:hover {
-  background-color: var(--rgba-secondary-2-4);
+  background-color: var(--rgba-secondary-1-3);
 }
 .highlight-tile[data-theme=light]:hover {
   background-color: var(--rgba-primary-1);
@@ -90,7 +89,8 @@
   justify-content: center;
 }
 .highlight-tile[data-theme=dark]:hover {
-  background-color: var(--rgba-primary-1);;
+  background-color: var(--rgba-secondary-1-1);
+  color: var(--rgba-primary-3);
   border-radius: 50%;
   width: 100%;
   height: 100%;
@@ -108,3 +108,9 @@
   color: var(--rgba-primary-2); /* text */
   background: var(--rgba-primary-3); /* dauber */
 }
+
+.lets-play[data-theme=dark]{
+  color: var(--rgba-secondary-1-0);
+  background: var(--rgba-primary-3);
+}
+

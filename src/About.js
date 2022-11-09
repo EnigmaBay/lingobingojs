@@ -15,6 +15,7 @@ export default function About() {
         key={index}
       >
         <DevBio
+          dataTheme={theme}
           img={dev.img}
           name={dev.name}
           bio={dev.bio}
@@ -32,7 +33,7 @@ export default function About() {
       <Row>
         <Col></Col>
         <Col sm={4}>
-          <div className='text-center fs-2 fw-bold'>About Us</div>
+          <div data-theme={theme} className='themed-header text-center fs-2 fw-bold'>About Us</div>
         </Col>
         <Col></Col>
       </Row>

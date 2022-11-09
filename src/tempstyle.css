@@ -31,10 +31,6 @@
   justify-content: center;
 }
 
-.main-nav-link {
-  margin-right: 20px;
-}
-
 .round-top-edges {
   border-top-left-radius: .7rem;
   border-top-right-radius: .7rem;
@@ -46,9 +42,7 @@
   border-bottom-right-radius: .7rem;
 }
 
-
-
-.lets-play {
+.lets-play, .themed-button {
   font-size: calc(.25rem + 1.6vw);
 }
 
@@ -60,11 +54,15 @@ ul {
 .lb-main-nav-link{
   padding: 10px;
   text-decoration: none;
-  color: var(--rgba-primary-1);
+  color: var(--rgba-secondary-1-2);
 }
 
 .lb-main-nav-link-active{
-  color: var(--rgba-primary-2);
+  color: var(--rgba-primary-1);
+}
+
+.lb-main-nav-link:hover{
+  color: var(--rgba-primary-1);
 }
 
 .enable-pointer:hover {
