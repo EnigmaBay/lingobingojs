@@ -80,6 +80,12 @@ ul > li {
   background-color: var( --rgba-secondary-1-0);
 }
 
+.themed-hyperlink[data-theme='dark']:link {
+  color: var(--rgba-primary-1);
+}
+.themed-hyperlink[data-theme='dark']:visited {
+  color: var(--rgba-secondary-1-0);
+}
 
 .highlight-button[data-theme=light]:hover {
   background-color: var(--rgba-secondary-1-3);
