@@ -215,8 +215,8 @@
   margin: auto;
   overflow: hidden;
   animation-name: sloGrow;
-  animation-duration: 4s;
-  animation-iteration-count: 2;
+  animation-duration: 7s;
+  animation-iteration-count: 1;
 }
 
 @keyframes sloGrow {
@@ -231,8 +231,8 @@
     overflow: hidden;
   }
 
-  20% {
-    font-size: 1em;
+  10% {
+    font-size: .8em;
     font-weight: 300;
     opacity: 1;
     margin-left: .5vw;
@@ -243,11 +243,11 @@
     overflow: hidden;
   }
 
-  40% {
-    font-size: 3em;
-    font-weight: 500;
+  20% {
+    font-size: 1.2em;
+    font-weight: 300;
     opacity: 1;
-    margin-left: 0;
+    margin-left: .5vw;
     margin-top: 0;
     width: auto;
     height: auto;
@@ -255,11 +255,11 @@
     overflow: hidden;
   }
 
-  60% {
-    font-size: 7em;
-    font-weight: 700;
+  30% {
+    font-size: 1.6em;
+    font-weight: 300;
     opacity: 1;
-    margin-left: 0;
+    margin-left: .5vw;
     margin-top: 0;
     width: auto;
     height: auto;
@@ -267,7 +267,31 @@
     overflow: hidden;
   }
 
-  80% {
+  45% {
+    font-size: 7em;
+    font-weight: 700;
+    opacity: 1;
+    margin-left: 0;
+    margin-top: 0;
+    width: auto;
+    height: auto;
+    transform: rotate(0deg);
+    overflow: hidden;
+  }
+
+  75% {
+    font-size: 7em;
+    font-weight: 700;
+    opacity: 1;
+    margin-left: 0;
+    margin-top: 0;
+    width: auto;
+    height: auto;
+    transform: rotate(0deg);
+    overflow: hidden;
+  }
+
+  90% {
     font-size: 15em;
     font-weight: 900;
     opacity: 1;
@@ -285,7 +309,7 @@
     opacity: 0;
     margin-left: 0;
     margin-top: 0;
-    transform: rotate(0deg);
+    transform: rotate(25deg);
     overflow: hidden;
   }
 }
