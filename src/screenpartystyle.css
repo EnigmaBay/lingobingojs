@@ -3,54 +3,49 @@
   width: 30px;
   height: 30px;
   box-shadow: 0px 10px 1px #796758;
-}
-
-.leftside {
   position: fixed;
   margin: 1em;
   border-radius: 16px;
+  opacity: 0;
+}
+
+.leftside {
+  left: 12vw;
 }
 
 @keyframes patternOne {
   0% {
-    left: 12vw;
     top: 0;
   }
   10% {
-    left: 12vw;
     top: 0;
+    transform: rotateZ(-360deg);
     opacity: 1;
   }
   25% {
     transform: rotateZ(360deg);
-    opacity: 1;
   }
   50% {
     transform: rotateZ(-360deg);
-    opacity: 1;
   }
   75% {
     transform: rotateZ(360deg);
-    opacity: 1;
   }
   100% {
     left: 7vw;
     top: 90vh;
-    opacity: 0;
+    opacity: .5;
   }
 }
 
 .alpha {
-  left: 12vw;
   animation-name: patternOne;
   animation-duration: 5s;
   animation-timing-function: ease-in;
 }
 
 .leftmid {
-  position: fixed;
-  margin: 1em;
-  border-radius: 16px;
+  left: 32rem;
 }
 
 @keyframes patternTwo {
@@ -62,26 +57,22 @@
   100% {
     left: 38vw;
     top: 90vh;
-    opacity: 1;
+    opacity: .6;
   }
 }
 
 .bravo {
-  left: 32rem;
   animation-name: patternTwo;
   animation-duration: 2s;
   animation-timing-function: ease-in;
 }
 
 .middle {
-  position: fixed;
-  margin: 1em;
-  border-radius: 16px;
+  left: 52vw;
 }
 
 @keyframes patternThree {
   0% {
-    left: 52vw;
     top: 0;
     opacity: 1;
   }
@@ -100,14 +91,11 @@
 }
 
 .rightmid {
-  position: fixed;
-  margin: 1em;
-  border-radius: 16px;
-}
+  left: 72vw;
+  }
 
 @keyframes patternFour {
   0% {
-    /* left: 82vw; */
     top: 0;
     opacity: 1;
   }
@@ -119,16 +107,13 @@
 }
 
 .delta {
-  left: 72vw;
   animation-name: patternFour;
   animation-duration: 6s;
   animation-timing-function: ease-in;
 }
 
 .rightside {
-  position: fixed;
-  margin: 1em;
-  border-radius: 16px;
+  left: 88vw;
 }
 
 @keyframes patternFive {
@@ -144,15 +129,12 @@
 }
 
 .echo {
-  left: 88vw;
   animation-name: patternFive;
   animation-duration: 3s;
   animation-timing-function: ease-in;
 }
 
 .center {
-  position: fixed;
-  margin: 1em;
   left: 10em;
   top: 50%;
 }
@@ -161,12 +143,11 @@
   width: 0px;
   height: 0px;
   display: block;
-  position: fixed;
   left: 0;
   right: 0;
   margin: auto;
+  box-shadow: none;
   overflow: hidden;
-  opacity: 0;
   animation-name: patternGrow;
   animation-duration: 2s;
   animation-iteration-count: 1;
@@ -179,14 +160,12 @@
     opacity: .2;
   }
   50% {
-    transform-origin: center center;
     width: 90vw;
     height: 90vh;
     opacity: 1;
     top: 0
   }
   100% {
-    transform-origin: center center;
     opacity: .2;
   }
 }
@@ -207,7 +186,6 @@
   text-align: center;
   margin: auto;
   overflow: hidden;
-  transform: rotate(0deg);
   animation-name: sloGrow;
   animation-duration: 4s;
   animation-iteration-count: 2;
