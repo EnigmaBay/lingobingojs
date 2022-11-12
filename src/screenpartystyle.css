@@ -2,182 +2,284 @@
   opacity: 0;
   width: 30px;
   height: 30px;
-  box-shadow: 0px 10px 1px  #796758;
+  box-shadow: 0px 10px 1px #796758;
 }
 
 .leftside {
-  position: absolute;
+  position: fixed;
   margin: 1em;
   border-radius: 16px;
 }
+
 @keyframes patternOne {
-  0% { left: 12vw; top: 0; }
-  10% { left: 12vw; top: 0; opacity: 1; }
-  25% { transform: rotateZ(360deg); opacity: 1; }
-  50% { transform: rotateZ(-360deg); opacity: 1; }
-  75% { transform: rotateZ(360deg); opacity: 1; }
-  100% { left: 7vw; top: 90vh; opacity: 0; }
+  0% {
+    left: 12vw;
+    top: 0;
+  }
+  10% {
+    left: 12vw;
+    top: 0;
+    opacity: 1;
+  }
+  25% {
+    transform: rotateZ(360deg);
+    opacity: 1;
+  }
+  50% {
+    transform: rotateZ(-360deg);
+    opacity: 1;
+  }
+  75% {
+    transform: rotateZ(360deg);
+    opacity: 1;
+  }
+  100% {
+    left: 7vw;
+    top: 90vh;
+    opacity: 0;
+  }
 }
+
 .alpha {
   left: 12vw;
   animation-name: patternOne;
-  animation-duration: 6s;
+  animation-duration: 5s;
   animation-timing-function: ease-in;
 }
 
 .leftmid {
-  position: absolute;
+  position: fixed;
   margin: 1em;
   border-radius: 16px;
 }
+
 @keyframes patternTwo {
-  0% { left: 32vw; top: 0; opacity: 1; }
-  100% { left: 38vw; top: 100vh; opacity: 1; }
+  0% {
+    left: 32vw;
+    top: 0;
+    opacity: 1;
+  }
+  100% {
+    left: 38vw;
+    top: 90vh;
+    opacity: 1;
+  }
 }
+
 .bravo {
   left: 32rem;
   animation-name: patternTwo;
-  animation-duration: 6s;
+  animation-duration: 2s;
   animation-timing-function: ease-in;
 }
 
 .middle {
-  position: absolute;
+  position: fixed;
   margin: 1em;
   border-radius: 16px;
 }
+
 @keyframes patternThree {
-  0% { left: 52vw; top: 0; opacity: 1; }
-  100% { left: 42vw; top: 100vh; opacity: 1; }
+  0% {
+    left: 52vw;
+    top: 0;
+    opacity: 1;
+  }
+  100% {
+    left: 42vw;
+    top: 90vh;
+    opacity: 1;
+  }
 }
+
 .charlie {
   left: 52vw;
   animation-name: patternThree;
-  animation-duration: 6s;
+  animation-duration: 4s;
   animation-timing-function: ease-in;
 }
 
 .rightmid {
-  position: absolute;
+  position: fixed;
   margin: 1em;
   border-radius: 16px;
 }
+
 @keyframes patternFour {
-  0% { left: 82vw; top: 0; opacity: 1; }
-  100% { left: 82vw; top: 100vh; opacity: 1; }
+  0% {
+    /* left: 82vw; */
+    top: 0;
+    opacity: 1;
+  }
+  100% {
+    left: 68vw;
+    top: 90vh;
+    opacity: 1;
+  }
 }
+
 .delta {
-  left: 82vw;
+  left: 72vw;
   animation-name: patternFour;
   animation-duration: 6s;
   animation-timing-function: ease-in;
 }
 
 .rightside {
-  position: absolute;
+  position: fixed;
   margin: 1em;
   border-radius: 16px;
 }
+
 @keyframes patternFive {
-  0% { left: 92vw; top: 0; opacity: 1; }
-  100% { left: 82vw; top: 100vh; opacity: 1; }
+  0% {
+    top: 0;
+    opacity: 1;
+  }
+  100% {
+    left: 78vw;
+    top: 90vh;
+    opacity: 1;
+  }
 }
+
 .echo {
-  left: 92vw;
+  left: 88vw;
   animation-name: patternFive;
-  animation-duration: 6s;
+  animation-duration: 3s;
   animation-timing-function: ease-in;
 }
 
 .center {
-  position: absolute;
+  position: fixed;
   margin: 1em;
   left: 10em;
   top: 50%;
 }
+
 .star {
   width: 0px;
   height: 0px;
   display: block;
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
   margin: auto;
+  overflow: hidden;
+  opacity: 0;
   animation-name: patternGrow;
-  animation-duration: .5s;
-  animation-iteration-count: 3;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
   animation-timing-function: cubic-bezier(1, 0.63, 0.71, 0.74);
 }
+
 @keyframes patternGrow {
-  0% { transform-origin: center center; opacity: 1; }
-  50% { transform-origin: center center; width: 98vw; height: 90vh; opacity: 1; top: 0 }
-  100% { transform-origin: center center; opacity: 1; }
+  0% {
+    transform-origin: center center;
+    opacity: .2;
+  }
+  50% {
+    transform-origin: center center;
+    width: 90vw;
+    height: 90vh;
+    opacity: 1;
+    top: 0
+  }
+  100% {
+    transform-origin: center center;
+    opacity: .2;
+  }
 }
 
 .bingo {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
   font-size: 0;
   color: var(--rgba-secondary-2-4);
   opacity: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 100;
-  overflow: hidden;
-  min-width:fit-content;
-  height: min-content;
-  position: absolute;
+  width: 0;
+  height: 0;
+  position: fixed;
   top: 50%;
   right: 0;
   bottom: 0;
   left: 0;
   text-align: center;
   margin: auto;
+  overflow: hidden;
   transform: rotate(0deg);
   animation-name: sloGrow;
   animation-duration: 4s;
   animation-iteration-count: 2;
 }
+
 @keyframes sloGrow {
   0% {
-    font-size:0px;
-    opacity:0;
-    margin-left:.5vw;
-    margin-top:0px;
+    font-size: 0;
+    opacity: .1;
+    margin-left: .5vw;
+    margin-top: 0;
+    width: auto;
+    height: auto;
     transform: rotate(-25deg);
+    overflow: hidden;
   }
+
   20% {
-    font-size: 14px;
-    opacity:1;
+    font-size: 1em;
     font-weight: 300;
+    opacity: 1;
+    margin-left: .5vw;
+    margin-top: 0;
+    width: auto;
+    height: auto;
     transform: rotate(25deg);
+    overflow: hidden;
   }
+
   40% {
-    font-size:30px;
+    font-size: 3em;
     font-weight: 500;
-    opacity:1;
-    margin-left:0px;
-    margin-top:0px;
+    opacity: 1;
+    margin-left: 0;
+    margin-top: 0;
+    width: auto;
+    height: auto;
     transform: rotate(-25deg);
+    overflow: hidden;
   }
+
   60% {
-    font-size: 100px;
+    font-size: 7em;
     font-weight: 700;
-    opacity:1;
-    margin-left:0px;
-    margin-top:0px;
+    opacity: 1;
+    margin-left: 0;
+    margin-top: 0;
+    width: auto;
+    height: auto;
     transform: rotate(25deg);
+    overflow: hidden;
   }
+
   80% {
-    font-size:500px;
+    font-size: 15em;
     font-weight: 900;
-    opacity:0;
-    margin-left:0vw;
-    margin-top:50vh;
+    opacity: 1;
+    margin-left: 0;
+    margin-top: 0;
+    width: auto;
+    height: auto;
     transform: rotate(-25deg);
+    overflow: hidden;
   }
+
   100% {
-    font-size:0px;
-    opacity:0;
-    margin-left:0.5vw;
-    margin-top:0px;
+    font-size: 0;
+    font-weight: 100;
+    opacity: 0;
+    margin-left: 0;
+    margin-top: 0;
     transform: rotate(0deg);
+    overflow: hidden;
   }
 }
