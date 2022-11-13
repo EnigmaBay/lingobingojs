@@ -26,10 +26,7 @@
   border-bottom-right-radius: .7rem;
 }
 
-/* Cursor */
-.enable-pointer:hover {
-  cursor: pointer;
-}
+
 
 /* Background */
 .themed-background[data-theme='light'] {
@@ -91,7 +88,10 @@ h2 {
 .themed-hyperlink[data-theme='dark']:visited {
   color: var(--rgba-secondary-1-0);
 }
-
+/* Cursor */
+.enable-pointer:hover {
+  cursor: pointer;
+}
 
 /*----------Main-Navbar----------*/
 ul {
@@ -109,13 +109,14 @@ ul > li {
   color: var(--rgba-primary-1);
 }
 
+.lb-main-nav-link:hover{
+  color: var(--rgba-secondary-1-2);
+}
 .lb-main-nav-link-active{
   color: var(--rgba-secondary-1-2);
 }
 
-.lb-main-nav-link:hover{
-  color: var(--rgba-secondary-1-2);
-}
+
 
 
 /*----------Game----------*/
