@@ -104,6 +104,8 @@ In the future we could change our minds and would then update this section.
 
 Thank-you to [GitHub](https://github.com) for providing collaborative tools for software development with free-of-charge options for us little devs. :smiley:
 
+Thank you [Icons8](https://icons8.com) for making open-source SVG and PNG Icons available to the masses.
+
 ### Lead Developers
 
 <img src='./images/icons8-github-cute.svg' alt='octocat' width='25px' height='25px' /> [Jon Rumsey](https://github.com/nojronatron)
