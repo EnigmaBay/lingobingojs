@@ -7,7 +7,6 @@ import DauberLayer from './DauberLayer';
 import PartyFavor from './funcLib/PartyFavor';
 import glitterData from './glitter-types.json';
 import BingoAnnouncer from './BingoAnnouncer';
-import './tempstyle.css';
 import './screenpartystyle.css';
 
 export default class Gameboard extends React.Component {
