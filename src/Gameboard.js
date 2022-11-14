@@ -59,7 +59,7 @@ export default class Gameboard extends React.Component {
         <Row className='m-2'>
           <Col></Col>
           <Col xs={'auto'}
-            className='rounded-4 themed-text lets-play'
+            className='rounded-4 themed-header lets-play'
             data-theme={this.props.dataTheme}
           >Lets Play Bingo!</Col>
           <Col></Col>

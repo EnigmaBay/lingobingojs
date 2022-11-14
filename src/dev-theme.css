@@ -55,6 +55,7 @@ ul > li {
 
 .themed-header{
   font-family: 'Noto Serif';
+  font-size: calc(1.75em + 1vw);
 }
 
 .themed-header[data-theme='light']{
@@ -67,6 +68,7 @@ ul > li {
 
 .themed-text{
   font-family: 'Andika';
+  font-size: 1.1em;
 }
 
 .themed-text[data-theme='light'] {
