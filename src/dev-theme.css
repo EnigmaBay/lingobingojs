@@ -37,6 +37,11 @@
 }
 
 /* Header */
+.themed-header{
+  font-family: 'Noto Serif';
+  font-size: calc(1.75em + 1vw);
+}
+
 .themed-header[data-theme='light']{
   color: var(--rgba-secondary-2-3);
 }
@@ -49,6 +54,11 @@
 h2 {
   padding: .1rem .1rem .1rem 1rem;
 }
+.themed-text{
+  font-family: 'Andika';
+  font-size: 1.1em;
+}
+
 .themed-text[data-theme='light'] {
   color: var(--rgba-secondary-2-3);
   background-color: var(--rgba-secondary-1-2);
@@ -63,7 +73,9 @@ h2 {
 /* Buttons */
 .themed-button {
   font-size: calc(.25rem + 1.6vw);
+  font-family: 'Noto Serif';
 }
+
 .themed-button[data-theme='light'] {
   color: var(--rgba-secondary-2-3);
   background-color: var(--rgba-secondary-1-2);
@@ -120,11 +132,13 @@ ul > li {
 
 
 /*----------Game----------*/
+
 .word-col {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 6em;
+  font-family: 'Mulish';
   font-size: calc(.35rem + .9vw);
   font-weight: 600;
   margin-bottom: .1em;
@@ -196,9 +210,11 @@ ul > li {
   background: var(--rgba-primary-3);
 }
 
-.lets-play {
+.lets-play{
+  font-family:'Noto serif';
   font-size: calc(.25rem + 1.6vw);
 }
+
 .lets-play[data-theme=dark]{
   color: var(--rgba-secondary-1-0);
   background: var(--rgba-primary-3);

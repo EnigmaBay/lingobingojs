@@ -33,7 +33,7 @@ export default function About() {
       <Row>
         <Col></Col>
         <Col sm={4}>
-          <div data-theme={theme} className='themed-header text-center fs-2 fw-bold'>About Us</div>
+          <div data-theme={theme} className='themed-header text-center'>About Us</div>
         </Col>
         <Col></Col>
       </Row>
