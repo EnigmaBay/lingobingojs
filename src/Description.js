@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useOutletContext } from 'react-router-dom';
+import Footer from './Footer.js';
 
 export default function Description() {
   // theme can be converted to a prop or user-accessible variable to select a theme
@@ -72,6 +73,9 @@ export default function Description() {
           </div>
         </Col>
         <Col md='auto'></Col>
+      </Row>
+      <Row>
+        <Footer dataTheme={theme}/>
       </Row>
     </Container>
   );

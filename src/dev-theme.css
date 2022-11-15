@@ -149,3 +149,10 @@ ul > li {
   background: var(--rgba-primary-3);
 }
 
+/*Footer*/
+
+.themed-footer[data-theme=dark]{
+  background: var(--rgba-secondary-1-3);
+}
+
+

@@ -38,6 +38,9 @@ export default function DevBio(props) {
         >
           GitHub
         </Card.Link>
+        <Card.Footer>
+          EnigmaBay
+        </Card.Footer>
       </Card>
     </Col>
   );
