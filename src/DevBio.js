@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import CardHeader from 'react-bootstrap/esm/CardHeader';
+import LinkedinSvg from './about-us/linkedinSvg';
+import GithubSvg from './about-us/githubSvg';
 
 export default function DevBio(props) {
   return (
@@ -24,23 +26,22 @@ export default function DevBio(props) {
         >
           {props.bio}
         </Card.Text>
-        <Card.Link
-          className='mx-auto my-1 enable-pointer themed-hyperlink'
-          data-theme={props.dataTheme}
-          href={props.linkedin}
-        >
-          LinkedIn
-        </Card.Link>
-        <Card.Link
-          className='mx-auto my-1 enable-pointer themed-hyperlink'
-          data-theme={props.dataTheme}
-          href={props.github}
-        >
-          GitHub
-        </Card.Link>
-        <Card.Footer>
-          EnigmaBay
-        </Card.Footer>
+        <span>
+          <Card.Link
+            className='mx-auto my-1 themed-hyperlink enable-pointer'
+            data-theme={props.dataTheme}
+            href={props.linkedin}
+          >
+            <LinkedinSvg />LinkedIn
+          </Card.Link>
+          <Card.Link
+            className='mx-auto my-1 themed-hyperlink enable-pointer '
+            data-theme={props.dataTheme}
+            href={props.github}
+          >
+            <GithubSvg />GitHub
+          </Card.Link>
+        </span>
       </Card>
     </Col>
   );

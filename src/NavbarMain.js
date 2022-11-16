@@ -4,15 +4,14 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavLink } from 'react-router-dom';
 import logo67x40 from './lingo-bingo-logo-bravo-67-40.png';
+import PropTypes from 'prop-types';
 
-export default function NavbarMain() {
+export default function NavbarMain(props) {
   const activeFunc = ({isActive}) =>{
     if(!isActive){
-      console.log('not active');
       return 'lb-main-nav-link';
     }
     else{
-      console.log('active');
       return 'lb-main-nav-link lb-main-nav-link-active';
     }
   };
@@ -29,6 +28,7 @@ export default function NavbarMain() {
             />
           </Navbar.Brand>
         </NavLink>
+        <img src='icons8-brightness-32.png' alt="click to switch themes" className='me-auto enable-pointer' onClick={props.handleSwapTheme()}></img>
         <div>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -45,3 +45,7 @@ export default function NavbarMain() {
     </Navbar>
   );
 }
+
+NavbarMain.propTypes = {
+  handleSwapTheme: PropTypes.func
+};
