@@ -141,9 +141,9 @@ ul > li {
   font-family: 'Mulish';
   font-size: calc(.35rem + .9vw);
   font-weight: 600;
-  margin-bottom: .3em;
-  margin-left: .2em;
-  margin-right: .2em;
+  margin-bottom: .7vw;
+  margin-left: .35vw;
+  margin-right: .35vw;
   border-radius: .6em;
 }
 .word-col[data-theme='light'] {
