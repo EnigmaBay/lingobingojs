@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import PropTypes from 'prop-types';
+import GithubSvg from './about-us/githubSvg';
 
 export default function Footer(props){
   const enigmaBay = <a href='https://github.com/EnigmaBay' className='themed-hyperlink' data-theme={props.dataTheme}>EnigmaBay</a>;
@@ -11,7 +12,7 @@ export default function Footer(props){
       <Card.Text className='themed-text' data-theme={props.dataTheme}>&#169; Copyright 2022 {enigmaBay}.</Card.Text>
       <Card.Text className='themed-text' data-theme={props.dataTheme}>The content on this website, of which {enigmaBay} is the author, is released under an {mit}.</Card.Text>
       <Card.Text className='themed-text' data-theme={props.dataTheme}><a className='themed-hyperlink' data-theme={props.dataTheme} href='http://icons8.com/'>This website makes use of icons by Icons8</a></Card.Text>
-      <Card.Img></Card.Img>
+      <div className='text-centered'><a href='https://github.com/EnigmaBay'><GithubSvg className="mx-auto"/></a></div>
     </Card>
   );
 }
