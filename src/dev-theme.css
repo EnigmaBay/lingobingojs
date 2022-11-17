@@ -221,6 +221,18 @@ ul > li {
 }
 
 /*Footer*/
+.themed-footer-header{
+  font-family: 'Noto Serif';
+  font-size: calc(1.5em + 1vw);
+  padding-top:1rem;
+}
+.themed-footer-header[data-theme='light']{
+  color: var(--rgba-secondary-2-3);
+}
+
+.themed-footer-header[data-theme='dark']{
+  color: var(--rgba-secondary-1-1);
+}
 
 .themed-footer[data-theme=dark]{
   background: var(--rgba-secondary-1-3);
