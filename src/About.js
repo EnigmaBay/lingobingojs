@@ -43,7 +43,9 @@ export default function About() {
         {devdata}
       </Row>
       <Row>
-        <Footer dataTheme={theme}/>
+        <Col className='mb-2'>
+          <Footer dataTheme={theme}/>
+        </Col>
       </Row>
     </Container>
   );
