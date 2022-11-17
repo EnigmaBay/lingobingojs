@@ -12,19 +12,17 @@ import './root.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <div className='root-container'>
-    <React.StrictMode>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home/>}>
-            <Route index element={<Description/>} />
-            <Route path="about" element = {<About/>}/>
-            <Route path="signup" element = {''}/>
-            <Route path="login" element = {''}/>
-            <Route path="play" element = {<GameSession/>}/>
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </React.StrictMode>
-  </div>
+  <React.StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home/>}>
+          <Route index element={<Description/>} />
+          <Route path="about" element = {<About/>}/>
+          <Route path="signup" element = {''}/>
+          <Route path="login" element = {''}/>
+          <Route path="play" element = {<GameSession/>}/>
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>
 );
