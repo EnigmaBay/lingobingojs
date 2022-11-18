@@ -24,10 +24,12 @@ User Stories are managed by and for the Dev Team in GoogleDocs and a copy of tho
 
 For MVP we:
 
-- Built a simple HTML5, CSS3, javascript/ES6 webapp that allows a single player to play Bingo using a default set or words, and learn about the developers.
+- Built a simple HTML5, CSS3, javascript/ES6 webapp that allows a single player to play Bingo using a default set or words.
+- Deployed routing for simple navigation, and built an About page with links for contacting the developers.
 - Implement a componentized design, to support adding features on a semi-regular basis, limiting code churn, promoting test-ability.
 - Enhanced the game so it throws a "bingo party" when the user clicks on 5-in-a-row.
 - Implemented color palettes and a light/dark scheme that users can toggle, that will instantly take effect across the site.
+- Ensure browser compatibility (primarily Chrome and Firefox) for multiple screen sizes, from huge, to desktop, to mobile or smart phone-sized.
 - Provide a dedicated web interface for people to use the app as they need, deployed to a simple hosting service with public access.
 
 ### Next Release
@@ -53,6 +55,10 @@ Development of this project will be a collaborative effort, with the following g
 - Work toward a full-stack implementation.
 - Develop an open-source, utilitarian online 'game' others can use and enjoy.
 
+### Accessibility
+
+We are aware of the need for inclusive, accessible-designed webapps and are working to meet those needs. We are not currently aware of any glaring accessibility issues, however we are open to improving the design to meet expectations through new or standardized methods.
+
 ## Installation and Deployment
 
 ### Prequisites
@@ -66,7 +72,7 @@ To build, test, and run this project you will need both:
 
 Review package.json for specifics, but overall this project makes use of:
 
-- React v.18+ and React Hooks
+- React v.18+, React Hooks, and React Router v.6
 - Bootstrap v.5+
 - React-bootstrap v.2+
 - Jest-dom v5.16+ for unit tests
