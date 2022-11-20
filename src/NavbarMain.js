@@ -35,8 +35,6 @@ export default function NavbarMain(props) {
             <Nav className="me-auto">
               <NavLink className={activeFunc} to="/" end>Home</NavLink>
               <NavLink className={activeFunc} to="../about">About Us</NavLink>
-              <NavLink className={activeFunc} to="../signup">Signup</NavLink>
-              <NavLink className={activeFunc} to="../login">Login</NavLink>
               <NavLink className={activeFunc} to="../play">Play LingoBingo</NavLink>
             </Nav>
           </Navbar.Collapse>
