@@ -222,38 +222,38 @@ ul > li {
 }
 
 /*Footer*/
-.themed-footer-header{
-  font-family: 'Noto Serif';
-  font-size: calc(1.5em + 1vw);
-  padding-top:1rem;
-}
-.themed-footer-header[data-theme='light']{
-  color: var(--rgba-secondary-2-3);
+
+
+.themed-footer{
+  background: #212529;
+  padding-top: 1rem;
+  border-bottom-left-radius: .6rem;
+  border-bottom-right-radius: .6rem;
 }
 
-.themed-footer-header[data-theme='dark']{
-  color: var(--rgba-secondary-1-1);
-}
-
-.themed-footer[data-theme=dark]{
-  background: var(--rgba-secondary-1-3);
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
-}
-.themed-footer[data-theme=light]{
-  background: var(--rgba-secondary-1-2);
-}
 .themed-footer-text{
   font-family: 'Andika';
-  font-size: 1.1em;
-}
-
-.themed-footer-text[data-theme='light'] {
-  color: var(--rgba-secondary-2-3);
-}
-.themed-footer-text[data-theme='dark'] {
+  font-size: 0.8em;
   color: var(--rgba-secondary-1-1);
 }
+.themed-footer-text-small{
+  font-size: 0.7em;
+}
+
+.themed-footer a{
+  text-decoration: none;
+  color: var(--rgba-primary-1);
+}
+
+.themed-footer a:visited{
+  color: var(--rgba-secondary-1-2);
+}
+
+.themed-footer a:hover{
+  color: var(--rgba-secondary-1-2);
+}
+
+
 
 /*----------About Us----------*/
 .dev-bio-column {

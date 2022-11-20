@@ -75,9 +75,7 @@ export default function Description() {
         <Col md='auto'></Col>
       </Row>
       <Row>
-        <Col className='mb2'>
-          <Footer dataTheme={theme}/>
-        </Col>
+        <Footer dataTheme={theme}/>
       </Row>
     </Container>
   );
