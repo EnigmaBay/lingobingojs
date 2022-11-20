@@ -221,6 +221,40 @@ ul > li {
   background: var(--rgba-primary-3);
 }
 
+/*Footer*/
+
+
+.themed-footer{
+  background: #212529;
+  padding-top: 1rem;
+  border-bottom-left-radius: .6rem;
+  border-bottom-right-radius: .6rem;
+}
+
+.themed-footer-text{
+  font-family: 'Andika';
+  font-size: 0.8em;
+  color: var(--rgba-secondary-1-1);
+}
+.themed-footer-text-small{
+  font-size: 0.7em;
+}
+
+.themed-footer a{
+  text-decoration: none;
+  color: var(--rgba-primary-1);
+}
+
+.themed-footer a:visited{
+  color: var(--rgba-secondary-1-2);
+}
+
+.themed-footer a:hover{
+  color: var(--rgba-secondary-1-2);
+}
+
+
+
 /*----------About Us----------*/
 .dev-bio-column {
   display: flex;

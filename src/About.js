@@ -5,6 +5,8 @@ import Col from 'react-bootstrap/Col';
 import DevBio from './DevBio.js';
 import biodata from './about-us/bio-data.json';
 import { useOutletContext } from 'react-router-dom';
+import Footer from './Footer.js';
+
 
 export default function About() {
   const [theme] = useOutletContext();
@@ -39,6 +41,9 @@ export default function About() {
       </Row>
       <Row>
         {devdata}
+      </Row>
+      <Row>
+        <Footer dataTheme={theme}/>
       </Row>
     </Container>
   );
