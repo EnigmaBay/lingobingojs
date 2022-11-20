@@ -7,7 +7,6 @@ import DauberLayer from './DauberLayer';
 import PartyFavor from './funcLib/PartyFavor';
 import glitterData from './glitter-types.json';
 import BingoAnnouncer from './BingoAnnouncer';
-import './tempstyle.css';
 import './screenpartystyle.css';
 
 export default class Gameboard extends React.Component {
@@ -37,12 +36,14 @@ export default class Gameboard extends React.Component {
       result.push(
         <Col key={idx}
           className='word-col p-1'
+          data-theme={this.props.dataTheme}
         >
           <DauberLayer
             id={idx}
             styleClass={this.props.dauberedTiles[idx] ?
               'daubered' :
               'plain'}
+            dataTheme={this.props.dataTheme}
             word={currentWord}
             handleTileClick={e => this.props.handleTileClick(e)}
           />
@@ -54,9 +55,12 @@ export default class Gameboard extends React.Component {
   renderGameboard(rows) {
     return (
       <Container fluid className='px-0' >
-        <Row className='mx-0'>
+        <Row className='m-2'>
           <Col></Col>
-          <Col xs={'auto'}>Lets Play Bingo!</Col>
+          <Col xs={'auto'}
+            className='rounded-4 themed-header lets-play'
+            data-theme={this.props.dataTheme}
+          >Lets Play Bingo!</Col>
           <Col></Col>
         </Row>
         {rows}
@@ -107,5 +111,6 @@ Gameboard.propTypes = {
   moves: PropTypes.number,
   dauberedTiles: PropTypes.array,
   handleTileClick: PropTypes.func,
-  isBingoed: PropTypes.bool
+  isBingoed: PropTypes.bool,
+  dataTheme: PropTypes.string
 };
