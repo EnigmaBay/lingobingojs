@@ -29,6 +29,7 @@ export default function About() {
 
   return (
     <Container
+      fluid
       className='main-output-borders themed-background'
       data-theme={theme}
     >

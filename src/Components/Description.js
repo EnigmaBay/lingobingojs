@@ -10,7 +10,7 @@ export default function Description() {
   const [theme] = useOutletContext();
   return (
     <Container
-      fluid='md'
+      fluid
       className='main-output-borders themed-background'
       data-theme={theme}
     >
