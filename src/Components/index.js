@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './CSS/root.css';
 import Home from './Components/Home';
-import GameSession from './Components/GameSession.js';
-import About from './Components/About.js';
+import GameSession from './GameSession.js';
+import About from './About.js';
 import Description from './Components/Description.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 

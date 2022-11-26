@@ -1,4 +1,4 @@
-import words from '../itu-wordlist.json';
+import words from '../JSON/itu-wordlist.json';
 
 export default function WordImporter() {
   return (

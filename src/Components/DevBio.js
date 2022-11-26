@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import CardHeader from 'react-bootstrap/esm/CardHeader';
-import LinkedinSvg from './about-us/linkedinSvg';
-import GithubSvg from './about-us/githubSvg';
+import LinkedinSvg from '../about-us/linkedinSvg';
+import GithubSvg from '../about-us/githubSvg';
 
 export default function DevBio(props) {
   return (

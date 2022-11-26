@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import DevBio from './DevBio.js';
-import biodata from './about-us/bio-data.json';
+import biodata from '../about-us/bio-data.json';
 import { useOutletContext } from 'react-router-dom';
 import Footer from './Footer.js';
 

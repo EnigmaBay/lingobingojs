@@ -4,10 +4,10 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import DauberLayer from './DauberLayer';
-import PartyFavor from './funcLib/PartyFavor';
-import glitterData from './glitter-types.json';
+import PartyFavor from '../funcLib/PartyFavor';
+import glitterData from '../JSON/glitter-types.json';
 import BingoAnnouncer from './BingoAnnouncer';
-import './screenpartystyle.css';
+import '../CSS/screenpartystyle.css';
 
 export default class Gameboard extends React.Component {
   constructor(props) {

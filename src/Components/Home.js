@@ -2,8 +2,8 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import NavbarMain from './NavbarMain.js';
 import Container from 'react-bootstrap/Container';
-import './root.css';
-import './dev-theme.css';
+import '../CSS/root.css';
+import '../CSS/dev-theme.css';
 
 
 export default function Home() {
