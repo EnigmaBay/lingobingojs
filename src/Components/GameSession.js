@@ -64,7 +64,6 @@ export default function GameSession() {
     <Container fluid
       className='main-output-borders themed-background'
       id='game-session'
-      // style={{padding: '2px'}}
       data-theme={theme}
     >
       <Row>
