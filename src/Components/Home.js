@@ -10,7 +10,7 @@ export default function Home() {
   const [theme, setTheme] = React.useState('dark');
   const swapTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark');
   return (
-    <Container>
+    <Container className='top-level-container'>
       <NavbarMain handleSwapTheme={()=>swapTheme}/>
       <Outlet context={[theme]}/>
     </Container>
