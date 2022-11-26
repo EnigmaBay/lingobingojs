@@ -3,7 +3,6 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavLink } from 'react-router-dom';
-// import logo67x40 from 'public/lingo-bingo-logo-bravo-67-40.png';
 import PropTypes from 'prop-types';
 
 export default function NavbarMain(props) {
