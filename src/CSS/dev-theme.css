@@ -3,6 +3,7 @@
 
 /*----------General----------*/
 
+/* Borders */
 @media only screen and (min-width: 586px){
   .round-top-edges {
     border-top-left-radius: .7rem;
@@ -24,11 +25,13 @@
     border-top: 0;
     border-bottom-left-radius: .7rem;
     border-bottom-right-radius: .7rem;
-  }
-  
+  }  
 }
-/* Borders */
-
+@media only screen and (max-width: 586px){
+  #home-component{
+    padding: 0px;
+  }
+}
 
 
 /* Background */
@@ -222,6 +225,11 @@ ul > li {
 .lets-play[data-theme=dark]{
   color: var(--rgba-secondary-1-0);
   background: var(--rgba-primary-3);
+}
+@media only screen and (max-width: 586px){
+  #game-session{
+    padding: 2px;
+  }
 }
 
 /*Footer*/
