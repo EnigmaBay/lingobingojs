@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavLink } from 'react-router-dom';
-import logo67x40 from './lingo-bingo-logo-bravo-67-40.png';
+// import logo67x40 from 'public/lingo-bingo-logo-bravo-67-40.png';
 import PropTypes from 'prop-types';
 
 export default function NavbarMain(props) {
@@ -21,7 +21,7 @@ export default function NavbarMain(props) {
         <NavLink to="../">
           <Navbar.Brand>
             <img
-              src={logo67x40}
+              src='lingo-bingo-logo-bravo-67-40.png'
               alt="Click to return to LingoBingo home page"
               width={'67px'}
               height={'40px'}

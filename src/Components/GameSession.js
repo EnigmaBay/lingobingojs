@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Gameboard from './Gameboard.js';
-import randomGen from './funcLib/RandomGen.js';
-import wordProcessor from './funcLib/WordProcessor.js';
-import wordImporter from './funcLib/WordImporter.js';
+import randomGen from '../funcLib/RandomGen.js';
+import wordProcessor from '../funcLib/WordProcessor.js';
+import wordImporter from '../funcLib/WordImporter.js';
 import PlayAgainButton from './PlayAgainButton.js';
 import { Col, Container, Row } from 'react-bootstrap';
-import checkForBingo from './funcLib/CheckForBingo';
+import checkForBingo from '../funcLib/CheckForBingo';
 import { useOutletContext } from 'react-router-dom';
 
 export default function GameSession() {
