@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <Container id='home-component' fluid='sm'>
       <NavbarMain handleSwapTheme={()=>swapTheme}/>
-      <Outlet id='content' context={[theme]}/>
+      <Outlet context={[theme]}/>
     </Container>
   );
 }
