@@ -21,10 +21,6 @@ export default function NavbarMain(props) {
       expand="sm"
       className='round-top-edges'
       id='lb-main-navbar'
-      style={{
-        position: 'absolute',
-        width:'100%'
-      }}
     >
       <Container>
         <NavLink to="../">
