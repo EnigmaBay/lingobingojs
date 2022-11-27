@@ -9,7 +9,6 @@ import PropTypes from 'prop-types';
 export default function NavbarMain(props) {
 
   const[expanded, setExpanded] = useState(false);
-  console.log(expanded);
   const activeFunc = ({isActive}) =>{
     if(!isActive){
       return 'lb-main-nav-link';
@@ -20,7 +19,6 @@ export default function NavbarMain(props) {
   };
   const toggle = () => {
     setExpanded((isExpanded)=>!isExpanded);
-    console.log(expanded);
   };
   return (
     <Navbar

@@ -31,23 +31,9 @@
   #home-component{
     padding: 0px;
   }
-  #lb-main-navbar{
-      position: absolute;
-      width: 100%;
-      z-index: 2;
-  }
-  .page{
-    position: relative;
-    top: 55px;
-    z-index: 1;
-  }
-  
-  
 }
 
-/* #basic-navbar-nav{
-  display: block;
-} */
+
 /* Background */
 .themed-background[data-theme='light'] {
   background-color: var(--rgba-secondary-1-4);
@@ -147,7 +133,24 @@ ul > li {
 .lb-main-nav-link-active{
   color: var(--rgba-secondary-1-2);
 }
-
+@media only screen and (max-width: 586px){
+  #lb-main-navbar{
+      position: absolute;
+      width: 100%;
+      z-index: 2;
+  }
+  .page{
+    position: relative;
+    top: 55px;
+    z-index: 1;
+  }
+  #basic-navbar-nav{
+    position: absolute;
+    right: 10px;
+    top: 55px;
+    background: #212529;
+  }  
+}
 
 
 
