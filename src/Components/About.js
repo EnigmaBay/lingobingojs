@@ -30,7 +30,7 @@ export default function About() {
   return (
     <Container
       fluid
-      className='main-output-borders themed-background'
+      className='main-output-borders themed-background page'
       data-theme={theme}
     >
       <Row>

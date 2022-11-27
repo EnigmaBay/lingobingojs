@@ -15,7 +15,17 @@ export default function NavbarMain(props) {
     }
   };
   return (
-    <Navbar bg="dark" variant="dark" expand="sm" className='round-top-edges'>
+    <Navbar
+      bg="dark"
+      variant="dark"
+      expand="sm"
+      className='round-top-edges'
+      id='lb-main-navbar'
+      style={{
+        position: 'absolute',
+        width:'100%'
+      }}
+    >
       <Container>
         <NavLink to="../">
           <Navbar.Brand>

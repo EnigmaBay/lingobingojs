@@ -11,7 +11,7 @@ export default function Description() {
   return (
     <Container
       fluid
-      className='main-output-borders themed-background'
+      className='main-output-borders themed-background page'
       data-theme={theme}
     >
       <Row className='p-2'>
