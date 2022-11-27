@@ -42,9 +42,12 @@
     z-index: 1;
   }
   
+  
 }
 
-
+/* #basic-navbar-nav{
+  display: block;
+} */
 /* Background */
 .themed-background[data-theme='light'] {
   background-color: var(--rgba-secondary-1-4);
