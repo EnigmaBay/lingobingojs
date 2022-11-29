@@ -29,7 +29,8 @@ export default function About() {
 
   return (
     <Container
-      className='main-output-borders themed-background'
+      fluid
+      className='main-output-borders themed-background page'
       data-theme={theme}
     >
       <Row>

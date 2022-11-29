@@ -12,7 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter className='top-level-container'>
       <Routes>
         <Route path="/" element={<Home/>}>
           <Route index element={<Description/>} />

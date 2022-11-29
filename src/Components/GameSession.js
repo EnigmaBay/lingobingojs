@@ -62,7 +62,8 @@ export default function GameSession() {
 
   return (
     <Container fluid
-      className='main-output-borders themed-background'
+      className='main-output-borders themed-background page'
+      id='game-session'
       data-theme={theme}
     >
       <Row>

@@ -54,7 +54,7 @@ export default class Gameboard extends React.Component {
 
   renderGameboard(rows) {
     return (
-      <Container fluid className='px-0' >
+      <Container fluid className='px-0'>
         <Row className='m-2'>
           <Col></Col>
           <Col xs={'auto'}
