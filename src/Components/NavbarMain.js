@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -9,6 +9,24 @@ import PropTypes from 'prop-types';
 export default function NavbarMain(props) {
 
   const[expanded, setExpanded] = useState(false);
+
+  const [windowWidth, setWindowWidth] = useState(getWindowWidth());
+
+  function getWindowWidth() {
+    const {innerWidth} = window;
+    return innerWidth;
+  }
+
+  useEffect(() => {
+    function handleWindowResize() {
+      setWindowWidth(getWindowWidth());
+    }
+    window.addEventListener('resize', handleWindowResize);
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  }, []);
+
   const activeFunc = ({isActive}) =>{
     if(!isActive){
       return 'lb-main-nav-link';
@@ -17,9 +35,11 @@ export default function NavbarMain(props) {
       return 'lb-main-nav-link lb-main-nav-link-active';
     }
   };
+
   const toggle = () => {
-    setExpanded((isExpanded)=>!isExpanded);
+    setExpanded((isExpanded)=> windowWidth <= 586 ? !isExpanded : isExpanded );
   };
+
   return (
     <Navbar
       bg="dark"

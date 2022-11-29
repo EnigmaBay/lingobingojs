@@ -138,18 +138,21 @@ ul > li {
       position: absolute;
       width: 100%;
       z-index: 2;
+      border-bottom: 0.5px solid var(--rgba-primary-1);
+  }
+  #basic-navbar-nav{
+    position: absolute;
+    right: 1px;
+    top: 55px;
+    background: #212529;
+    border-bottom: 0.5px solid var(--rgba-primary-1);
+    border-left: 0.5px solid var(--rgba-primary-1);;
   }
   .page{
     position: relative;
     top: 55px;
     z-index: 1;
   }
-  #basic-navbar-nav{
-    position: absolute;
-    right: 10px;
-    top: 55px;
-    background: #212529;
-  }  
 }
 
 
