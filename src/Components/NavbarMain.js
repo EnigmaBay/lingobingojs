@@ -20,14 +20,14 @@ export default function NavbarMain(props) {
         <NavLink to="../">
           <Navbar.Brand>
             <img
-              src='lingo-bingo-logo-bravo-67-40.png'
+              src='/lingo-bingo-logo-bravo-67-40.png'
               alt="Click to return to LingoBingo home page"
               width={'67px'}
               height={'40px'}
             />
           </Navbar.Brand>
         </NavLink>
-        <img src='icons8-brightness-32.png' alt="click to switch themes" className='me-auto enable-pointer' onClick={props.handleSwapTheme()}></img>
+        <img src='/icons8-brightness-32.png' alt="click to switch themes" className='me-auto enable-pointer' onClick={props.handleSwapTheme()}></img>
         <div>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
