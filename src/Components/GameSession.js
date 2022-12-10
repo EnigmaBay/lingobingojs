@@ -14,10 +14,10 @@ export default function GameSession() {
   const [dauberedTiles, setDauberedTiles] = useState([]);
   const [gamesStarted, setGamesStarted] = useState([1]);
   const [randWords, setRandWords] = useState(initRandomWords());
-  let {gameboardId} = useParams();
+  let {gameboardId, param2} = useParams();
   const [theme] = useOutletContext();
 
-  console.log(gameboardId);
+  console.log(gameboardId + ' ' + param2);
 
   function initRandomWords() {
     const randInts = randomGen(24);
