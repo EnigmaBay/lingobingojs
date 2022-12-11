@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function linkedinSvg() {
+export default function linkedinSvg(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -10,6 +11,7 @@ export default function linkedinSvg() {
       height="48"
       viewBox="0 0 48 48"
     >
+      <title>{'Visit ' + props.name + '\'s LinkedIn profile'}</title>
       <path
         fill="#0078d4"
         d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5	V37z"
@@ -29,3 +31,7 @@ export default function linkedinSvg() {
     </svg>
   );
 }
+
+linkedinSvg.propTypes = {
+  name: PropTypes.string,
+};
