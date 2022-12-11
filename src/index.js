@@ -20,6 +20,8 @@ root.render(
           <Route path="signup" element = {''}/>
           <Route path="login" element = {''}/>
           <Route path="play" element = {<GameSession/>}/>
+          <Route path="play/:gameboardId" element = {<GameSession/>}/>
+          <Route path="play/:gameboardId/:param2" element = {<GameSession/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
