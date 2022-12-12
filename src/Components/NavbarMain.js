@@ -60,7 +60,7 @@ export default function NavbarMain(props) {
             />
           </Navbar.Brand>
         </NavLink>
-        <img src='icons8-brightness-32.png' alt="click to switch themes" className='me-auto enable-pointer' onClick={props.handleSwapTheme()}></img>
+        <img src='icons8-brightness-32.png' alt="Click to switch themes" className='me-auto enable-pointer' onClick={props.handleSwapTheme()}></img>
         <div>
           <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={toggle}/>
           <Navbar.Collapse id="basic-navbar-nav">
