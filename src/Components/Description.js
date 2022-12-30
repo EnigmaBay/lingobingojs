@@ -59,6 +59,20 @@ export default function Description() {
       </Row>
       <Row className='p-2 mb-3'>
         <Col md='auto'></Col>
+        <Col>
+          <iframe className='demo-video rounded-4'
+            width="500"
+            height="500"
+            src="https://www.youtube.com/embed/P1yVieUmLPo?controls=0&autoplay=1&mute=1&modestbranding=1&loop=1"
+            title="Video showing how to play LingoBingoJS"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; loop"
+            allowfullscreen>
+          </iframe>
+        </Col>
+        <Col md='auto'></Col>
+      </Row>
+      <Row className='p-2 mb-3'>
+        <Col md='auto'></Col>
         <Col className='md-8'>
           <div
             className='rounded-4 themed-text'
