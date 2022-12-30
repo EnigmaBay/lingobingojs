@@ -20,6 +20,7 @@ export default function About() {
           dataTheme={theme}
           img={dev.img}
           name={dev.name}
+          pronouns={dev.pronouns}
           bio={dev.bio}
           linkedin={dev.linkedin}
           github={dev.github}
