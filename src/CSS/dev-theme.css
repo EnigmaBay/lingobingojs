@@ -305,3 +305,12 @@ ul > li {
   align-items: center;
   justify-content: center;
 }
+
+/*----------Description----------*/
+.demo-video {
+  min-width: 330px;
+  min-height: 200px;
+  width: 100%;
+  object-fit: scale-down;
+}
+
