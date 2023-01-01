@@ -59,6 +59,30 @@ export default function Description() {
       </Row>
       <Row className='p-2 mb-3'>
         <Col md='auto'></Col>
+        <Col className="md-8 dev-bio-column">
+          <iframe
+            className='demo-video rounded-4'
+            src="https://www.youtube.com/embed/P1yVieUmLPo?controls=0&autoplay=1&mute=1&modestbranding=1&loop=1"
+            title="Video showing how to play LingoBingoJS"
+            allow="autoplay; encrypted-media; loop"
+            allowfullscreen
+          >
+            <div className="themed-footer-text">
+            Your browser does not support iFrames.
+              <a
+                href="https://www.youtube.com/watch?v=P1yVieUmLPo&ab_channel=JonRumsey"
+                target="_blank"
+                rel="noreferrer"
+              >
+              View it at Jon&apos;s YouTube channel instead.
+              </a>
+            </div>
+          </iframe>
+        </Col>
+        <Col md='auto'></Col>
+      </Row>
+      <Row className='p-2 mb-3'>
+        <Col md='auto'></Col>
         <Col className='md-8'>
           <div
             className='rounded-4 themed-text'

@@ -25,7 +25,7 @@
     border-top: 0;
     border-bottom-left-radius: .7rem;
     border-bottom-right-radius: .7rem;
-  }  
+  }
 }
 @media only screen and (max-width: 586px){
   #home-component{
@@ -311,3 +311,14 @@ ul > li {
   align-items: center;
   justify-content: center;
 }
+
+/*----------Description----------*/
+.demo-video {
+  min-width: 330px;
+  max-width: 660px;
+  min-height: 225px;
+  max-height: 350px;
+  object-fit: scale-down;
+  border: none;
+}
+
