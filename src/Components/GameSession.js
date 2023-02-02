@@ -60,7 +60,8 @@ export default function GameSession() {
   useEffect(() => {
     const randInts = randomGen(24);
     // let words = wordImporter();
-    const urlWithId = process.env.REACT_APP_GAMEBOARD_URI;
+    const urlWithId = `${process.env.REACT_APP_GAMEBOARD_URI}${process.env.REACT_APP_GAMEBOARD_ID}`;
+    console.log('urlWithId is now:', urlWithId);
     const config = {
       method: 'get',
       baseURL: process.env.REACT_APP_API_SERVER,
