@@ -7,23 +7,24 @@ import PlayAgainButton from './PlayAgainButton.js';
 import { Col, Container, Row } from 'react-bootstrap';
 import checkForBingo from '../funcLib/CheckForBingo';
 import { useOutletContext, useParams } from 'react-router-dom';
+import axios from 'axios';
 
 export default function GameSession() {
   const [moves, setMoves] = useState(0);
   const [isBingoed, setBingoed] = useState(false);
   const [dauberedTiles, setDauberedTiles] = useState([]);
   const [gamesStarted, setGamesStarted] = useState([1]);
-  const [randWords, setRandWords] = useState(initRandomWords());
+  const [randWords, setRandWords] = useState([]);
   let {gameboardId, param2} = useParams();
   const [theme] = useOutletContext();
 
   console.log(gameboardId + ' ' + param2);
 
-  function initRandomWords() {
-    const randInts = randomGen(24);
-    let words = wordImporter();
-    return wordProcessor(words, randInts);
-  }
+  // function initRandomWords() {
+  //   const randInts = randomGen(24);
+  //   let words = wordImporter();
+  //   return wordProcessor(words, randInts);
+  // }
 
   function handleTileClick(e) {
     let id = e.currentTarget.id;
@@ -57,7 +58,25 @@ export default function GameSession() {
   }, [dauberedTiles, moves]);
 
   useEffect(() => {
-    setRandWords(initRandomWords());
+    const randInts = randomGen(24);
+    // let words = wordImporter();
+    const urlWithId = process.env.REACT_APP_GAMEBOARD_URI;
+    const config = {
+      method: 'get',
+      baseURL: process.env.REACT_APP_API_SERVER,
+      url: urlWithId,
+    };
+    axios(config)
+      .then(res => res.data)
+      .then(words => wordProcessor(words, randInts))
+      .then(processedWords => setRandWords(processedWords))
+      .catch((error) => {
+        console.log('axios thenable error:', error.message);
+        return wordImporter();
+      });
+
+    // return wordProcessor(words, randInts);
+    // setRandWords(initRandomWords());
     // daubers center tile
     dauberTile(12);
   }, [gamesStarted]);
