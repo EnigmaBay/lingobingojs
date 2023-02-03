@@ -60,7 +60,8 @@ export default function GameSession() {
   useEffect(() => {
     const randInts = randomGen(24);
     // let words = wordImporter();
-    const urlWithId = `${process.env.REACT_APP_GAMEBOARD_URI}${process.env.REACT_APP_GAMEBOARD_ID}`;
+    // const urlWithId = `${process.env.REACT_APP_GAMEBOARD_URI}${process.env.REACT_APP_GAMEBOARD_ID}`;
+    const urlWithId = `${process.env.REACT_APP_GAMEBOARD_URI}${gameboardId}`;
     console.log('urlWithId is now:', urlWithId);
     const config = {
       method: 'get',
@@ -80,7 +81,7 @@ export default function GameSession() {
     // setRandWords(initRandomWords());
     // daubers center tile
     dauberTile(12);
-  }, [gamesStarted]);
+  }, [gameboardId, gamesStarted]);
 
   return (
     <Container fluid
