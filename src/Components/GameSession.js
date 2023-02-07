@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import Gameboard from './Gameboard.js';
-import randomGen from '../funcLib/RandomGen.js';
-import wordProcessor from '../funcLib/WordProcessor.js';
-import wordImporter from '../funcLib/WordImporter.js';
-import PlayAgainButton from './PlayAgainButton.js';
-import { Col, Container, Row } from 'react-bootstrap';
-import checkForBingo from '../funcLib/CheckForBingo';
-import { useOutletContext, useParams } from 'react-router-dom';
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import Gameboard from "./Gameboard.js";
+import randomGen from "../funcLib/RandomGen.js";
+import wordProcessor from "../funcLib/WordProcessor.js";
+import wordImporter from "../funcLib/WordImporter.js";
+import PlayAgainButton from "./PlayAgainButton.js";
+import { Col, Container, Row } from "react-bootstrap";
+import checkForBingo from "../funcLib/CheckForBingo";
+import { useOutletContext, useParams } from "react-router-dom";
+import axios from "axios";
 
 export default function GameSession() {
   const [moves, setMoves] = useState(0);
@@ -15,16 +15,8 @@ export default function GameSession() {
   const [dauberedTiles, setDauberedTiles] = useState([]);
   const [gamesStarted, setGamesStarted] = useState([1]);
   const [randWords, setRandWords] = useState([]);
-  let {gameboardId, param2} = useParams();
+  let { gameboardId } = useParams();
   const [theme] = useOutletContext();
-
-  console.log(gameboardId + ' ' + param2);
-
-  // function initRandomWords() {
-  //   const randInts = randomGen(24);
-  //   let words = wordImporter();
-  //   return wordProcessor(words, randInts);
-  // }
 
   function handleTileClick(e) {
     let id = e.currentTarget.id;
@@ -59,34 +51,41 @@ export default function GameSession() {
 
   useEffect(() => {
     const randInts = randomGen(24);
-    // let words = wordImporter();
-    // const urlWithId = `${process.env.REACT_APP_GAMEBOARD_URI}${process.env.REACT_APP_GAMEBOARD_ID}`;
-    const urlWithId = `${process.env.REACT_APP_GAMEBOARD_URI}${gameboardId}`;
-    console.log('urlWithId is now:', urlWithId);
-    const config = {
-      method: 'get',
-      baseURL: process.env.REACT_APP_API_SERVER,
-      url: urlWithId,
-    };
-    axios(config)
-      .then(res => res.data)
-      .then(words => wordProcessor(words, randInts))
-      .then(processedWords => setRandWords(processedWords))
-      .catch((error) => {
-        console.log('axios thenable error:', error.message);
-        return wordImporter();
-      });
 
-    // return wordProcessor(words, randInts);
-    // setRandWords(initRandomWords());
+    if (gameboardId !== undefined) {
+      const urlWithId = `${process.env.REACT_APP_GAMEBOARD_URI}${gameboardId}`;
+      const apiServer = process.env.REACT_APP_API_SERVER;
+
+      const config = {
+        method: "get",
+        baseURL: apiServer,
+        url: urlWithId,
+      };
+
+      axios(config)
+        .then((res) => res.data)
+        .then((words) => wordProcessor(words, randInts))
+        .then((processedWords) => setRandWords(processedWords))
+        .catch(() => {
+          const words = wordImporter();
+          const processedWords = wordProcessor(words, randInts);
+          setRandWords(processedWords);
+        });
+    } else {
+      const words = wordImporter();
+      const processedWords = wordProcessor(words, randInts);
+      setRandWords(processedWords);
+    }
+
     // daubers center tile
     dauberTile(12);
   }, [gameboardId, gamesStarted]);
 
   return (
-    <Container fluid
-      className='main-output-borders themed-background page'
-      id='game-session'
+    <Container
+      fluid
+      className="main-output-borders themed-background page"
+      id="game-session"
       data-theme={theme}
     >
       <Row>
