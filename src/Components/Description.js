@@ -66,7 +66,7 @@ export default function Description() {
         <div className="video-wrapper">
           <iframe
             className="demo-video rounded-4"
-            src="https://www.youtube.com/embed/P1yVieUmLPo?controls=0&autoplay=1&mute=1&modestbranding=1"
+            src="https://www.youtube.com/embed/P1yVieUmLPo?controls=0&autoplay=1&mute=1&modestbranding=1&loop=1&playlist=P1yVieUmLPo"
             title="Video showing how to play LingoBingoJS"
             allow="autoplay; encrypted-media;"
             width="560"
