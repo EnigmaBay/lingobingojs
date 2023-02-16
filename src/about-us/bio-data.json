@@ -2,15 +2,15 @@
   "data": [
     {
       "name": "Jonathan Rumsey",
-      "pronouns": "(he/him)", 
+      "pronouns": "(he/him)",
       "bio": "I am a full stack software developer with experience in systems administration and software testing. I earned a Code Fellows certificate in Advanced Software Development with Java, and I enjoy developing in Java, C#, and webapps using the MERN stack. I thrive working in groups that collaboratively design and build solutions that have a positive impact on customers.",
-      "img": "/Jon_Rainier_200x200.jpg",
+      "img": "/Jon_Rainier_400x400.jpg",
       "github": "https://github.com/nojronatron",
       "linkedin": "https://linked.in/jonathan_rumsey_wa"
     },
     {
       "name": "Ryan Schafer",
-      "pronouns": "(he/him)", 
+      "pronouns": "(he/him)",
       "bio": "I'm a software developer with a knack for learning and implementing new technologies, frameworks, and paradigms. I earned FreeCodeCamp certificates in Responsive Web Design, Front End Development Libraries, and Javascript Algorithms and Data Structures. I derive a feeling of immense satisfaction from solving challenging technical problems. I enjoy collaborating with others to produce engaging UI experiences and meaningful interactions with data.",
       "img": "/Ryan_Schafer_400x400.jpeg",
       "github": "https://github.com/schaferyan",
