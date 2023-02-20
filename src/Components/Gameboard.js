@@ -3,53 +3,16 @@ import PropTypes from 'prop-types';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import DauberLayer from './DauberLayer';
 import PartyFavor from '../funcLib/PartyFavor';
 import glitterData from '../JSON/glitter-types.json';
 import BingoAnnouncer from './BingoAnnouncer';
+import rowBuilder from './RowBuilder';
+
 import '../CSS/screenpartystyle.css';
 
 export default class Gameboard extends React.Component {
   constructor(props) {
     super(props);
-  }
-
-  rowBuilder(randWords) {
-    let result = [];
-    for (let row = 0; row < 5; row++) {
-      result.push(
-        <Row
-          key={row}
-          className='mx-0'
-        >{this.tileBuilder(row, randWords)}</Row>
-      );
-    }
-    return result;
-  }
-
-  tileBuilder(row, randWords) {
-    let result = [];
-    const incrementor = row * 5;
-    for (let col = 0; col < 5; col++) {
-      const idx = col + incrementor;
-      const currentWord = randWords[idx];
-      result.push(
-        <Col key={idx}
-          className='word-col p-1'
-          data-theme={this.props.dataTheme}
-        >
-          <DauberLayer
-            id={idx}
-            styleClass={this.props.dauberedTiles[idx] ?
-              'daubered' :
-              'plain'}
-            dataTheme={this.props.dataTheme}
-            word={currentWord}
-            handleTileClick={e => this.props.handleTileClick(e)}
-          />
-        </Col>);
-    }
-    return result;
   }
 
   renderGameboard(rows) {
@@ -90,8 +53,10 @@ export default class Gameboard extends React.Component {
   }
 
   render() {
-    const rows = this.rowBuilder(this.props.randwords);
-    const gameBoard = this.renderGameboard(rows);
+    const rows = this.props.dauberedTiles
+      ? rowBuilder(this.props.randwords, this.props.dataTheme, this.props.dauberedTiles, this.props.handleTileClick)
+      : null;
+    const gameBoard = this.props.dauberedTiles ? this.renderGameboard(rows) : null;
     const currentMove = this.props.moves;
     const bingoAnnouncementText = 'B I N G O in ' + currentMove + ' words !';
     const partyfavors = this.getPartyFavors(bingoAnnouncementText);
