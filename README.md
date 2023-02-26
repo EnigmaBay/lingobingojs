@@ -1,6 +1,6 @@
 # Lingo Bingo JS
 
-LingoBingo webapp game ported to react-js.
+LingoBingo game built using the MERN Stack!
 
 ## Overview
 
@@ -36,11 +36,13 @@ For MVP we:
 
 We plan to implement several features for this next version, adding to the utility of the game by adding user profiles so that custom word lists can be implemented.
 
-We are currently in the design phase. Some ideas include:
+We are currently in the develop phase of the following features:
 
 - Authentication and authorization.
-- Back end Database and API services.
-- Custom word list form and storage.
+- Back end Database and REST API for CRUD services.
+- Custom word list creation, storage, and editing for authorized users.
+- Web UI for registered 'Presenters' for creating and updating wordlists and bingo boards.
+- Use of Cookies and server-side Caching.
 
 This Readme and User Stories will be updates as we complete the planning and design phases for the next version.
 
@@ -58,6 +60,52 @@ Development of this project will be a collaborative effort, with the following g
 ### Accessibility
 
 We are aware of the need for inclusive, accessible-designed webapps and are working to meet those needs. We are not currently aware of any glaring accessibility issues, however we are open to improving the design to meet expectations through new or standardized methods.
+
+### How We Use Your Identifying Information
+
+We delegate authorization and registration to [Auth0](https://auth0.com/).
+
+Our code never accesses your:
+
+- Passwords or other credentials.
+- Login or account information.
+- "Social Login" information. As far as our code knows, Auth0 authenticated you (or didn't) and that's it, regardless of which social button you clicked to log in.
+
+Our code *does* have access to your email address and name:
+
+- We only use this information during authorization.
+- Your information is *never* stored in our server cache nor the database.
+- Once the API server authorizes you, this information is not used again until next time authorization is required.
+
+Our code *does* use JSON Web Tokens:
+
+- This is necessary to authorize 'registered' users.
+- Unregistered users will not be able to provide a valid Authorize Token, and therefore cannot create words lists nor game boards.
+- JSON Web Tokens are a well known, trustworthy means to provide authentication and authorization.
+
+### Registration and Sign In Questions
+
+What if I forget my password?
+
+> Click the Login button and when Auth0 prompts you to login, select 'forgot password' and go through the Auth0 validation and verification process.
+
+What if I no longer want to use Google to login?
+
+> Click the Login button and when Auth0 prompts you to login, select a new username and password to register. You will get authorization to add words and create gameboards again, but will lose access to the word lists and gameboards you made before.
+
+What if I no longer want to use a username and password to login?
+
+> Click the Login button and when Auth0 prompts you to login, select 'Login with Google' to register. You will get authorization to add words and create gameboards again, but will lose access to the word lists and gameboards you made before.
+
+Can I remove my registration information from your site?
+
+> We do not store you registration information. If at any time you want to reset or remove your account, contact an EnigmaBay developer. Our contact information is shared on the LingoBingo-JS application in the About Us page. We will correspond with you and, upon verifying your identity, can then remove your Words and Bingoboards from our database, as well as your logon information stored with Auth0.com.
+
+### Cookies
+
+LingoBingoJS uses cookies for verifying your have authorization to create word lists and game boards.
+
+Cookies do not store any personally identifying information (PII) and have an expiration, so once you stop creating, editing, or removing words or gameboards, the cookies will no longer be valid.
 
 ## Installation and Deployment
 
@@ -77,7 +125,7 @@ Review package.json for specifics, but overall this project makes use of:
 - React-bootstrap v.2+
 - Jest-dom v5.16+ for unit tests
 
-To view dependencies run `npm version` at the terminal after cloning.
+Run `npm version` at the terminal after cloning to verify NPM is v8 or newer.
 
 ### Installation
 
@@ -91,6 +139,15 @@ This project is being developed in Linux-based environments. You can choose to b
 6. Run `npm start` to run a local, development version of the website.
 
 See [reactapp readme](./README-reactapp.md) and [reactjs](https://reactjs.org/) for details on cloning, developing, testing, and running react webapps in production vs. development.
+
+### Dev and Test Usage
+
+You will need to set up the following for full-stack usage:
+
+1. An Auth0 account with an SPA and an endpoint that provides JSON Web Public Keys.
+1. An API Server deployment: See [lingobingo-back repository](https://github.com/EnigmaBay/lingobingo-back).
+1. CORS on the API Server if using a mixed http and https deployment.
+1. A MongoDB deployment with appropriate connection string and authorization parameters, and configured to allow connections only from your API Server instance.
 
 ## Development
 
