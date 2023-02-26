@@ -14,6 +14,28 @@ During the summer of 2022, Jon and Ryan decided to collaborate to bring LingoBin
 
 Build a full-stack web application that online presenters can use to as an engagement tool during their sessions, with little setup or preparation, other than knowing the terminology used in their presentation, so participants can "Bingo" from those words during the presentation.
 
+### How To Play And Use The Default Deployment
+
+#### Presenters
+
+You are going to present to an audience and want to add some fun to your presentation session.
+
+1. Open the LingoBingoJS website and click on LOG IN.
+1. Enter a username and password, or log in using a social button (e.g. Log In With Google).
+1. Onced logged on a 'Presenters Home' page will be displayed allowing you to create words in a category, as well as edit and remove words you have added.
+1. When you have at least 24 words in a single category, select 'Create Gameboard' and be sure to enter the category exactly as you defined it.
+1. The web page displays a URL that you can share with your audience, and they will get a Lingo-Bingo game board with a randomized selection of words you entered!
+1. Ask your audience members to hunt for the 'Lingo' words on their game boards, and encourage them to interrupt your presentation by yelling 'BINGO!'.
+1. It could be fun and helpful to have the attendee(s) that got a Bingo to share the 5-in-a-row Lingo words, as part of a review.
+
+#### Players, Audience, and Attendees
+
+1. Your presenter will provide you with a web URL.
+1. Click the web URL or open a web browser and past it into the 'address bar'.
+1. When the page loads a Bingo Board game session will start (for you) with a randomized list of 'Lingo' words the presenter has created for this presentation.
+1. Your presenter should tell you whether or not to yell 'BINGO!' when you see a Bingo Party on your screen (you got 5 words in any single direction).
+1. Once you 'Bingo' you can reset your game by clicking 'Play Again' or following the first few steps again in a new browser window.
+
 ## User Stories
 
 User Stories are managed by and for the Dev Team in GoogleDocs and a copy of those developing stories is stored in [userstories.md](./userstories.md) here in this repo.
@@ -59,7 +81,7 @@ Development of this project will be a collaborative effort, with the following g
 
 ### Accessibility
 
-We are aware of the need for inclusive, accessible-designed webapps and are working to meet those needs. We are not currently aware of any glaring accessibility issues, however we are open to improving the design to meet expectations through new or standardized methods.
+We are aware of the need for inclusive, accessible-designed webapps and are working to meet those needs. We are not currently aware of any glaring accessibility issues, however we are open to improving the design to meet expectations through standardized methods.
 
 ### How We Use Your Identifying Information
 
