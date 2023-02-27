@@ -314,11 +314,19 @@ ul > li {
 
 /*----------Description----------*/
 .demo-video {
-  min-width: 330px;
-  max-width: 660px;
-  min-height: 225px;
-  max-height: 350px;
-  object-fit: scale-down;
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   border: none;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 35px;
+  height: 0;
+  overflow: hidden;
 }
 
