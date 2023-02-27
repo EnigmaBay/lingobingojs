@@ -66,20 +66,21 @@ export default function GameSession() {
         .then((res) => res.data)
         .then((words) => wordProcessor(words, randInts))
         .then((processedWords) => setRandWords(processedWords))
-        .catch(() => {
-          const words = wordImporter();
-          const processedWords = wordProcessor(words, randInts);
-          setRandWords(processedWords);
-        });
+        .catch(() => importDefaultWords(randInts));
     } else {
-      const words = wordImporter();
-      const processedWords = wordProcessor(words, randInts);
-      setRandWords(processedWords);
+      const words = importDefaultWords(randInts);
+      setRandWords(words);
     }
 
     // daubers center tile
     dauberTile(12);
   }, [gameboardId, gamesStarted]);
+
+  function importDefaultWords(randInts) {
+    const words = wordImporter();
+    const processedWords = wordProcessor(words, randInts);
+    return processedWords;
+  }
 
   return (
     <Container
