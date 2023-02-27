@@ -49,7 +49,7 @@
     "no-trailing-spaces": "warn",
     "no-undefined": "off",
     "quotes": [
-      "off",
+      "warn",
       "single",
       {
         "allowTemplateLiterals": true
