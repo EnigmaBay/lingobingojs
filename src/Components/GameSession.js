@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
-import Gameboard from "./Gameboard.js";
-import randomGen from "../funcLib/RandomGen.js";
-import wordProcessor from "../funcLib/WordProcessor.js";
-import wordImporter from "../funcLib/WordImporter.js";
-import PlayAgainButton from "./PlayAgainButton.js";
-import { Col, Container, Row } from "react-bootstrap";
-import checkForBingo from "../funcLib/CheckForBingo";
-import { useOutletContext, useParams } from "react-router-dom";
-import axios from "axios";
+import React, { useEffect, useState } from 'react';
+import Gameboard from './Gameboard.js';
+import randomGen from '../funcLib/RandomGen.js';
+import wordProcessor from '../funcLib/WordProcessor.js';
+import wordImporter from '../funcLib/WordImporter.js';
+import PlayAgainButton from './PlayAgainButton.js';
+import { Col, Container, Row } from 'react-bootstrap';
+import checkForBingo from '../funcLib/CheckForBingo';
+import { useOutletContext, useParams } from 'react-router-dom';
+import axios from 'axios';
 
 export default function GameSession() {
   const [moves, setMoves] = useState(0);
@@ -57,7 +57,7 @@ export default function GameSession() {
       const apiServer = process.env.REACT_APP_API_SERVER;
 
       const config = {
-        method: "get",
+        method: 'get',
         baseURL: apiServer,
         url: urlWithId,
       };
