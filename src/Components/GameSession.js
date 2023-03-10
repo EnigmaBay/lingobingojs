@@ -17,7 +17,7 @@ export default function GameSession() {
   let {gameboardId, param2} = useParams();
   const [theme] = useOutletContext();
 
-  console.log(gameboardId + ' ' + param2);
+  console.log(gameboardId, param2);
 
   function initRandomWords() {
     const randInts = randomGen(24);
@@ -28,12 +28,16 @@ export default function GameSession() {
   function handleTileClick(e) {
     let id = e.currentTarget.id;
     if (id !== null) {
-      setDauberedTiles((prev) => {
-        let modDauberedTiles = prev;
-        modDauberedTiles[id] = true;
-        return modDauberedTiles;
+      const currentDauberedTiles = dauberedTiles;
+      currentDauberedTiles[id] = true;
+      let moveCount = -1;
+      currentDauberedTiles.forEach((tile) => {
+        if (tile === true) {
+          moveCount++;
+        }
       });
-      setMoves(moves + 1);
+      setDauberedTiles(currentDauberedTiles);
+      setMoves(moveCount);
     }
   }
 
