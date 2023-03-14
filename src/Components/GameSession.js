@@ -66,10 +66,11 @@ export default function GameSession() {
         .then((res) => res.data)
         .then((words) => wordProcessor(words, randInts))
         .then((processedWords) => setRandWords(processedWords))
-        .catch(() => importDefaultWords(randInts));
+        .catch(() => {
+          importDefaultWords(randInts);
+        });
     } else {
-      const words = importDefaultWords(randInts);
-      setRandWords(words);
+      importDefaultWords(randInts);
     }
 
     // daubers center tile
@@ -79,7 +80,7 @@ export default function GameSession() {
   function importDefaultWords(randInts) {
     const words = wordImporter();
     const processedWords = wordProcessor(words, randInts);
-    return processedWords;
+    setRandWords(processedWords);
   }
 
   return (
