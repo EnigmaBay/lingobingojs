@@ -264,8 +264,8 @@ ul > li {
 .themed-footer{
   background: #212529;
   padding-top: 1rem;
-  border-bottom-left-radius: .6rem;
-  border-bottom-right-radius: .6rem;
+  border-bottom-left-radius: .4rem;
+  border-bottom-right-radius: .4rem;
 }
 
 .themed-footer-text{
