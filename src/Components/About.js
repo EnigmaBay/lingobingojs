@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import DevBio from './DevBio.js';
-import biodata from './about-us/bio-data.json';
+import biodata from '../about-us/bio-data.json';
 import { useOutletContext } from 'react-router-dom';
 import Footer from './Footer.js';
 
@@ -20,6 +20,7 @@ export default function About() {
           dataTheme={theme}
           img={dev.img}
           name={dev.name}
+          pronouns={dev.pronouns}
           bio={dev.bio}
           linkedin={dev.linkedin}
           github={dev.github}
@@ -29,7 +30,8 @@ export default function About() {
 
   return (
     <Container
-      className='main-output-borders themed-background'
+      fluid
+      className='main-output-borders themed-background page'
       data-theme={theme}
     >
       <Row>

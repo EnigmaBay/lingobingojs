@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import CardHeader from 'react-bootstrap/esm/CardHeader';
-import LinkedinSvg from './about-us/linkedinSvg';
-import GithubSvg from './about-us/githubSvg';
+import LinkedinSvg from '../about-us/linkedinSvg';
+import GithubSvg from '../about-us/githubSvg';
 
 export default function DevBio(props) {
   return (
@@ -12,13 +12,13 @@ export default function DevBio(props) {
       <Card className='text-center mb-3 themed-text' data-theme={props.dataTheme}>
         <CardHeader>
           <Card.Title>
-            {props.name}
+            {props.name + ' ' + props.pronouns}
           </Card.Title>
           <Card.Img
             className='fluid'
             variant='top'
             src={props.img}
-            alt={props.name}
+            alt={'Photo of ' + props.name}
           />
         </CardHeader>
         <Card.Text
@@ -32,14 +32,16 @@ export default function DevBio(props) {
             data-theme={props.dataTheme}
             href={props.linkedin}
           >
-            <LinkedinSvg />LinkedIn
+            <LinkedinSvg name={props.name}/>
+            LinkedIn
           </Card.Link>
           <Card.Link
             className='mx-auto my-1 themed-hyperlink enable-pointer '
             data-theme={props.dataTheme}
             href={props.github}
           >
-            <GithubSvg />GitHub
+            <GithubSvg name={props.name}/>
+            GitHub
           </Card.Link>
         </span>
       </Card>
@@ -50,6 +52,7 @@ export default function DevBio(props) {
 DevBio.propTypes = {
   img: PropTypes.string,
   name: PropTypes.string,
+  pronouns: PropTypes.string,
   bio: PropTypes.string,
   linkedin: PropTypes.string,
   github: PropTypes.string,

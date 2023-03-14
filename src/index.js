@@ -1,19 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './root.css';
-// import App from './App';
-import Home from './Home';
-import GameSession from './GameSession.js';
-import About from './About.js';
-import Description from './Description.js';
+import './CSS/root.css';
+import Home from './Components/Home';
+import GameSession from './Components/GameSession.js';
+import About from './Components/About.js';
+import Description from './Components/Description.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './root.css';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter className='top-level-container'>
       <Routes>
         <Route path="/" element={<Home/>}>
           <Route index element={<Description/>} />
@@ -21,6 +20,8 @@ root.render(
           <Route path="signup" element = {''}/>
           <Route path="login" element = {''}/>
           <Route path="play" element = {<GameSession/>}/>
+          <Route path="play/:gameboardId" element = {<GameSession/>}/>
+          <Route path="play/:gameboardId/:param2" element = {<GameSession/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

@@ -3,29 +3,35 @@
 
 /*----------General----------*/
 
-/*Borders */
-.round-top-edges {
-  border-top-left-radius: .7rem;
-  border-top-right-radius: .7rem;
+/* Borders */
+@media only screen and (min-width: 586px){
+  .round-top-edges {
+    border-top-left-radius: .7rem;
+    border-top-right-radius: .7rem;
+  }
+  .main-output-borders {
+    border-top: 0;
+    border-bottom-left-radius: .7rem;
+    border-bottom-right-radius: .7rem;
+  }
+  .main-output-borders[data-theme='light'] {
+    border: solid 4px var(--rgba-primary-3);
+    border-top: 0;
+    border-bottom-left-radius: .7rem;
+    border-bottom-right-radius: .7rem;
+  }
+  .main-output-borders[data-theme='dark'] {
+    border: solid 4px var(--rgba-secondary-2-3);
+    border-top: 0;
+    border-bottom-left-radius: .7rem;
+    border-bottom-right-radius: .7rem;
+  }
 }
-.main-output-borders {
-  border-top: 0;
-  border-bottom-left-radius: .7rem;
-  border-bottom-right-radius: .7rem;
+@media only screen and (max-width: 586px){
+  #home-component{
+    padding: 0px;
+  }
 }
-.main-output-borders[data-theme='light'] {
-  border: solid 4px var(--rgba-primary-3);
-  border-top: 0;
-  border-bottom-left-radius: .7rem;
-  border-bottom-right-radius: .7rem;
-}
-.main-output-borders[data-theme='dark'] {
-  border: solid 4px var(--rgba-secondary-2-3);
-  border-top: 0;
-  border-bottom-left-radius: .7rem;
-  border-bottom-right-radius: .7rem;
-}
-
 
 
 /* Background */
@@ -100,6 +106,12 @@ h2 {
 .themed-hyperlink[data-theme='dark']:visited {
   color: var(--rgba-secondary-1-0);
 }
+.themed-hyperlink[data-theme='light']:link {
+  color: var(--rgba-primary-4);
+}
+.themed-hyperlink[data-theme='light']:visited {
+  color: var(--rgba-primary-3);
+}
 /* Cursor */
 .enable-pointer:hover {
   cursor: pointer;
@@ -127,7 +139,27 @@ ul > li {
 .lb-main-nav-link-active{
   color: var(--rgba-secondary-1-2);
 }
-
+@media only screen and (max-width: 586px){
+  #lb-main-navbar{
+      position: absolute;
+      width: 100%;
+      z-index: 2;
+      border-bottom: 0.5px solid var(--rgba-primary-1);
+  }
+  #basic-navbar-nav{
+    position: absolute;
+    right: 1px;
+    top: 55px;
+    background: #212529;
+    border-bottom: 0.5px solid var(--rgba-primary-1);
+    border-left: 0.5px solid var(--rgba-primary-1);;
+  }
+  .page{
+    position: relative;
+    top: 55px;
+    z-index: 1;
+  }
+}
 
 
 
@@ -148,7 +180,7 @@ ul > li {
 }
 .word-col[data-theme='light'] {
   color: var(--rgba-primary-3);
-  background: var(--rgba-secondary-1-1);
+  background: var(--rgba-secondary-2-1);
 }
 .word-col[data-theme='dark'] {
   color: var(--rgba-secondary-1-2);
@@ -165,12 +197,12 @@ ul > li {
   border-radius: 50%;
 }
 .daubered[data-theme='light'] {
-  color: var(--rgba-primary-3); /* text */
-  background: var(--rgba-primary-2); /* dauber */
+  color: var(--rgba-secondary-2-1); /* text */
+  background: var(--rgba-primary-4); /* dauber */
 }
 .daubered[data-theme='dark'] {
   color: var(--rgba-primary-3); /* text */
-  background: var( --rgba-secondary-1-4); /* dauber */
+  background: var( --rgba-secondary-1-0); /* dauber */
 }
 .plain {
   border-radius: 0;
@@ -213,12 +245,17 @@ ul > li {
 
 .lets-play{
   font-family:'Noto serif';
-  font-size: calc(.25rem + 1.6vw);
+  font-size: calc(1rem + 1.6vw);
 }
 
 .lets-play[data-theme=dark]{
   color: var(--rgba-secondary-1-0);
   background: var(--rgba-primary-3);
+}
+@media only screen and (max-width: 586px){
+  #game-session{
+    padding: 2px;
+  }
 }
 
 /*Footer*/
@@ -227,8 +264,8 @@ ul > li {
 .themed-footer{
   background: #212529;
   padding-top: 1rem;
-  border-bottom-left-radius: .6rem;
-  border-bottom-right-radius: .6rem;
+  border-bottom-left-radius: .4rem;
+  border-bottom-right-radius: .4rem;
 }
 
 .themed-footer-text{
@@ -274,3 +311,22 @@ ul > li {
   align-items: center;
   justify-content: center;
 }
+
+/*----------Description----------*/
+.demo-video {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 35px;
+  height: 0;
+  overflow: hidden;
+}
+
