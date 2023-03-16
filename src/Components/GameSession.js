@@ -29,22 +29,29 @@ export default function GameSession() {
         setDauberedTiles(currentDauberedTiles);
         setMoves(moveCount);
       }
+      dauberTile(id);
     }
   }
 
   function dauberTile(id) {
-    setDauberedTiles((prev) => {
-      let modDauberedTiles = prev;
-      modDauberedTiles[id] = true;
-      return modDauberedTiles;
+    const currentDauberedTiles = dauberedTiles;
+    currentDauberedTiles[id] = true;
+    let moveCount = -1;
+    currentDauberedTiles.forEach((tile) => {
+      if (tile === true) {
+        moveCount++;
+      }
     });
+    setDauberedTiles(currentDauberedTiles);
+    setMoves(moveCount);
   }
 
   function restartGame() {
-    setGamesStarted(gamesStarted + 1);
     setMoves(0);
     setDauberedTiles([]);
-    setGamesStarted(gamesStarted + 1);
+    let gamesStartedCount = gamesStarted;
+    gamesStartedCount++;
+    setGamesStarted(gamesStartedCount);
   }
 
   useEffect(() => {
@@ -74,10 +81,12 @@ export default function GameSession() {
     } else {
       importDefaultWords(randInts);
     }
+  }, [gameboardId, gamesStarted]);
 
+  useEffect(()=> {
     // daubers center tile
     dauberTile(12);
-  }, [gameboardId, gamesStarted]);
+  });
 
   function importDefaultWords(randInts) {
     const words = wordImporter();
