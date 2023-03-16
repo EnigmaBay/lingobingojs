@@ -22,15 +22,13 @@ export default function GameSession() {
     let id = e.currentTarget.id;
     if (id !== null) {
       const currentDauberedTiles = dauberedTiles;
-      currentDauberedTiles[id] = true;
-      let moveCount = -1;
-      currentDauberedTiles.forEach((tile) => {
-        if (tile === true) {
-          moveCount++;
-        }
-      });
-      setDauberedTiles(currentDauberedTiles);
-      setMoves(moveCount);
+      if (currentDauberedTiles[id] !== true) {
+        currentDauberedTiles[id] = true;
+        let moveCount = moves;
+        moveCount++;
+        setDauberedTiles(currentDauberedTiles);
+        setMoves(moveCount);
+      }
     }
   }
 
