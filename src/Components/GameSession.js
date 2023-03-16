@@ -7,23 +7,16 @@ import PlayAgainButton from './PlayAgainButton.js';
 import { Col, Container, Row } from 'react-bootstrap';
 import checkForBingo from '../funcLib/CheckForBingo';
 import { useOutletContext, useParams } from 'react-router-dom';
+import axios from 'axios';
 
 export default function GameSession() {
   const [moves, setMoves] = useState(0);
   const [isBingoed, setBingoed] = useState(false);
   const [dauberedTiles, setDauberedTiles] = useState([]);
   const [gamesStarted, setGamesStarted] = useState([1]);
-  const [randWords, setRandWords] = useState(initRandomWords());
-  let {gameboardId, param2} = useParams();
+  const [randWords, setRandWords] = useState([]);
+  let { gameboardId } = useParams();
   const [theme] = useOutletContext();
-
-  console.log(gameboardId, param2);
-
-  function initRandomWords() {
-    const randInts = randomGen(24);
-    let words = wordImporter();
-    return wordProcessor(words, randInts);
-  }
 
   function handleTileClick(e) {
     let id = e.currentTarget.id;
@@ -61,15 +54,44 @@ export default function GameSession() {
   }, [dauberedTiles, moves]);
 
   useEffect(() => {
-    setRandWords(initRandomWords());
+    const randInts = randomGen(24);
+
+    if (gameboardId !== undefined) {
+      const urlWithId = `${process.env.REACT_APP_GAMEBOARD_URI}${gameboardId}`;
+      const apiServer = process.env.REACT_APP_API_SERVER;
+
+      const config = {
+        method: 'get',
+        baseURL: apiServer,
+        url: urlWithId,
+      };
+
+      axios(config)
+        .then((res) => res.data)
+        .then((words) => wordProcessor(words, randInts))
+        .then((processedWords) => setRandWords(processedWords))
+        .catch(() => {
+          importDefaultWords(randInts);
+        });
+    } else {
+      importDefaultWords(randInts);
+    }
+
     // daubers center tile
     dauberTile(12);
-  }, [gamesStarted]);
+  }, [gameboardId, gamesStarted]);
+
+  function importDefaultWords(randInts) {
+    const words = wordImporter();
+    const processedWords = wordProcessor(words, randInts);
+    setRandWords(processedWords);
+  }
 
   return (
-    <Container fluid
-      className='main-output-borders themed-background page'
-      id='game-session'
+    <Container
+      fluid
+      className="main-output-borders themed-background page"
+      id="game-session"
       data-theme={theme}
     >
       <Row>

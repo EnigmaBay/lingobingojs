@@ -1,9 +1,9 @@
-import React from "react";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import { useOutletContext } from "react-router-dom";
-import Footer from "./Footer.js";
+import React from 'react';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import { useOutletContext } from 'react-router-dom';
+import Footer from './Footer.js';
 
 export default function Description() {
   // theme can be converted to a prop or user-accessible variable to select a theme
