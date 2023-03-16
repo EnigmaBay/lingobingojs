@@ -21,29 +21,21 @@ export default function GameSession() {
   function handleTileClick(e) {
     let id = e.currentTarget.id;
     if (id !== null) {
-      const currentDauberedTiles = dauberedTiles;
-      if (currentDauberedTiles[id] !== true) {
-        currentDauberedTiles[id] = true;
-        let moveCount = moves;
-        moveCount++;
-        setDauberedTiles(currentDauberedTiles);
-        setMoves(moveCount);
-      }
       dauberTile(id);
     }
   }
 
   function dauberTile(id) {
     const currentDauberedTiles = dauberedTiles;
-    currentDauberedTiles[id] = true;
-    let moveCount = -1;
-    currentDauberedTiles.forEach((tile) => {
-      if (tile === true) {
+    if (currentDauberedTiles[id] !== true) {
+      currentDauberedTiles[id] = true;
+      if (id !== 12){ // do not count FREE space
+        let moveCount = moves;
         moveCount++;
+        setMoves(moveCount);
       }
-    });
-    setDauberedTiles(currentDauberedTiles);
-    setMoves(moveCount);
+      setDauberedTiles(currentDauberedTiles);
+    }
   }
 
   function restartGame() {
