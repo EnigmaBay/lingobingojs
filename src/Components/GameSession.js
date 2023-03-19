@@ -21,12 +21,14 @@ export default function GameSession() {
   function handleTileClick(e) {
     let id = e.currentTarget.id;
     if (id !== null) {
-      setDauberedTiles((prev) => {
-        let modDauberedTiles = prev;
-        modDauberedTiles[id] = true;
-        return modDauberedTiles;
-      });
-      setMoves(moves + 1);
+      const currentDauberedTiles = dauberedTiles;
+      if (currentDauberedTiles[id] !== true) {
+        currentDauberedTiles[id] = true;
+        let moveCount = moves;
+        moveCount++;
+        setDauberedTiles(currentDauberedTiles);
+        setMoves(moveCount);
+      }
     }
   }
 
