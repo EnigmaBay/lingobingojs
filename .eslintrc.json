@@ -1,4 +1,9 @@
 {
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "globals": {
     "Mustache": true,
     "$": true
@@ -49,7 +54,7 @@
     "no-trailing-spaces": "warn",
     "no-undefined": "off",
     "quotes": [
-      "warn",
+      "error",
       "single",
       {
         "allowTemplateLiterals": true
