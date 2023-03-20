@@ -50,6 +50,9 @@ export default function GameSession() {
 
   useEffect(() => {
     setBingoed(checkForBingo(dauberedTiles, moves));
+    let currentDauberedTiles = dauberedTiles;
+    currentDauberedTiles[12] = true;
+    setDauberedTiles(currentDauberedTiles);
   }, [dauberedTiles, moves]);
 
   useEffect(() => {
@@ -75,10 +78,7 @@ export default function GameSession() {
     } else {
       importDefaultWords(randInts);
     }
-    let currentDauberedTiles = dauberedTiles;
-    currentDauberedTiles[12] = true;
-    setDauberedTiles(currentDauberedTiles);
-  }, [gameboardId, gamesStarted, dauberedTiles]);
+  }, [gameboardId, gamesStarted]);
 
   function importDefaultWords(randInts) {
     const words = wordImporter();
