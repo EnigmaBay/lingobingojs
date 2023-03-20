@@ -29,7 +29,8 @@ export default function GameSession() {
     const currentDauberedTiles = dauberedTiles;
     if (currentDauberedTiles[id] !== true) {
       currentDauberedTiles[id] = true;
-      if (id !== 12){ // do not count FREE space
+      if (id !== 12) {
+        // do not count FREE space
         let moveCount = moves;
         moveCount++;
         setMoves(moveCount);
@@ -43,6 +44,7 @@ export default function GameSession() {
     setDauberedTiles([]);
     let gamesStartedCount = gamesStarted;
     gamesStartedCount++;
+    dauberTile(12);
     setGamesStarted(gamesStartedCount);
   }
 
@@ -73,12 +75,10 @@ export default function GameSession() {
     } else {
       importDefaultWords(randInts);
     }
-  }, [gameboardId, gamesStarted]);
-
-  useEffect(()=> {
-    // daubers center tile
-    dauberTile(12);
-  });
+    let currentDauberedTiles = dauberedTiles;
+    currentDauberedTiles[12] = true;
+    setDauberedTiles(currentDauberedTiles);
+  }, [gameboardId, gamesStarted, dauberedTiles]);
 
   function importDefaultWords(randInts) {
     const words = wordImporter();
@@ -89,8 +89,8 @@ export default function GameSession() {
   return (
     <Container
       fluid
-      className="main-output-borders themed-background page"
-      id="game-session"
+      className='main-output-borders themed-background page'
+      id='game-session'
       data-theme={theme}
     >
       <Row>
@@ -106,7 +106,7 @@ export default function GameSession() {
         </Col>
       </Row>
       <Row>
-        <Col className="d-flex justify-content-center">
+        <Col className='d-flex justify-content-center'>
           {/* Center the button */}
           <PlayAgainButton
             isBingoed={isBingoed}
