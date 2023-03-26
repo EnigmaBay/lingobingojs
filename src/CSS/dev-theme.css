@@ -4,35 +4,34 @@
 /*----------General----------*/
 
 /* Borders */
-@media only screen and (min-width: 586px){
+@media only screen and (min-width: 586px) {
   .round-top-edges {
-    border-top-left-radius: .7rem;
-    border-top-right-radius: .7rem;
+    border-top-left-radius: 0.7rem;
+    border-top-right-radius: 0.7rem;
   }
   .main-output-borders {
     border-top: 0;
-    border-bottom-left-radius: .7rem;
-    border-bottom-right-radius: .7rem;
+    border-bottom-left-radius: 0.7rem;
+    border-bottom-right-radius: 0.7rem;
   }
   .main-output-borders[data-theme='light'] {
     border: solid 4px var(--rgba-primary-3);
     border-top: 0;
-    border-bottom-left-radius: .7rem;
-    border-bottom-right-radius: .7rem;
+    border-bottom-left-radius: 0.7rem;
+    border-bottom-right-radius: 0.7rem;
   }
   .main-output-borders[data-theme='dark'] {
     border: solid 4px var(--rgba-secondary-2-3);
     border-top: 0;
-    border-bottom-left-radius: .7rem;
-    border-bottom-right-radius: .7rem;
+    border-bottom-left-radius: 0.7rem;
+    border-bottom-right-radius: 0.7rem;
   }
 }
-@media only screen and (max-width: 586px){
-  #home-component{
+@media only screen and (max-width: 586px) {
+  #home-component {
     padding: 0px;
   }
 }
-
 
 /* Background */
 .themed-background[data-theme='light'] {
@@ -43,24 +42,24 @@
 }
 
 /* Header */
-.themed-header{
+.themed-header {
   font-family: 'Noto Serif';
   font-size: calc(1.75em + 1vw);
 }
 
-.themed-header[data-theme='light']{
+.themed-header[data-theme='light'] {
   color: var(--rgba-secondary-2-3);
 }
 
-.themed-header[data-theme='dark']{
+.themed-header[data-theme='dark'] {
   color: var(--rgba-secondary-1-1);
 }
 
 /* Text */
 h2 {
-  padding: .1rem .1rem .1rem 1rem;
+  padding: 0.1rem 0.1rem 0.1rem 1rem;
 }
-.themed-text{
+.themed-text {
   font-family: 'Andika';
   font-size: 1.1em;
 }
@@ -68,17 +67,17 @@ h2 {
 .themed-text[data-theme='light'] {
   color: var(--rgba-secondary-2-3);
   background-color: var(--rgba-secondary-1-2);
-  padding: .5rem 1.5rem .5rem 1.5rem;
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
 }
 .themed-text[data-theme='dark'] {
   color: var(--rgba-secondary-1-1);
   background-color: var(--rgba-secondary-1-3);
-  padding: .5rem 1.5rem .5rem 1.5rem;
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
 }
 
 /* Buttons */
 .themed-button {
-  font-size: calc(.25rem + 1.6vw);
+  font-size: calc(0.25rem + 1.6vw);
   font-family: 'Noto Serif';
 }
 
@@ -89,13 +88,35 @@ h2 {
 }
 .themed-button[data-theme='dark'] {
   color: var(--rgba-primary-3);
-  background-color: var( --rgba-secondary-1-0);
+  background-color: var(--rgba-secondary-1-0);
 }
-.highlight-button[data-theme=light]:hover {
+.highlight-button[data-theme='light']:hover {
   background-color: var(--rgba-secondary-1-3);
   color: var(--rgba-secondary-1-2);
 }
-.highlight-button[data-theme=dark]:hover {
+.highlight-button[data-theme='dark']:hover {
+  background-color: var(--rgba-secondary-1-3);
+}
+
+.themed-button-sm {
+  font-size: calc(0.25rem + 1.3vw);
+  font-family: 'Noto Serif';
+  border-radius: 1rem;
+}
+.themed-button-sm[data-theme='light'] {
+  color: var(--rgba-secondary-2-3);
+  background-color: var(--rgba-secondary-1-2);
+  border: solid 2px var(--rgba-secondary-2-3);
+}
+.themed-button-sm[data-theme='dark'] {
+  color: var(--rgba-primary-3);
+  background-color: var(--rgba-secondary-1-0);
+}
+.highlight-button-sm[data-theme='light']:hover {
+  background-color: var(--rgba-secondary-1-3);
+  color: var(--rgba-secondary-1-2);
+}
+.highlight-button-sm[data-theme='dark']:hover {
   background-color: var(--rgba-secondary-1-3);
 }
 
@@ -127,41 +148,39 @@ ul > li {
   line-height: 2rem;
 }
 
-.lb-main-nav-link{
+.lb-main-nav-link {
   padding: 10px;
   text-decoration: none;
   color: var(--rgba-primary-1);
 }
 
-.lb-main-nav-link:hover{
+.lb-main-nav-link:hover {
   color: var(--rgba-secondary-1-2);
 }
-.lb-main-nav-link-active{
+.lb-main-nav-link-active {
   color: var(--rgba-secondary-1-2);
 }
-@media only screen and (max-width: 586px){
-  #lb-main-navbar{
-      position: absolute;
-      width: 100%;
-      z-index: 2;
-      border-bottom: 0.5px solid var(--rgba-primary-1);
+@media only screen and (max-width: 586px) {
+  #lb-main-navbar {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    border-bottom: 0.5px solid var(--rgba-primary-1);
   }
-  #basic-navbar-nav{
+  #basic-navbar-nav {
     position: absolute;
     right: 1px;
     top: 55px;
     background: #212529;
     border-bottom: 0.5px solid var(--rgba-primary-1);
-    border-left: 0.5px solid var(--rgba-primary-1);;
+    border-left: 0.5px solid var(--rgba-primary-1);
   }
-  .page{
+  .page {
     position: relative;
     top: 55px;
     z-index: 1;
   }
 }
-
-
 
 /*----------Game----------*/
 
@@ -171,12 +190,12 @@ ul > li {
   justify-content: center;
   height: 6em;
   font-family: 'Mulish';
-  font-size: calc(.35rem + .9vw);
+  font-size: calc(0.35rem + 0.9vw);
   font-weight: 600;
-  margin-bottom: .7vw;
-  margin-left: .35vw;
-  margin-right: .35vw;
-  border-radius: .6em;
+  margin-bottom: 0.7vw;
+  margin-left: 0.35vw;
+  margin-right: 0.35vw;
+  border-radius: 0.6em;
 }
 .word-col[data-theme='light'] {
   color: var(--rgba-primary-3);
@@ -202,7 +221,7 @@ ul > li {
 }
 .daubered[data-theme='dark'] {
   color: var(--rgba-primary-3); /* text */
-  background: var( --rgba-secondary-1-0); /* dauber */
+  background: var(--rgba-secondary-1-0); /* dauber */
 }
 .plain {
   border-radius: 0;
@@ -213,7 +232,7 @@ ul > li {
 .plain[data-theme='dark'] {
   color: var(--rgba-secondary-1-2);
 }
-.highlight-tile[data-theme=light]:hover {
+.highlight-tile[data-theme='light']:hover {
   background-color: var(--rgba-primary-1);
   border-radius: 50%;
   width: 100%;
@@ -222,7 +241,7 @@ ul > li {
   align-items: center;
   justify-content: center;
 }
-.highlight-tile[data-theme=dark]:hover {
+.highlight-tile[data-theme='dark']:hover {
   background-color: var(--rgba-secondary-1-1);
   color: var(--rgba-primary-3);
   border-radius: 50%;
@@ -233,77 +252,74 @@ ul > li {
   justify-content: center;
 }
 
-.highlight-tile[data-theme=light]:active {
+.highlight-tile[data-theme='light']:active {
   color: var(--rgba-primary-3);
   background: var(--rgba-primary-2);
 }
 
-.highlight-tile[data-theme=dark]:active {
+.highlight-tile[data-theme='dark']:active {
   color: var(--rgba-primary-2);
   background: var(--rgba-primary-3);
 }
 
-.lets-play{
-  font-family:'Noto serif';
+.lets-play {
+  font-family: 'Noto serif';
   font-size: calc(1rem + 1.6vw);
 }
 
-.lets-play[data-theme=dark]{
+.lets-play[data-theme='dark'] {
   color: var(--rgba-secondary-1-0);
   background: var(--rgba-primary-3);
 }
-@media only screen and (max-width: 586px){
-  #game-session{
+@media only screen and (max-width: 586px) {
+  #game-session {
     padding: 2px;
   }
 }
 
 /*Footer*/
 
-
-.themed-footer{
+.themed-footer {
   background: #212529;
   padding-top: 1rem;
-  border-bottom-left-radius: .4rem;
-  border-bottom-right-radius: .4rem;
+  border-bottom-left-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
 }
 
-.themed-footer-text{
+.themed-footer-text {
   font-family: 'Andika';
   font-size: 0.8em;
   color: var(--rgba-secondary-1-1);
 }
-.themed-footer-text-small{
+.themed-footer-text-small {
   font-size: 0.7em;
 }
 
-.themed-footer a{
+.themed-footer a {
   text-decoration: none;
 }
-.themed-footer[data-theme=dark] a{
+.themed-footer[data-theme='dark'] a {
   color: var(--rgba-primary-1);
 }
 
-.themed-footer[data-theme=light] a{
+.themed-footer[data-theme='light'] a {
   color: var(--rgba-secondary-1-2);
 }
 
-.themed-footer[data-theme=light] a:visited{
+.themed-footer[data-theme='light'] a:visited {
   color: var(--rgba-secondary-1-4);
 }
 
-.themed-footer[data-theme=dark] a:visited{
+.themed-footer[data-theme='dark'] a:visited {
   color: var(--rgba-primary-2);
 }
 
-.themed-footer[data-theme=dark] a:hover{
+.themed-footer[data-theme='dark'] a:hover {
   color: var(--rgba-secondary-1-2);
 }
-.themed-footer[data-theme=light] a:hover{
+.themed-footer[data-theme='light'] a:hover {
   color: var(--rgba-primary-1);
 }
-
-
 
 /*----------About Us----------*/
 .dev-bio-column {
@@ -315,7 +331,7 @@ ul > li {
 /*----------Description----------*/
 .demo-video {
   position: absolute;
-  top:0;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
@@ -329,4 +345,3 @@ ul > li {
   height: 0;
   overflow: hidden;
 }
-
