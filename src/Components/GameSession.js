@@ -31,12 +31,9 @@ export default function GameSession() {
     const currentDauberedTiles = dauberedTiles;
     if (currentDauberedTiles[id] !== true) {
       currentDauberedTiles[id] = true;
-      if (id !== 12) {
-        // do not count FREE space
-        let moveCount = moves;
-        moveCount++;
-        setMoves(moveCount);
-      }
+      let moveCount = moves;
+      moveCount++;
+      setMoves(moveCount);
       setDauberedTiles(currentDauberedTiles);
     }
   }
@@ -46,7 +43,7 @@ export default function GameSession() {
     setDauberedTiles(defaultDauberedTiles);
     let gamesStartedCount = gamesStarted;
     gamesStartedCount++;
-    dauberTile(12);
+    // dauberTile(12);
     setGamesStarted(gamesStartedCount);
   }
 
