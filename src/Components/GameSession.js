@@ -12,7 +12,9 @@ import axios from 'axios';
 export default function GameSession() {
   const [moves, setMoves] = useState(0);
   const [isBingoed, setBingoed] = useState(false);
-  const [dauberedTiles, setDauberedTiles] = useState([]);
+  const defaultDauberedTiles = [];
+  defaultDauberedTiles[12] = true;
+  const [dauberedTiles, setDauberedTiles] = useState(defaultDauberedTiles);
   const [gamesStarted, setGamesStarted] = useState([1]);
   const [randWords, setRandWords] = useState([]);
   let { gameboardId } = useParams();
@@ -29,31 +31,27 @@ export default function GameSession() {
     const currentDauberedTiles = dauberedTiles;
     if (currentDauberedTiles[id] !== true) {
       currentDauberedTiles[id] = true;
-      if (id !== 12) {
-        // do not count FREE space
-        let moveCount = moves;
-        moveCount++;
-        setMoves(moveCount);
-      }
+      let moveCount = moves;
+      moveCount++;
+      setMoves(moveCount);
       setDauberedTiles(currentDauberedTiles);
     }
   }
 
   function restartGame() {
     setMoves(0);
-    setDauberedTiles([]);
+    setDauberedTiles(defaultDauberedTiles);
     let gamesStartedCount = gamesStarted;
     gamesStartedCount++;
-    dauberTile(12);
+    // dauberTile(12);
     setGamesStarted(gamesStartedCount);
   }
 
   useEffect(() => {
     setBingoed(checkForBingo(dauberedTiles, moves));
-    let currentDauberedTiles = dauberedTiles;
-    currentDauberedTiles[12] = true;
-    setDauberedTiles(currentDauberedTiles);
-    console.log('the effect is running');
+    // let currentDauberedTiles = dauberedTiles;
+    // currentDauberedTiles[12] = true;
+    // setDauberedTiles(currentDauberedTiles);
   }, [dauberedTiles, moves]);
 
   useEffect(() => {
