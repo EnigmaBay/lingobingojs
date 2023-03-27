@@ -12,7 +12,9 @@ import axios from 'axios';
 export default function GameSession() {
   const [moves, setMoves] = useState(0);
   const [isBingoed, setBingoed] = useState(false);
-  const [dauberedTiles, setDauberedTiles] = useState([]);
+  const defaultDauberedTiles = [];
+  defaultDauberedTiles[12] = true;
+  const [dauberedTiles, setDauberedTiles] = useState(defaultDauberedTiles);
   const [gamesStarted, setGamesStarted] = useState([1]);
   const [randWords, setRandWords] = useState([]);
   let { gameboardId } = useParams();
@@ -41,7 +43,7 @@ export default function GameSession() {
 
   function restartGame() {
     setMoves(0);
-    setDauberedTiles([]);
+    setDauberedTiles(defaultDauberedTiles);
     let gamesStartedCount = gamesStarted;
     gamesStartedCount++;
     dauberTile(12);
@@ -50,9 +52,9 @@ export default function GameSession() {
 
   useEffect(() => {
     setBingoed(checkForBingo(dauberedTiles, moves));
-    let currentDauberedTiles = dauberedTiles;
-    currentDauberedTiles[12] = true;
-    setDauberedTiles(currentDauberedTiles);
+    // let currentDauberedTiles = dauberedTiles;
+    // currentDauberedTiles[12] = true;
+    // setDauberedTiles(currentDauberedTiles);
   }, [dauberedTiles, moves]);
 
   useEffect(() => {
