@@ -53,6 +53,7 @@ export default function GameSession() {
     let currentDauberedTiles = dauberedTiles;
     currentDauberedTiles[12] = true;
     setDauberedTiles(currentDauberedTiles);
+    console.log('the effect is running');
   }, [dauberedTiles, moves]);
 
   useEffect(() => {
