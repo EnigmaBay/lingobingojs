@@ -12,7 +12,9 @@ import axios from 'axios';
 export default function GameSession() {
   const [moves, setMoves] = useState(0);
   const [isBingoed, setBingoed] = useState(false);
-  const [dauberedTiles, setDauberedTiles] = useState([]);
+  const defaultDauberedTiles = [];
+  defaultDauberedTiles[12] = true;
+  const [dauberedTiles, setDauberedTiles] = useState(defaultDauberedTiles);
   const [gamesStarted, setGamesStarted] = useState([1]);
   const [randWords, setRandWords] = useState([]);
   let { gameboardId } = useParams();
@@ -21,28 +23,27 @@ export default function GameSession() {
   function handleTileClick(e) {
     let id = e.currentTarget.id;
     if (id !== null) {
-      setDauberedTiles((prev) => {
-        let modDauberedTiles = prev;
-        modDauberedTiles[id] = true;
-        return modDauberedTiles;
-      });
-      setMoves(moves + 1);
+      dauberTile(id);
     }
   }
 
   function dauberTile(id) {
-    setDauberedTiles((prev) => {
-      let modDauberedTiles = prev;
-      modDauberedTiles[id] = true;
-      return modDauberedTiles;
-    });
+    const currentDauberedTiles = dauberedTiles;
+    if (currentDauberedTiles[id] !== true) {
+      currentDauberedTiles[id] = true;
+      let moveCount = moves;
+      moveCount++;
+      setMoves(moveCount);
+      setDauberedTiles(currentDauberedTiles);
+    }
   }
 
   function restartGame() {
-    setGamesStarted(gamesStarted + 1);
     setMoves(0);
-    setDauberedTiles([]);
-    setGamesStarted(gamesStarted + 1);
+    setDauberedTiles(defaultDauberedTiles);
+    let gamesStartedCount = gamesStarted;
+    gamesStartedCount++;
+    setGamesStarted(gamesStartedCount);
   }
 
   useEffect(() => {
@@ -72,9 +73,6 @@ export default function GameSession() {
     } else {
       importDefaultWords(randInts);
     }
-
-    // daubers center tile
-    dauberTile(12);
   }, [gameboardId, gamesStarted]);
 
   function importDefaultWords(randInts) {
@@ -86,8 +84,8 @@ export default function GameSession() {
   return (
     <Container
       fluid
-      className="main-output-borders themed-background page"
-      id="game-session"
+      className='main-output-borders themed-background page'
+      id='game-session'
       data-theme={theme}
     >
       <Row>
@@ -103,7 +101,7 @@ export default function GameSession() {
         </Col>
       </Row>
       <Row>
-        <Col className="d-flex justify-content-center">
+        <Col className='d-flex justify-content-center'>
           {/* Center the button */}
           <PlayAgainButton
             isBingoed={isBingoed}
