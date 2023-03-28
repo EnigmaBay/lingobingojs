@@ -43,15 +43,11 @@ export default function GameSession() {
     setDauberedTiles(defaultDauberedTiles);
     let gamesStartedCount = gamesStarted;
     gamesStartedCount++;
-    // dauberTile(12);
     setGamesStarted(gamesStartedCount);
   }
 
   useEffect(() => {
     setBingoed(checkForBingo(dauberedTiles, moves));
-    // let currentDauberedTiles = dauberedTiles;
-    // currentDauberedTiles[12] = true;
-    // setDauberedTiles(currentDauberedTiles);
   }, [dauberedTiles, moves]);
 
   useEffect(() => {
