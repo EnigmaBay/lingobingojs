@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import CustomAccordionToggle from './CustomAccordionToggle';
+import FetchCategories from './FetchCategories';
 
 export default function PresenterForm() {
+  const [categoryListVisible, setCategoryListVisible] = useState(false);
   const [theme] = useOutletContext();
 
   function handleGetCategories(e) {
     e.preventDefault();
     console.log('handleGetCategories called.');
+    setCategoryListVisible(true);
   }
 
   function handleSubmit(e) {
@@ -60,6 +63,7 @@ export default function PresenterForm() {
                 Get Categories
               </button>
             </div>
+            {categoryListVisible && <FetchCategories />}
             <hr></hr>
             <Form onSubmit={handleSubmit}>
               <Form.Group className='my-3' controlId='formCategoryGetWords'>
