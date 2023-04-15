@@ -4,9 +4,9 @@ import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import CustomAccordionToggle from './CustomAccordionToggle';
-import FetchCategories from './FetchCategories';
+import FetchCategories from './FetchCategories.js';
 
-export default function PresenterForm() {
+export default function PresenterForm(props) {
   const [categoryListVisible, setCategoryListVisible] = useState(false);
   const [theme] = useOutletContext();
 
@@ -33,6 +33,8 @@ export default function PresenterForm() {
     }
     console.log('handleSubmit completed.');
   }
+
+  console.log('profile props code', props.encodedPayload);
 
   return (
     <Accordion
@@ -63,7 +65,9 @@ export default function PresenterForm() {
                 Get Categories
               </button>
             </div>
-            {categoryListVisible && <FetchCategories />}
+            {categoryListVisible && (
+              <FetchCategories encodedPayload={props.encodedPayload} />
+            )}
             <hr></hr>
             <Form onSubmit={handleSubmit}>
               <Form.Group className='my-3' controlId='formCategoryGetWords'>
