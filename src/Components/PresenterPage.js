@@ -8,7 +8,7 @@ import Footer from './Footer.js';
 import LoginButton from '../Auth/LoginButton';
 import LogoutButton from '../Auth/LogoutButton.js';
 import Profile from '../Auth/Profile.js';
-import PresenterForm from './PresenterForm';
+import PresenterForm from '../Data/PresenterForm.js';
 
 export default function PresenterPage() {
   const [theme] = useOutletContext();
@@ -16,48 +16,82 @@ export default function PresenterPage() {
     useAuth0();
   const [isApiAuthorized, setIsApiAuthorized] = useState(false);
   const [encodedPayload, setEncodedPayload] = useState('');
+  const [accessToken, setAccessToken] = useState(null);
 
   useEffect(() => {
-    async function fetchData() {
-      if (user !== undefined) {
-        const isVerified = user.email_verified ? 'true' : 'false';
-        console.log('profile: user is defined and isVerified is', isVerified);
-        const accessToken = await getAccessTokenSilently({
-          authorizationParams: {
-            audience: process.env.REACT_APP_API_SERVER,
-            scope: 'read:current_user',
-          },
-        });
-        console.log('got access token', accessToken);
-        const payloadData = `${user.nickname},${user.email},${user.name},${isVerified}`;
-        const base64encodedPayload = Buffer.from(payloadData, 'utf8')
-          .toString('base64')
-          .replaceAll('+', '-')
-          .replaceAll('/', '_'); // convert base64 to base64url
-        setEncodedPayload(base64encodedPayload);
-        console.log('encodedPayload', encodedPayload);
+    let ignore = false;
 
-        const authorizeUrl = `${process.env.REACT_APP_AUDIENCEURL}/authorize/${encodedPayload}`;
-        const config = {
-          method: 'get',
-          baseURL: process.env.REACT_APP_API_SERVER,
-          url: authorizeUrl,
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-        };
-        axios(config)
-          .then(() => setIsApiAuthorized(true))
-          .catch((error) => {
-            console.error(error);
-            setIsApiAuthorized(false);
+    async function fetchData() {
+      if (!ignore) {
+        if (user !== undefined) {
+          const isVerified = user.email_verified ? 'true' : 'false';
+          console.log('profile: user is defined and isVerified is', isVerified);
+          const accessToken = await getAccessTokenSilently({
+            authorizationParams: {
+              audience: process.env.REACT_APP_API_SERVER,
+              scope: 'read:current_user',
+            },
           });
-      } else {
-        setIsApiAuthorized(false);
+          console.log('got access token', accessToken);
+          const payloadData = `${user.nickname},${user.email},${user.name},${isVerified}`;
+          console.log('PresenterPage payloadData to be encoded', payloadData);
+
+          const base64encodedPayload = Buffer.from(payloadData, 'utf8')
+            .toString('base64')
+            .replaceAll('+', '-')
+            .replaceAll('/', '_'); // convert base64 to base64url
+          setEncodedPayload(base64encodedPayload);
+          console.log(
+            'PresenterPage encodedPayload to send to server',
+            encodedPayload
+          );
+
+          const authorizeUrl = `${process.env.REACT_APP_AUDIENCEURL}/authorize/${encodedPayload}`;
+          const config = {
+            method: 'get',
+            baseURL: process.env.REACT_APP_API_SERVER,
+            url: authorizeUrl,
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+            },
+          };
+
+          axios(config)
+            .then((response) => {
+              console.log('PresenterPage response headers', response.headers);
+              console.log('PresenterPage response data', response.data);
+              console.log('PresenterPage response status', response.status);
+              setAccessToken(accessToken);
+              return response;
+            })
+            .then((resStatus) => {
+              const authz = resStatus.status === 200 ? true : false;
+              setIsApiAuthorized(authz);
+            })
+            .catch((error) => {
+              console.error(error);
+              setIsApiAuthorized(false);
+            });
+        } else {
+          setIsApiAuthorized(false);
+          setAccessToken(null);
+        }
       }
     }
+
     fetchData();
-  }, [getAccessTokenSilently, setEncodedPayload, setIsApiAuthorized, user]);
+
+    return () => {
+      ignore = true;
+    };
+  }, [
+    encodedPayload,
+    getAccessTokenSilently,
+    setAccessToken,
+    setEncodedPayload,
+    setIsApiAuthorized,
+    user,
+  ]);
 
   if (isLoading) {
     return (
@@ -76,16 +110,6 @@ export default function PresenterPage() {
 
   if (isApiAuthorized) {
     console.log('isApiAuthorized', isApiAuthorized);
-  }
-
-  if (isLoading) {
-    return (
-      <Card data-theme={theme} className='themed-background mt-4'>
-        <Card.Header data-theme={theme}>
-          <Card.Text data-theme={theme}>Loading. . .</Card.Text>
-        </Card.Header>
-      </Card>
-    );
   }
 
   return (
@@ -109,14 +133,19 @@ export default function PresenterPage() {
             <Profile
               username={user.name}
               emailVerified={user.email_verified}
-              isApiAuthorised={isApiAuthorized}
+              isApiAuthorized={isApiAuthorized}
             />
           )}
         </Col>
       </Row>
       <Row>
         <Col className='md-8 pb-4'>
-          <PresenterForm encodedPayload={encodedPayload} />
+          {isApiAuthorized && (
+            <PresenterForm
+              encodedPayload={encodedPayload}
+              accessToken={accessToken}
+            />
+          )}
         </Col>
       </Row>
       <Row>
