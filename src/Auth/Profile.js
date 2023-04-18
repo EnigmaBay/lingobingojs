@@ -1,6 +1,7 @@
 import React from 'react';
 import { useOutletContext } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
+import PropTypes from 'prop-types';
 
 export default function Profile(props) {
   const [theme] = useOutletContext();
@@ -22,3 +23,9 @@ export default function Profile(props) {
     </Card>
   );
 }
+
+Profile.propTypes = {
+  username: PropTypes.string,
+  emailVerified: PropTypes.bool,
+  isApiAuthorized: PropTypes.bool,
+};
