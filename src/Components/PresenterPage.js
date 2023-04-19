@@ -25,52 +25,42 @@ export default function PresenterPage() {
       if (!ignore) {
         if (user !== undefined) {
           const isVerified = user.email_verified ? 'true' : 'false';
-          console.log('profile: user is defined and isVerified is', isVerified);
-          const accessToken = await getAccessTokenSilently({
+          const payloadData = `${user.nickname},${user.email},${user.name},${isVerified}`;
+
+          const fetchedAccessToken = await getAccessTokenSilently({
             authorizationParams: {
               audience: process.env.REACT_APP_API_SERVER,
               scope: 'read:current_user',
             },
           });
-          console.log('got access token', accessToken);
-          const payloadData = `${user.nickname},${user.email},${user.name},${isVerified}`;
-          console.log('PresenterPage payloadData to be encoded', payloadData);
 
           const base64encodedPayload = Buffer.from(payloadData, 'utf8')
             .toString('base64')
             .replaceAll('+', '-')
             .replaceAll('/', '_'); // convert base64 to base64url
-          setEncodedPayload(base64encodedPayload);
-          console.log(
-            'PresenterPage encodedPayload to send to server',
-            encodedPayload
-          );
 
-          const authorizeUrl = `${process.env.REACT_APP_AUDIENCEURL}/authorize/${encodedPayload}`;
+          const authorizeUrl = `${process.env.REACT_APP_AUDIENCEURL}/authorize/${base64encodedPayload}`;
           const config = {
             method: 'get',
             baseURL: process.env.REACT_APP_API_SERVER,
             url: authorizeUrl,
             headers: {
-              Authorization: `Bearer ${accessToken}`,
+              Authorization: `Bearer ${fetchedAccessToken}`,
             },
           };
 
           axios(config)
             .then((response) => {
-              console.log('PresenterPage response headers', response.headers);
-              console.log('PresenterPage response data', response.data);
-              console.log('PresenterPage response status', response.status);
-              setAccessToken(accessToken);
-              return response;
-            })
-            .then((resStatus) => {
-              const authz = resStatus.status === 200 ? true : false;
-              setIsApiAuthorized(authz);
+              setEncodedPayload(base64encodedPayload);
+              setAccessToken(fetchedAccessToken);
+              const { message } = response.data;
+              const isAuth = message === 'Authorized.' ? true : false;
+              setIsApiAuthorized(isAuth);
             })
             .catch((error) => {
               console.error(error);
               setIsApiAuthorized(false);
+              setAccessToken(null);
             });
         } else {
           setIsApiAuthorized(false);
@@ -85,7 +75,6 @@ export default function PresenterPage() {
       ignore = true;
     };
   }, [
-    encodedPayload,
     getAccessTokenSilently,
     setAccessToken,
     setEncodedPayload,
@@ -101,15 +90,6 @@ export default function PresenterPage() {
         </Card.Header>
       </Card>
     );
-  }
-
-  if (isAuthenticated) {
-    console.log('Auth0 user object', user);
-    console.log('name, email, locale', user.name, user.email, user.locale);
-  }
-
-  if (isApiAuthorized) {
-    console.log('isApiAuthorized', isApiAuthorized);
   }
 
   return (
@@ -140,7 +120,7 @@ export default function PresenterPage() {
       </Row>
       <Row>
         <Col className='md-8 pb-4'>
-          {isApiAuthorized && (
+          {isAuthenticated && isApiAuthorized && (
             <PresenterForm
               encodedPayload={encodedPayload}
               accessToken={accessToken}
