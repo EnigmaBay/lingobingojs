@@ -3,6 +3,7 @@ import { useOutletContext } from 'react-router-dom';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
+import PropTypes from 'prop-types';
 import CustomAccordionToggle from '../Components/CustomAccordionToggle';
 import AddWord from './AddWord';
 import AddWords from './AddWords';
@@ -67,12 +68,6 @@ export default function PresenterForm(props) {
     const visibility = addWordsListVisible ? false : true;
     setAddWordsListVisible(visibility);
   }
-
-  console.log(
-    'profile props payload and token',
-    props.encodedPayload,
-    props.accessToken
-  );
 
   return (
     <Accordion
@@ -246,3 +241,8 @@ export default function PresenterForm(props) {
     </Accordion>
   );
 }
+
+PresenterForm.propTypes = {
+  accessToken: PropTypes.string,
+  encodedPayload: PropTypes.string,
+};

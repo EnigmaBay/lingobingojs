@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import axios from 'axios';
 
 export default function FetchCategories(props) {
@@ -45,12 +46,6 @@ export default function FetchCategories(props) {
     return <div>Loading. . .</div>;
   }
 
-  console.log(
-    'fetchCategories props:',
-    props.encodedPayload,
-    props.accessToken
-  );
-
   return (
     <ul>
       {categories.map((category, idx) => {
@@ -59,3 +54,8 @@ export default function FetchCategories(props) {
     </ul>
   );
 }
+
+FetchCategories.propTypes = {
+  accessToken: PropTypes.string,
+  encodedPayload: PropTypes.string,
+};
