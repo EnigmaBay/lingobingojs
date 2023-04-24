@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 export default function FetchWords(props) {
   const [words, setWords] = useState(null);
@@ -57,3 +58,9 @@ export default function FetchWords(props) {
     </ul>
   );
 }
+
+FetchWords.PropTypes = {
+  category: PropTypes.string,
+  encodedPayload: PropTypes.string,
+  accessToken: PropTypes.string,
+};

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 export default function AddWord(props) {
   const [response, setResponse] = useState(null);
@@ -56,3 +57,11 @@ export default function AddWord(props) {
 
   return <div>{response}</div>;
 }
+
+AddWords.PropTypes = {
+  encodedPayload: PropTypes.string,
+  accessToken: PropTypes.string,
+  category: PropTypes.string,
+  newWord: PropTypes.string,
+  word: PropTypes.string,
+};

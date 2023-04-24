@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAccordionButton } from 'react-bootstrap/AccordionButton';
 import { useOutletContext } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export default function CustomAccordionToggle({ children, eventKey }) {
   const [theme] = useOutletContext();
@@ -19,3 +20,8 @@ export default function CustomAccordionToggle({ children, eventKey }) {
     </button>
   );
 }
+
+CustomAccordionToggle.PropTypes = {
+  children: PropTypes.object,
+  eventKey: PropTypes.number,
+};

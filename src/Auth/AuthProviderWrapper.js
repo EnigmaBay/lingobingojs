@@ -1,5 +1,6 @@
 import React from 'react';
 import { Auth0Provider } from '@auth0/auth0-react';
+import PropTypes from 'prop-types';
 
 export default function AuthProviderWrapper({ children }) {
   const domain = process.env.REACT_APP_AUTH0_DOMAIN;
@@ -24,3 +25,7 @@ export default function AuthProviderWrapper({ children }) {
     </Auth0Provider>
   );
 }
+
+AuthProviderWrapper.PropTypes = {
+  children: PropTypes.object,
+};
