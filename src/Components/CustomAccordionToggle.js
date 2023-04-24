@@ -22,6 +22,6 @@ export default function CustomAccordionToggle({ children, eventKey }) {
 }
 
 CustomAccordionToggle.PropTypes = {
-  children: PropTypes.object,
+  children: PropTypes.node.isRequired,
   eventKey: PropTypes.number,
 };
