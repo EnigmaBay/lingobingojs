@@ -58,7 +58,7 @@ export default function AddWord(props) {
   return <div>{response}</div>;
 }
 
-AddWords.PropTypes = {
+AddWord.PropTypes = {
   encodedPayload: PropTypes.string,
   accessToken: PropTypes.string,
   category: PropTypes.string,
