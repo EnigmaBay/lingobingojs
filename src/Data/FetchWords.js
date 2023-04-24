@@ -59,7 +59,7 @@ export default function FetchWords(props) {
   );
 }
 
-FetchWords.PropTypes = {
+FetchWords.propTypes = {
   category: PropTypes.string,
   encodedPayload: PropTypes.string,
   accessToken: PropTypes.string,

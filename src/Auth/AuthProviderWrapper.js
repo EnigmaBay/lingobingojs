@@ -26,6 +26,6 @@ export default function AuthProviderWrapper({ children }) {
   );
 }
 
-AuthProviderWrapper.PropTypes = {
+AuthProviderWrapper.propTypes = {
   children: PropTypes.node.isRequired,
 };
