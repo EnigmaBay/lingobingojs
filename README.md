@@ -2,9 +2,11 @@
 
 LingoBingo game built using the MERN Stack!
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/978bc5d2-6caa-489a-8311-a288ea487d50/deploy-status)](https://app.netlify.com/sites/eb-lingobingo/deploys)
+
 ## Overview
 
-Jon attended a webinar about engaging audiences during online presentations *[Cindy Huggett et al]*. One of the tips was to use a "Buzzword Bingo" game that attendees could play during the webinar to help maintain audience attention and engagement.
+Jon attended a webinar about engaging audiences during online presentations _[Cindy Huggett et al]_. One of the tips was to use a "Buzzword Bingo" game that attendees could play during the webinar to help maintain audience attention and engagement.
 
 In 2021 Jon deployed a simple [LingoBingo game using C# and Azure WebApps](https://github.com/nojronatron/LingoBingoGen). This version was used during a live, remote training call and there was good participation and positive feedback, proving this to be a viable, useful project.
 
@@ -93,13 +95,13 @@ Our code never accesses your:
 - Login or account information.
 - "Social Login" information. As far as our code knows, Auth0 authenticated you (or didn't) and that's it, regardless of which social button you clicked to log in.
 
-Our code *does* have access to your email address and name:
+Our code _does_ have access to your email address and name:
 
 - We only use this information during authorization.
-- Your information is *never* stored in our server cache nor the database.
+- Your information is _never_ stored in our server cache nor the database.
 - Once the API server authorizes you, this information is not used again until next time authorization is required.
 
-Our code *does* use JSON Web Tokens:
+Our code _does_ use JSON Web Tokens:
 
 - This is necessary to authorize 'registered' users.
 - Unregistered users will not be able to provide a valid Authorize Token, and therefore cannot create words lists nor game boards.
