@@ -23,7 +23,8 @@ export default function PresenterPage() {
 
     async function fetchData() {
       if (!ignore) {
-        if (user !== undefined) {
+        console.log('encodedPayload len =>', encodedPayload.length);
+        if (user !== undefined && encodedPayload.length > 0) {
           const isVerified = user.email_verified ? 'true' : 'false';
           const payloadData = `${user.nickname},${user.email},${user.name},${isVerified}`;
 
@@ -78,6 +79,7 @@ export default function PresenterPage() {
   }, [
     getAccessTokenWithPopup,
     setAccessToken,
+    encodedPayload,
     setEncodedPayload,
     setIsApiAuthorized,
     user,
