@@ -12,7 +12,7 @@ import PresenterForm from '../Data/PresenterForm.js';
 
 export default function PresenterPage() {
   const [theme] = useOutletContext();
-  const { isAuthenticated, isLoading, getAccessTokenSilently, user } =
+  const { isAuthenticated, isLoading, getAccessTokenWithPopup, user } =
     useAuth0();
   const [isApiAuthorized, setIsApiAuthorized] = useState(false);
   const [encodedPayload, setEncodedPayload] = useState('');
@@ -27,7 +27,7 @@ export default function PresenterPage() {
           const isVerified = user.email_verified ? 'true' : 'false';
           const payloadData = `${user.nickname},${user.email},${user.name},${isVerified}`;
 
-          const fetchedAccessToken = await getAccessTokenSilently({
+          const fetchedAccessToken = await getAccessTokenWithPopup({
             authorizationParams: {
               audience: process.env.REACT_APP_AUTH0AUDIENCE,
               scope: 'read:current_user',
