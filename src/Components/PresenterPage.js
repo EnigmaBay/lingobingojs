@@ -79,6 +79,7 @@ export default function PresenterPage() {
   }, [
     getAccessTokenWithPopup,
     setAccessToken,
+    encodedPayload,
     setEncodedPayload,
     setIsApiAuthorized,
     user,
