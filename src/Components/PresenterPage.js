@@ -54,6 +54,7 @@ export default function PresenterPage() {
               setEncodedPayload(base64encodedPayload);
               setAccessToken(fetchedAccessToken);
               const { message } = response.data;
+              console.log('axios response.data =>', message);
               const isAuth = message === 'Authorized.' ? true : false;
               setIsApiAuthorized(isAuth);
             })
