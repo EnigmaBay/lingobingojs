@@ -75,7 +75,7 @@ export default function PresenterPage() {
       ignore = true;
     };
   }, [
-    getAccessTokenSilently,
+    getAccessTokenWithPopup,
     setAccessToken,
     setEncodedPayload,
     setIsApiAuthorized,
