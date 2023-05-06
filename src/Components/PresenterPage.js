@@ -29,7 +29,7 @@ export default function PresenterPage() {
 
           const fetchedAccessToken = await getAccessTokenSilently({
             authorizationParams: {
-              audience: process.env.REACT_APP_API_SERVER,
+              audience: process.env.REACT_APP_AUTH0AUDIENCE,
               scope: 'read:current_user',
             },
           });
