@@ -7,17 +7,19 @@ import PropTypes from 'prop-types';
 import CustomAccordionToggle from '../Components/CustomAccordionToggle';
 import AddWord from './AddWord';
 import AddWords from './AddWords';
-import FetchCategories from './FetchCategories.js';
+import FetchCategories from './FetchCategories';
 import FetchWords from './FetchWords';
-
+import CreateGameboard from './CreateGameboard';
 export default function PresenterForm(props) {
   const [categoryListVisible, setCategoryListVisible] = useState(false);
   const [wordsListVisible, setWordsListVisible] = useState(false);
   const [addWordListVisible, setAddWordListVisible] = useState(false);
   const [addWordsListVisible, setAddWordsListVisible] = useState(false);
+  const [gameboardLinkVisible, setGameboardLinkVisible] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('');
   const [selectedWord, setSelectedWord] = useState('');
   const [selectedWords, setSelectedWords] = useState('');
+  const [gameboardCategory, setGameboardCategory] = useState('');
   const [theme] = useOutletContext();
 
   function handleGetCategories(event) {
@@ -43,7 +45,7 @@ export default function PresenterForm(props) {
 
   function handleAddWord(event) {
     event.preventDefault();
-    console.log('handleAddWord e.target:', event.target);
+    // console.log('handleAddWord e.target:', event.target);
     const category = event.target.addWordCategory.value.trim();
     const word = event.target.addWordWord.value.trim();
     setSelectedCategory(category);
@@ -55,6 +57,19 @@ export default function PresenterForm(props) {
     );
     const visibility = addWordListVisible ? false : true;
     setAddWordListVisible(visibility);
+  }
+
+  function handleCreateGameboard(event) {
+    event.preventDefault();
+    console.log(
+      'handleCreateGameboard called. event target is',
+      event.target.formGetGameboard.value
+    );
+    const category = event.target.formGetGameboard.value.trim();
+    setGameboardCategory(category);
+    console.log('handleCreateGameboard category is now', category);
+    const visibility = gameboardLinkVisible ? false : true;
+    setGameboardLinkVisible(visibility);
   }
 
   function handleAddWords(event) {
@@ -104,7 +119,7 @@ export default function PresenterForm(props) {
                 accessToken={props.accessToken}
               />
             )}
-            <hr></hr>
+            <hr />
             <Form onSubmit={handleGetWords}>
               <Form.Group className='my-3' controlId='formCategoryGetWords'>
                 <Form.Control
@@ -234,6 +249,47 @@ export default function PresenterForm(props) {
                   />
                 )}
               </div>
+            </Form>
+          </Card.Body>
+        </Accordion.Collapse>
+      </Card>
+      {/* Create a gameboard from a category and get a link for players */}
+      <Card data-theme={theme} className='themed-background mt-2'>
+        <Card.Header data-theme={theme}>
+          <CustomAccordionToggle eventKey='2'>
+            Create a Gameboard From a Category of 24+ Words
+          </CustomAccordionToggle>
+        </Card.Header>
+        <Accordion.Collapse eventKey='2'>
+          <Card.Body className='themed-text rounded-4 m-3' data-theme={theme}>
+            {/* Create gameboard and get link for players */}
+            <Form onSubmit={handleCreateGameboard}>
+              <Form.Group className='my-3' controlId='formGetGameboard'>
+                <Form.Control
+                  type='text'
+                  placeholder='category'
+                  className='themed-header'
+                />
+              </Form.Group>
+              <div className='d-flex justify-content-between'>
+                <Form.Text className='text-muted'>
+                  Enter a category with 24+ words to make gameboards with.
+                </Form.Text>
+                <button
+                  type='submit'
+                  className='themed-button-sm'
+                  data-theme={theme}
+                >
+                  Get Gameboard Link
+                </button>
+              </div>
+              {gameboardLinkVisible && (
+                <CreateGameboard
+                  encodedPayload={props.encodedPayload}
+                  accessToken={props.accessToken}
+                  category={gameboardCategory}
+                />
+              )}
             </Form>
           </Card.Body>
         </Accordion.Collapse>
