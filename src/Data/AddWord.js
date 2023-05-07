@@ -40,7 +40,7 @@ export default function AddWord(props) {
       }
     }
 
-    if (props.word && props.category) {
+    if (props.newWord && props.category) {
       addWord();
     }
 
@@ -63,5 +63,4 @@ AddWord.propTypes = {
   accessToken: PropTypes.string,
   category: PropTypes.string,
   newWord: PropTypes.string,
-  word: PropTypes.string,
 };
