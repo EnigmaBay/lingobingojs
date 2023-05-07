@@ -23,5 +23,5 @@ export default function CustomAccordionToggle({ children, eventKey }) {
 
 CustomAccordionToggle.propTypes = {
   children: PropTypes.node.isRequired,
-  eventKey: PropTypes.number,
+  eventKey: PropTypes.string,
 };
