@@ -64,7 +64,7 @@ export default function Description() {
       </Row>
       <Row className='p-2 mb-3'>
         <div className='video-wrapper'>
-          <iframe
+          {/* <iframe
             className='demo-video rounded-4'
             src='https://www.youtube.com/embed/P1yVieUmLPo?controls=0&autoplay=1&mute=1&modestbranding=1&loop=1&playlist=P1yVieUmLPo'
             title='Video showing how to play LingoBingoJS'
@@ -83,7 +83,7 @@ export default function Description() {
                 View it at Jon&apos;s YouTube channel instead.
               </a>
             </div>
-          </iframe>
+          </iframe> */}
         </div>
       </Row>
       <Row className='p-2 mb-3'>

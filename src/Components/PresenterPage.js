@@ -14,17 +14,22 @@ export default function PresenterPage() {
   const [theme] = useOutletContext();
   const { isAuthenticated, isLoading, getAccessTokenWithPopup, user } =
     useAuth0();
-  const [isApiAuthorized, setIsApiAuthorized] = useState(false);
-  const [encodedPayload, setEncodedPayload] = useState('');
-  const [accessToken, setAccessToken] = useState(null);
+  // const [isApiAuthorized, setIsApiAuthorized] = useState(false);
+  // const [encodedPayload, setEncodedPayload] = useState('');
+  // const [accessToken, setAccessToken] = useState(null);
+  const [stateObject, setStateObject] = useState({
+    encodedPayload: '',
+    accessToken: '',
+    isApiAuthorized: false,
+  });
 
   useEffect(() => {
     let ignore = false;
 
     async function fetchData() {
       if (!ignore) {
-        console.log('encodedPayload len =>', encodedPayload.length);
-        if (user !== undefined && encodedPayload.length > 0) {
+        console.log('isApiAuthorized =>', stateObject.isApiAuthorized);
+        if (user !== undefined) {
           const isVerified = user.email_verified ? 'true' : 'false';
           const payloadData = `${user.nickname},${user.email},${user.name},${isVerified}`;
 
@@ -52,21 +57,39 @@ export default function PresenterPage() {
 
           axios(config)
             .then((response) => {
-              setEncodedPayload(base64encodedPayload);
-              setAccessToken(fetchedAccessToken);
+              // setEncodedPayload(base64encodedPayload);
+              // setAccessToken(fetchedAccessToken);
               const { message } = response.data;
               console.log('axios response.data =>', message);
               const isAuth = message === 'Authorized.' ? true : false;
-              setIsApiAuthorized(isAuth);
+              // setIsApiAuthorized(isAuth);
+              const newState = {
+                encodedPayload: base64encodedPayload,
+                accessToken: fetchedAccessToken,
+                isApiAuthorized: isAuth,
+              };
+              setStateObject(newState);
             })
             .catch((error) => {
               console.error(error);
-              setIsApiAuthorized(false);
-              setAccessToken(null);
+              // setIsApiAuthorized(false);
+              // setAccessToken(null);
+              const newState = {
+                encodedPayload: '',
+                accessToken: '',
+                isApiAuthorized: false,
+              };
+              setStateObject(newState);
             });
         } else {
-          setIsApiAuthorized(false);
-          setAccessToken(null);
+          // setIsApiAuthorized(false);
+          // setAccessToken(null);
+          const newState = {
+            encodedPayload: '',
+            accessToken: '',
+            isApiAuthorized: false,
+          };
+          setStateObject(newState);
         }
       }
     }
@@ -78,10 +101,11 @@ export default function PresenterPage() {
     };
   }, [
     getAccessTokenWithPopup,
-    setAccessToken,
-    encodedPayload,
-    setEncodedPayload,
-    setIsApiAuthorized,
+    setStateObject,
+    stateObject,
+    // encodedPayload,
+    // setEncodedPayload,
+    // setIsApiAuthorized,
     user,
   ]);
 
@@ -116,17 +140,17 @@ export default function PresenterPage() {
             <Profile
               username={user.name}
               emailVerified={user.email_verified}
-              isApiAuthorized={isApiAuthorized}
+              isApiAuthorized={stateObject.isApiAuthorized}
             />
           )}
         </Col>
       </Row>
       <Row>
         <Col className='md-8 pb-4'>
-          {isAuthenticated && isApiAuthorized && (
+          {isAuthenticated && stateObject.isApiAuthorized && (
             <PresenterForm
-              encodedPayload={encodedPayload}
-              accessToken={accessToken}
+              encodedPayload={stateObject.encodedPayload}
+              accessToken={stateObject.accessToken}
             />
           )}
         </Col>
