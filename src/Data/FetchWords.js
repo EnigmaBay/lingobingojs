@@ -45,7 +45,6 @@ export default function FetchWords(props) {
     return <div>Loading. . .</div>;
   }
 
-  console.log('fetchWords props:', props.encodedPayload, props.accessToken);
   if (words) {
     console.log('fetchWords fetched these words', words);
   }

@@ -29,7 +29,7 @@ export default function PresenterPage() {
     async function fetchData() {
       if (!ignore) {
         console.log('isApiAuthorized =>', stateObject.isApiAuthorized);
-        if (user !== undefined) {
+        if (user !== undefined && isAuthenticated) {
           const isVerified = user.email_verified ? 'true' : 'false';
           const payloadData = `${user.nickname},${user.email},${user.name},${isVerified}`;
 
@@ -81,15 +81,15 @@ export default function PresenterPage() {
               };
               setStateObject(newState);
             });
-        } else {
-          // setIsApiAuthorized(false);
-          // setAccessToken(null);
-          const newState = {
-            encodedPayload: '',
-            accessToken: '',
-            isApiAuthorized: false,
-          };
-          setStateObject(newState);
+          // } else {
+          //   // setIsApiAuthorized(false);
+          //   // setAccessToken(null);
+          //   const newState = {
+          //     encodedPayload: '',
+          //     accessToken: '',
+          //     isApiAuthorized: false,
+          //   };
+          //   setStateObject(newState);
         }
       }
     }
@@ -106,6 +106,7 @@ export default function PresenterPage() {
     // encodedPayload,
     // setEncodedPayload,
     // setIsApiAuthorized,
+    isAuthenticated,
     user,
   ]);
 
