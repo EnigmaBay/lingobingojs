@@ -194,16 +194,16 @@ export default function PresenterForm(props) {
                     Add Word
                   </button>
                 </div>
-                {addWordListVisible && (
-                  <AddWord
-                    encodedPayload={props.encodedPayload}
-                    accessToken={props.accessToken}
-                    category={selectedCategory}
-                    newWord={selectedWord}
-                  />
-                )}
               </div>
             </Form>
+            {addWordListVisible && (
+              <AddWord
+                encodedPayload={props.encodedPayload}
+                accessToken={props.accessToken}
+                category={selectedCategory}
+                newWord={selectedWord}
+              />
+            )}
 
             <hr />
             {/* Add New Comma Separated List of Words */}
