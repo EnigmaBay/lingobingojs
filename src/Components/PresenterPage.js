@@ -14,9 +14,6 @@ export default function PresenterPage() {
   const [theme] = useOutletContext();
   const { isAuthenticated, isLoading, getAccessTokenWithPopup, user } =
     useAuth0();
-  // const [isApiAuthorized, setIsApiAuthorized] = useState(false);
-  // const [encodedPayload, setEncodedPayload] = useState('');
-  // const [accessToken, setAccessToken] = useState(null);
   const [stateObject, setStateObject] = useState({
     encodedPayload: '',
     accessToken: '',
@@ -57,12 +54,9 @@ export default function PresenterPage() {
 
           axios(config)
             .then((response) => {
-              // setEncodedPayload(base64encodedPayload);
-              // setAccessToken(fetchedAccessToken);
               const { message } = response.data;
               console.log('axios response.data =>', message);
               const isAuth = message === 'Authorized.' ? true : false;
-              // setIsApiAuthorized(isAuth);
               const newState = {
                 encodedPayload: base64encodedPayload,
                 accessToken: fetchedAccessToken,
@@ -72,8 +66,6 @@ export default function PresenterPage() {
             })
             .catch((error) => {
               console.error(error);
-              // setIsApiAuthorized(false);
-              // setAccessToken(null);
               const newState = {
                 encodedPayload: '',
                 accessToken: '',
@@ -81,15 +73,6 @@ export default function PresenterPage() {
               };
               setStateObject(newState);
             });
-          // } else {
-          //   // setIsApiAuthorized(false);
-          //   // setAccessToken(null);
-          //   const newState = {
-          //     encodedPayload: '',
-          //     accessToken: '',
-          //     isApiAuthorized: false,
-          //   };
-          //   setStateObject(newState);
         }
       }
     }
@@ -103,9 +86,6 @@ export default function PresenterPage() {
     getAccessTokenWithPopup,
     setStateObject,
     stateObject,
-    // encodedPayload,
-    // setEncodedPayload,
-    // setIsApiAuthorized,
     isAuthenticated,
     user,
   ]);
@@ -127,13 +107,15 @@ export default function PresenterPage() {
       data-theme={theme}
     >
       <Row>
-        <Col></Col>
+        <Col sm={4}></Col>
         <Col sm={4}>
           <div data-theme={theme} className='themed-header text-center'>
             Presenters Page
           </div>
         </Col>
-        <Col>{isAuthenticated ? <LogoutButton /> : <LoginButton />}</Col>
+        <Col sm={4} className='themed-text align-self-center'>
+          {isAuthenticated ? <LogoutButton /> : <LoginButton theme={theme} />}
+        </Col>
       </Row>
       <Row>
         <Col>
