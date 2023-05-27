@@ -79,9 +79,6 @@ export default function NavbarMain(props) {
               <NavLink onClick={toggle} className={activeFunc} to='../play'>
                 Play LingoBingo
               </NavLink>
-              <NavLink onClick={toggle} className={activeFunc} to='../login'>
-                Login
-              </NavLink>
               <NavLink
                 onClick={toggle}
                 className={activeFunc}
