@@ -8,7 +8,6 @@ import About from './Components/About.js';
 import Description from './Components/Description.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AuthProviderWrapper from './Auth/AuthProviderWrapper';
-import LoginButton from './Auth/LoginButton';
 import PresenterPage from './Components/PresenterPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -21,7 +20,6 @@ root.render(
             <Route index element={<Description />} />
             <Route path='about' element={<About />} />
             <Route path='presenter' element={<PresenterPage />} />
-            <Route path='login' element={<LoginButton />} />
             <Route path='play' element={<GameSession />} />
             <Route path='play/:gameboardId' element={<GameSession />} />
             <Route path='play/:gameboardId/:param2' element={<GameSession />} />
